@@ -9,6 +9,19 @@
       Title="AboutWSPage">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="320*"/>
+            <RowDefinition Height="45*"/>
+        </Grid.RowDefinitions>
+        <Grid Background="Gray"></Grid>
+        <Grid Grid.Row="2" Background="Gray"></Grid>
+        <TextBlock HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" FontWeight="Bold" Foreground="White">Worldskills China Competiton 2016</TextBlock>
+        <TextBlock FontSize="25" Grid.Row="1" HorizontalAlignment="Center" Margin="5">About WorldSkills</TextBlock>
+        <StackPanel Margin="0 30 0 0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Style="{StaticResource MainButton}" Name="HistoryWSBtn"  Content="History of WorldSkills" Margin="15" Click="HistoryWSBtn_Click"></Button>
+            <Button Style="{StaticResource MainButton}" Content ="Competition Skills" Margin="15"></Button>
+            <Button Style="{StaticResource MainButton}" Content ="Previous Competition" Margin="15"></Button>
+        </StackPanel>
     </Grid>
 </Page>
