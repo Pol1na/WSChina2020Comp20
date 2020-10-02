@@ -24,5 +24,10 @@ namespace WSChina2020AppComp20.Pages
         {
             InitializeComponent();
         }
+
+        private void AboutWSBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new AboutWSPage());
+        }
     }
 }
