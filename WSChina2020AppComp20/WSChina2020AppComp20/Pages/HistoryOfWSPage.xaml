@@ -25,10 +25,28 @@
         <TextBlock HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" FontWeight="Bold" Foreground="White" Grid.ColumnSpan="2" >Worldskills China Competiton 2016</TextBlock>
         <TextBlock Grid.Row="1" FontSize="25" HorizontalAlignment="Center" Grid.ColumnSpan="2">History of WorldSkills</TextBlock>
         <Image Source="..\Images\logo.png" Width="120" VerticalAlignment="Center" Grid.Row="1" HorizontalAlignment="Left" Margin="10" ></Image>
-        <Image Name="AlbertImage" Source="..\Images\Albert.jpg" VerticalAlignment="Center" Grid.Row="1" HorizontalAlignment="Right" Margin="10" ></Image>
-        <Image Name="NoImage" Source="..\Images\no-image.png" VerticalAlignment="Center" Grid.Row="2" HorizontalAlignment="Center" Margin="5"></Image>
-        <Image Name="DirectorsImage" Source="..\Images\directors.jpg" VerticalAlignment="Center" Grid.Row="3" HorizontalAlignment="Center" Margin="5"></Image>
+        <Button Name="AlbertImage" Grid.Row="1" HorizontalAlignment="Right" Margin="10" Width="80" Height="110" Click="AlbertImage_Click">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="..\Images\Albert.jpg"></Image>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Name="NoImage" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="..\Images\no-image.png"></Image>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Button Name="DirectorsImage" Grid.Row="3" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+            <Button.Template>
+                <ControlTemplate>
+                    <Image Source="..\Images\directors.jpg"></Image>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
         <Border BorderThickness="1" Grid.Row ="1" Grid.RowSpan="3" Grid.Column="1" BorderBrush="LightGray" Margin="40" ></Border>
-        <ListBox Name ="HistoryListBox" Grid.Row ="1" Grid.RowSpan="3" Grid.Column="1" Margin="40"></ListBox>
+        <ListView Name ="HistoryListView" Grid.Row ="1" Grid.RowSpan="3" Grid.Column="1" Margin="40"></ListView>
     </Grid>
 </Page>

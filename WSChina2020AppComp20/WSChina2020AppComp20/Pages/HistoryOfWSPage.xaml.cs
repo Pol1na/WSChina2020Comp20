@@ -24,5 +24,9 @@ namespace WSChina2020AppComp20.Pages
         {
             InitializeComponent();
         }
+
+        private void AlbertImage_Click(object sender, RoutedEventArgs e)
+        {
+        }
     }
 }
