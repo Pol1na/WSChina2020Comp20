@@ -25,28 +25,31 @@
         <TextBlock HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" FontWeight="Bold" Foreground="White" Grid.ColumnSpan="2" >Worldskills China Competiton 2016</TextBlock>
         <TextBlock Grid.Row="1" FontSize="25" HorizontalAlignment="Center" Grid.ColumnSpan="2">History of WorldSkills</TextBlock>
         <Image Source="..\Images\logo.png" Width="120" VerticalAlignment="Center" Grid.Row="1" HorizontalAlignment="Left" Margin="10" ></Image>
-        <Button Name="AlbertImage" Grid.Row="1" HorizontalAlignment="Right" Margin="10" Width="80" Height="110" Click="AlbertImage_Click">
+        <Button Cursor="Hand" Name="AlbertImage" Grid.Row="1" HorizontalAlignment="Right" Margin="10" Width="80" Height="110" Click="AlbertImage_Click">
             <Button.Template>
                 <ControlTemplate>
                     <Image Source="..\Images\Albert.jpg"></Image>
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Name="NoImage" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+        <Button Cursor="Hand" Name="NoImage" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Click="NoImage_Click">
             <Button.Template>
                 <ControlTemplate>
                     <Image Source="..\Images\no-image.png"></Image>
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Name="DirectorsImage" Grid.Row="3" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10">
+        <Button Cursor="Hand" Name="DirectorsImage" Grid.Row="3" Width="100" Height="100" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Click="DirectorsImage_Click">
             <Button.Template>
                 <ControlTemplate>
                     <Image Source="..\Images\directors.jpg"></Image>
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Border BorderThickness="1" Grid.Row ="1" Grid.RowSpan="3" Grid.Column="1" BorderBrush="LightGray" Margin="40" ></Border>
-        <ListView Name ="HistoryListView" Grid.Row ="1" Grid.RowSpan="3" Grid.Column="1" Margin="40"></ListView>
+        <Border BorderThickness="1" Grid.Row ="1" Grid.RowSpan="3" Grid.Column="1" BorderBrush="LightBlue" Margin="40" ></Border>
+        <ScrollViewer Name="Scroll" CanContentScroll="True" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Margin="40">
+            <TextBox Name="HistoryWSTextBox" TextWrapping="Wrap"></TextBox>
+        </ScrollViewer>
+        
     </Grid>
 </Page>
