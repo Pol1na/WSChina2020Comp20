@@ -22,12 +22,13 @@
         </Grid.RowDefinitions>
         <Grid Background="Gray" Grid.ColumnSpan="2"></Grid>
         <Grid Grid.Row="4" Background="Gray" Grid.ColumnSpan="2"></Grid>
-        <TextBlock HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" FontWeight="Bold" Foreground="White" Grid.Column="1" >Worldskills China Competiton 2016</TextBlock>
+        <TextBlock HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" FontWeight="Bold" Foreground="White" Grid.ColumnSpan="2" >Worldskills China Competiton 2016</TextBlock>
         <TextBlock Grid.Row="1" FontSize="25" HorizontalAlignment="Center" Grid.ColumnSpan="2">History of WorldSkills</TextBlock>
-        <Ellipse Fill="Bisque" Width="80" Height="40" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10" ></Ellipse>
-        <Rectangle Width="80" Height="40" VerticalAlignment="Center" Grid.Row="1" HorizontalAlignment="Right" Stroke="Black" Margin="10" />
-        <Rectangle Width="200" Height="70" VerticalAlignment="Center" Grid.Row="2" HorizontalAlignment="Center" Stroke="Black"/>
-        <Rectangle Width="200" Height="70" VerticalAlignment="Center" Grid.Row="3" HorizontalAlignment="Center" Stroke="Black"/>
+        <Image Source="..\Images\logo.png" Width="120" VerticalAlignment="Center" Grid.Row="1" HorizontalAlignment="Left" Margin="10" ></Image>
+        <Image Name="AlbertImage" Source="..\Images\Albert.jpg" VerticalAlignment="Center" Grid.Row="1" HorizontalAlignment="Right" Margin="10" ></Image>
+        <Image Name="NoImage" Source="..\Images\no-image.png" VerticalAlignment="Center" Grid.Row="2" HorizontalAlignment="Center" Margin="5"></Image>
+        <Image Name="DirectorsImage" Source="..\Images\directors.jpg" VerticalAlignment="Center" Grid.Row="3" HorizontalAlignment="Center" Margin="5"></Image>
         <Border BorderThickness="1" Grid.Row ="1" Grid.RowSpan="3" Grid.Column="1" BorderBrush="LightGray" Margin="40" ></Border>
+        <ListBox Name ="HistoryListBox" Grid.Row ="1" Grid.RowSpan="3" Grid.Column="1" Margin="40"></ListBox>
     </Grid>
 </Page>

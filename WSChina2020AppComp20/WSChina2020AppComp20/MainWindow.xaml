@@ -11,6 +11,7 @@
                Navigated="MainFrame_Navigated" 
                NavigationUIVisibility="Hidden"
                ContentRendered="MainFrame_ContentRendered"></Frame>
+            
         <Button Name="BackBtn" Style="{StaticResource BackButton}" VerticalAlignment="Top" Margin="100 10" Click="BackBtn_Click"></Button>
     </Grid>
 </Window>
