@@ -24,5 +24,11 @@ namespace WSChina2020AppComp20.Pages
         {
             InitializeComponent();
         }
+
+        private void HistoryWSBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Pages.HistoryOfWSPage());
+
+        }
     }
 }
