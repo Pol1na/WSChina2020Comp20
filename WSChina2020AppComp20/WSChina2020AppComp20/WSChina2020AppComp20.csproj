@@ -71,6 +71,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\CompetitionSkillsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\HistoryOfWSPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -83,6 +87,9 @@
   <ItemGroup>
     <Compile Include="Pages\AboutWSPage.xaml.cs">
       <DependentUpon>AboutWSPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CompetitionSkillsPage.xaml.cs">
+      <DependentUpon>CompetitionSkillsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\HistoryOfWSPage.xaml.cs">
       <DependentUpon>HistoryOfWSPage.xaml</DependentUpon>
