@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище WSChina2020BaseComp20Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="All Fields">
+    <Key>
+      <PropertyRef Name="BlockID" />
+    </Key>
+    <Property Name="BlockID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Blocks">
+    <Key>
+      <PropertyRef Name="BlockID" />
+    </Key>
+    <Property Name="BlockID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Skills">
+    <Key>
+      <PropertyRef Name="SkillID" />
+    </Key>
+    <Property Name="SkillID" Type="int" Nullable="false" />
+    <Property Name="BlockID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_Blocks_All Fields">
+    <End Role="All Fields" Type="Self.All Fields" Multiplicity="1" />
+    <End Role="Blocks" Type="Self.Blocks" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="All Fields">
+        <PropertyRef Name="BlockID" />
+      </Principal>
+      <Dependent Role="Blocks">
+        <PropertyRef Name="BlockID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Skills_Blocks">
+    <End Role="Blocks" Type="Self.Blocks" Multiplicity="1" />
+    <End Role="Skills" Type="Self.Skills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Blocks">
+        <PropertyRef Name="BlockID" />
+      </Principal>
+      <Dependent Role="Skills">
+        <PropertyRef Name="BlockID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище WSChina2020BaseComp20ModelContainer">
+    <EntitySet Name="All Fields" EntityType="Self.All Fields" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Blocks" EntityType="Self.Blocks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Skills" EntityType="Self.Skills" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Blocks_All Fields" Association="Self.FK_Blocks_All Fields">
+      <End Role="All Fields" EntitySet="All Fields" />
+      <End Role="Blocks" EntitySet="Blocks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Skills_Blocks" Association="Self.FK_Skills_Blocks">
+      <End Role="Blocks" EntitySet="Blocks" />
+      <End Role="Skills" EntitySet="Skills" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

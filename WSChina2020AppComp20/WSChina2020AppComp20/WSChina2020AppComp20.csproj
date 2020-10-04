@@ -75,6 +75,7 @@
     <Compile Include="Entities\All_Field.cs">
       <DependentUpon>SkillsModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\AppData.cs" />
     <Compile Include="Entities\Block.cs">
       <DependentUpon>SkillsModel.tt</DependentUpon>
     </Compile>

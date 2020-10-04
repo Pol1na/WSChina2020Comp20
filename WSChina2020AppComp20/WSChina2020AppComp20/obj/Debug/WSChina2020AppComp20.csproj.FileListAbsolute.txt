@@ -20,3 +20,12 @@ C:\Users\Pol1na\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020A
 C:\Users\Pol1na\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\WSChina2020AppComp20.csproj.CoreCompileInputs.cache
 C:\Users\Pol1na\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\WSChina2020AppComp20.exe
 C:\Users\Pol1na\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\WSChina2020AppComp20.pdb
+C:\Users\Pol1na\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\bin\Debug\EntityFramework.dll
+C:\Users\Pol1na\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Pol1na\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\bin\Debug\EntityFramework.xml
+C:\Users\Pol1na\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Pol1na\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Pol1na\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\Pages\CompetitionSkillsPage.g.cs
+C:\Users\Pol1na\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\WSChina2020AppComp20_Content.g.cs
+C:\Users\Pol1na\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\Pages\CompetitionSkillsPage.baml
+C:\Users\Pol1na\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\WSChina2020AppComp20.csproj.CopyComplete

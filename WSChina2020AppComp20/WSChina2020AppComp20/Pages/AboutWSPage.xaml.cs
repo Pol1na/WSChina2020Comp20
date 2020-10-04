@@ -30,5 +30,15 @@ namespace WSChina2020AppComp20.Pages
             NavigationService.Navigate(new Pages.HistoryOfWSPage());
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CompetitionSkillsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Pages.CompetitionSkillsPage());
+        }
     }
 }
