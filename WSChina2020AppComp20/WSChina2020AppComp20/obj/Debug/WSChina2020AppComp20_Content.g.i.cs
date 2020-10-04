@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/no-image.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("entities/skillsmodel.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("entities/skillsmodel.tt")]
 
 
