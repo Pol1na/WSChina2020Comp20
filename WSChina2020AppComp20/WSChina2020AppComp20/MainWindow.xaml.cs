@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Timers;
+using System.Windows.Threading;
+using System.Threading;
 
 namespace WSChina2020AppComp20
 {
@@ -20,10 +23,41 @@ namespace WSChina2020AppComp20
     /// </summary>
     public partial class MainWindow : Window
     {
+        DateTime WorldSkills2021 = new DateTime(2021, 09, 22, 0, 0, 0);
         public MainWindow()
         {
             InitializeComponent();
             MainFrame.Navigate(new Pages.MenuPage());
+
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Tick += timer_tick;
+            timer.Start();
+        }
+
+        void timer_tick(object sender, EventArgs e)
+        {
+            if((MainFrame.Content as Page).Title is null)
+            {
+                Title = "Skills Competition Managment System: " + (MainFrame.Content as Page).Title;
+
+            }
+            else
+            {
+                Title = "Skills Competition Managment System";
+            }
+            TimeSpan TimeRemaining = WorldSkills2021 - DateTime.Now;
+            if (TimeRemaining.Seconds > 0 || TimeRemaining.Minutes > 0 || TimeRemaining.Hours > 0 || TimeRemaining.Days > 0)
+            {
+                TimerWS.Text = $"{TimeRemaining.Days} days, {TimeRemaining.Hours} hours, {TimeRemaining.Minutes} minutes and {TimeRemaining.Seconds} seconds until the WorldSkills Shanghai 2021 starts";
+
+            }
+            else
+            {
+                TimerWS.Text = "The WorldSkills Shanghai 2021 has started.";
+            }
+
+
+
         }
 
         private void MainFrame_Navigated(object sender, NavigationEventArgs e)

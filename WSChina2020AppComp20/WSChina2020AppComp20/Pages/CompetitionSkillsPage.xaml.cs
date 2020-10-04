@@ -29,7 +29,6 @@ namespace WSChina2020AppComp20.Pages
             {
                 TreeViewItem item = new TreeViewItem()
                 {
-                    Name = "Block_" + block.BlockID.ToString(),
                     Header = block.Name
                 };
                 SkillsTW.Items.Add(item);
@@ -39,8 +38,7 @@ namespace WSChina2020AppComp20.Pages
                 {
                     TreeViewItem child = new TreeViewItem()
                     {
-                        Name = "Skill_" + skill.SkillID.ToString(),
-                        Header = skill.Name
+                        Header = skill.SkillID.ToString() + ". " + skill.Name
                     };
                     child.Selected += Skill_Selected;
                     item.Items.Add(child);
@@ -48,7 +46,8 @@ namespace WSChina2020AppComp20.Pages
                     void Skill_Selected(object sender, RoutedEventArgs e)
                     {
                         TreeViewItem element = (TreeViewItem)sender;
-                        CompetitionSkillsTextBox.Text = skill.Description;
+                        
+                        CompetitionSkillsTextBox.Text = $"{skill.Name} \n {skill.Description}";
                     }
 
                 } 
