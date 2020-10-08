@@ -104,6 +104,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\AboutSHPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AboutWSCN.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -130,6 +134,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\AboutSHPage.xaml.cs">
+      <DependentUpon>AboutSHPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AboutWSCN.xaml.cs">
       <DependentUpon>AboutWSCN.xaml</DependentUpon>
     </Compile>
