@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:WSChina2020AppComp20"
         mc:Ignorable="d"
         Title="Main Screen" Height="450" Width="800"
-        MinHeight="450" MinWidth="900">
+        MinHeight="500" MinWidth="900">
     <Grid>
         <Frame x:Name="MainFrame" Grid.Row="1" 
                Navigated="MainFrame_Navigated" 
                NavigationUIVisibility="Hidden"
                ContentRendered="MainFrame_ContentRendered"></Frame>
-        <Button Name="BackBtn" Style="{StaticResource BackButton}" VerticalAlignment="Top" Margin="100 10" Click="BackBtn_Click"></Button>
-        <TextBlock Name="TimerWS" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10"></TextBlock>
+        <Button Name="BackBtn" Style="{StaticResource BackButton}" VerticalAlignment="Top" Margin="150 10" Click="BackBtn_Click"></Button>
+        <TextBlock Name="TimerWS"  FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="20"></TextBlock>
     </Grid>
 </Window>

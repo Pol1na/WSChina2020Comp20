@@ -20,7 +20,7 @@
         <Image Source="..\Images\logo.png" Width="120" VerticalAlignment="Center" HorizontalAlignment="Left"></Image>
         <TextBlock HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" FontWeight="Bold" Foreground="White" Margin="234,16">Worldskills China Competiton 2016</TextBlock>
         <TextBlock FontSize="30" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">Previous Competitions</TextBlock>
-        <StackPanel Grid.Row="2" Height="50" VerticalAlignment="Top" Orientation="Horizontal">
+        <StackPanel Grid.Row="2" Margin="10 0 10 10" VerticalAlignment="Top" HorizontalAlignment="Center" Orientation="Horizontal">
             <Label FontSize="16" Margin="5" HorizontalAlignment="Left">Ordinal No. :</Label>
             <TextBox x:Name="OrdinalNumTextBox" Width="200" Margin="10"></TextBox>
             <Label FontSize="16" Margin="30 5 0 5">City or Country:</Label>

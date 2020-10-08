@@ -22,7 +22,7 @@
         <StackPanel Margin="0 30 0 0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button Style="{StaticResource MainButton}" Name="HistoryWSBtn"  Content="History of WorldSkills" Margin="15" Click="HistoryWSBtn_Click"></Button>
             <Button Style="{StaticResource MainButton}" Name ="CompetitionSkillsBtn"  Content ="Competition Skills" Margin="15" Click="CompetitionSkillsBtn_Click"></Button>
-            <Button Style="{StaticResource MainButton}" Content ="Previous Competition" Margin="15"></Button>
+            <Button Style="{StaticResource MainButton}" Name ="PreviousCompBtn"  Content ="Previous Competition" Margin="15" Click="PreviousCompBtn_Click"></Button>
         </StackPanel>
     </Grid>
 </Page>

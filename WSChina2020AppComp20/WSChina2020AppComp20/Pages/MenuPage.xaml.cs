@@ -29,5 +29,17 @@ namespace WSChina2020AppComp20.Pages
         {
             NavigationService.Navigate(new AboutWSPage());
         }
+
+        private void AboutWSCNButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Pages.AboutWSCN());
+
+        }
+
+        private void AboutSHButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Pages.AboutSHPage());
+
+        }
     }
 }

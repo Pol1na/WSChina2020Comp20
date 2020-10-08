@@ -31,3 +31,7 @@ C:\Users\Pol1na\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020A
 C:\Users\Pol1na\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\WSChina2020AppComp20.csproj.CopyComplete
 C:\Users\Pol1na\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\Pages\PreviousCompPage.g.cs
 C:\Users\Pol1na\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\Pages\PreviousCompPage.baml
+C:\Users\Pol1na\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\Pages\AboutSHPage.g.cs
+C:\Users\Pol1na\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\Pages\AboutWSCN.g.cs
+C:\Users\Pol1na\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\Pages\AboutSHPage.baml
+C:\Users\Pol1na\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\Pages\AboutWSCN.baml
