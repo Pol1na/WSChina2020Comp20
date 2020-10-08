@@ -40,6 +40,30 @@ namespace WSChina2020AppComp20.Pages {
     /// </summary>
     public partial class PreviousCompPage : System.Windows.Controls.Page, System.Windows.Markup.IComponentConnector {
         
+        
+        #line 25 "..\..\..\Pages\PreviousCompPage.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.TextBox OrdinalNumTextBox;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 27 "..\..\..\Pages\PreviousCompPage.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.TextBox CityCountryTextBox;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 32 "..\..\..\Pages\PreviousCompPage.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.DataGrid MembersDGrid;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -68,6 +92,18 @@ namespace WSChina2020AppComp20.Pages {
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
         void System.Windows.Markup.IComponentConnector.Connect(int connectionId, object target) {
+            switch (connectionId)
+            {
+            case 1:
+            this.OrdinalNumTextBox = ((System.Windows.Controls.TextBox)(target));
+            return;
+            case 2:
+            this.CityCountryTextBox = ((System.Windows.Controls.TextBox)(target));
+            return;
+            case 3:
+            this.MembersDGrid = ((System.Windows.Controls.DataGrid)(target));
+            return;
+            }
             this._contentLoaded = true;
         }
     }

@@ -40,7 +40,6 @@
                 <TabItem.Content>Tourism</TabItem.Content>
             </TabItem>
 
-
         </TabControl>
     </Grid>
 </Page>

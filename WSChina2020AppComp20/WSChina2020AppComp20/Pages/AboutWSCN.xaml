@@ -29,9 +29,9 @@
         </TextBlock>
         <Border Grid.Row="2" BorderThickness="1" BorderBrush="LightBlue" Margin="10">
             <StackPanel>
-                <Button Height="65" Margin="5"> China's Accession to the WorldSkills</Button>
-                <Button Height="65" Margin="5"> Committee of WorldSkills China</Button>
-                <Button Height="65" Margin="5"> Participation and Results</Button>
+                <Button x:Name="AccessionButton" Height="65" Margin="5"> China's Accession to the WorldSkills</Button>
+                <Button x:Name="CommitteeButton" Height="65" Margin="5"> Committee of WorldSkills China</Button>
+                <Button x:Name="ResultsButton" Height="65" Margin="5"> Participation and Results</Button>
             </StackPanel>
         </Border>
         <Border Grid.Row="2" Grid.Column="1" BorderThickness="1" BorderBrush="LightBlue" Margin="10"/>

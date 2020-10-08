@@ -20,8 +20,25 @@
         <Image Source="..\Images\logo.png" Width="120" VerticalAlignment="Center" HorizontalAlignment="Left"></Image>
         <TextBlock HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" FontWeight="Bold" Foreground="White" Margin="234,16">Worldskills China Competiton 2016</TextBlock>
         <TextBlock FontSize="30" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">Previous Competitions</TextBlock>
-        <Label Grid.Row="2" Margin="10" FontSize="25">Ordinal No. :</Label>
-        
+        <StackPanel Grid.Row="2" Height="50" VerticalAlignment="Top" Orientation="Horizontal">
+            <Label FontSize="16" Margin="5" HorizontalAlignment="Left">Ordinal No. :</Label>
+            <TextBox x:Name="OrdinalNumTextBox" Width="200" Margin="10"></TextBox>
+            <Label FontSize="16" Margin="30 5 0 5">City or Country:</Label>
+            <TextBox x:Name="CityCountryTextBox" Width="200" Margin="10"></TextBox>
+            <Button Margin="10" Width="80">Search</Button>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Margin="10 60 10 10">
+            <Label HorizontalAlignment="Center" FontSize="10">Total Records: XXX</Label>
+            <DataGrid x:Name="MembersDGrid" FontSize="18" RowBackground="DarkGray" AutoGenerateColumns="False" AlternatingRowBackground="White">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Ordinal No."></DataGridTextColumn>
+                    <DataGridTextColumn Header="Year"></DataGridTextColumn>
+                    <DataGridTextColumn Header="City, Country"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Member Number"></DataGridTextColumn>
+                </DataGrid.Columns>                
+                
+            </DataGrid>
+        </StackPanel>
 
 
 

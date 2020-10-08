@@ -40,6 +40,30 @@ namespace WSChina2020AppComp20.Pages {
     /// </summary>
     public partial class AboutWSCN : System.Windows.Controls.Page, System.Windows.Markup.IComponentConnector {
         
+        
+        #line 32 "..\..\..\Pages\AboutWSCN.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button AccessionButton;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 33 "..\..\..\Pages\AboutWSCN.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button CommitteeButton;
+        
+        #line default
+        #line hidden
+        
+        
+        #line 34 "..\..\..\Pages\AboutWSCN.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button ResultsButton;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -68,6 +92,18 @@ namespace WSChina2020AppComp20.Pages {
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
         void System.Windows.Markup.IComponentConnector.Connect(int connectionId, object target) {
+            switch (connectionId)
+            {
+            case 1:
+            this.AccessionButton = ((System.Windows.Controls.Button)(target));
+            return;
+            case 2:
+            this.CommitteeButton = ((System.Windows.Controls.Button)(target));
+            return;
+            case 3:
+            this.ResultsButton = ((System.Windows.Controls.Button)(target));
+            return;
+            }
             this._contentLoaded = true;
         }
     }
