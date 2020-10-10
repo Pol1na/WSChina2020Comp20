@@ -15,6 +15,8 @@ using System.Windows.Shapes;
 using System.Timers;
 using System.Windows.Threading;
 using System.Threading;
+using WSChina2020AppComp20.Entities;
+using System.IO;
 
 namespace WSChina2020AppComp20
 {
@@ -56,7 +58,9 @@ namespace WSChina2020AppComp20
                 TimerWS.Text = "The WorldSkills Shanghai 2021 has started.";
             }
 
-
+            var img = AppData.Context.Tourism.ToList()[0];
+            img.travel = File.ReadAllBytes(@"C:\Users\Pol1na\Desktop");
+            AppData.Context.SaveChanges();
 
         }
 

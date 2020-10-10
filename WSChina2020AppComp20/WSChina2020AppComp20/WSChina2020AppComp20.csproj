@@ -79,6 +79,12 @@
     <Compile Include="Entities\Block.cs">
       <DependentUpon>SkillsModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Event.cs">
+      <DependentUpon>SkillsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\History.cs">
+      <DependentUpon>SkillsModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Skill.cs">
       <DependentUpon>SkillsModel.tt</DependentUpon>
     </Compile>
@@ -98,6 +104,9 @@
       <DependentUpon>SkillsModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Entities\sysdiagram.cs">
+      <DependentUpon>SkillsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Tourism.cs">
       <DependentUpon>SkillsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">

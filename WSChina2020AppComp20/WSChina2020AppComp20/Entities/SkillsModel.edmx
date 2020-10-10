@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище WSChina2020BaseComp20Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище WSChina2020BaseComp20Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="All Fields">
           <Key>
             <PropertyRef Name="BlockID" />
@@ -17,6 +17,22 @@
           </Key>
           <Property Name="BlockID" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Events">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="id" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="History">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="id" Type="nchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="Skills">
           <Key>
@@ -36,6 +52,15 @@
           <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Tourism">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="travel" Type="image" Nullable="false" />
+          <Property Name="hotel" Type="image" Nullable="false" />
+          <Property Name="food" Type="image" Nullable="false" />
+          <Property Name="id" Type="nchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <Association Name="FK_Blocks_All Fields">
           <End Role="All Fields" Type="Self.All Fields" Multiplicity="1" />
@@ -64,8 +89,11 @@
         <EntityContainer Name="Хранилище WSChina2020BaseComp20ModelContainer">
           <EntitySet Name="All Fields" EntityType="Self.All Fields" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Blocks" EntityType="Self.Blocks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Events" EntityType="Self.Events" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="History" EntityType="Self.History" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Skills" EntityType="Self.Skills" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tourism" EntityType="Self.Tourism" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Blocks_All Fields" Association="Self.FK_Blocks_All Fields">
             <End Role="All Fields" EntitySet="All Fields" />
             <End Role="Blocks" EntitySet="Blocks" />
@@ -75,8 +103,7 @@
             <End Role="Skills" EntitySet="Skills" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="WSChina2020BaseComp20Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -153,7 +180,35 @@
             <End Role="Blocks" EntitySet="Blocks" />
             <End Role="Skills" EntitySet="Skills" />
           </AssociationSet>
+          <EntitySet Name="Events" EntityType="WSChina2020BaseComp20Model.Event" />
+          <EntitySet Name="Histories" EntityType="WSChina2020BaseComp20Model.History" />
+          <EntitySet Name="Tourism" EntityType="WSChina2020BaseComp20Model.Tourism" />
         </EntityContainer>
+        <EntityType Name="Event">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="id" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="History">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="id" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Tourism">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="travel" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="hotel" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="food" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="id" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -193,6 +248,34 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Events">
+            <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Event">
+              <MappingFragment StoreEntitySet="Events">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Histories">
+            <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.History">
+              <MappingFragment StoreEntitySet="History">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tourism">
+            <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Tourism">
+              <MappingFragment StoreEntitySet="Tourism">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="food" ColumnName="food" />
+                <ScalarProperty Name="hotel" ColumnName="hotel" />
+                <ScalarProperty Name="travel" ColumnName="travel" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

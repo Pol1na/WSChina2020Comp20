@@ -29,5 +29,8 @@ namespace WSChina2020AppComp20.Entities
         public virtual DbSet<Block> Blocks { get; set; }
         public virtual DbSet<Skill> Skills { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
+        public virtual DbSet<Event> Events { get; set; }
+        public virtual DbSet<History> Histories { get; set; }
+        public virtual DbSet<Tourism> Tourism { get; set; }
     }
 }

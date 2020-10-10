@@ -13,6 +13,22 @@
     <Property Name="BlockID" Type="int" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
   </EntityType>
+  <EntityType Name="Events">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="date" Type="date" Nullable="false" />
+    <Property Name="description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="id" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="History">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="id" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
   <EntityType Name="Skills">
     <Key>
       <PropertyRef Name="SkillID" />
@@ -31,6 +47,15 @@
     <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Tourism">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="travel" Type="image" Nullable="false" />
+    <Property Name="hotel" Type="image" Nullable="false" />
+    <Property Name="food" Type="image" Nullable="false" />
+    <Property Name="id" Type="nchar" MaxLength="10" Nullable="false" />
   </EntityType>
   <Association Name="FK_Blocks_All Fields">
     <End Role="All Fields" Type="Self.All Fields" Multiplicity="1" />
@@ -59,8 +84,11 @@
   <EntityContainer Name="Хранилище WSChina2020BaseComp20ModelContainer">
     <EntitySet Name="All Fields" EntityType="Self.All Fields" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Blocks" EntityType="Self.Blocks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Events" EntityType="Self.Events" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="History" EntityType="Self.History" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Skills" EntityType="Self.Skills" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tourism" EntityType="Self.Tourism" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Blocks_All Fields" Association="Self.FK_Blocks_All Fields">
       <End Role="All Fields" EntitySet="All Fields" />
       <End Role="Blocks" EntitySet="Blocks" />
