@@ -58,9 +58,9 @@ namespace WSChina2020AppComp20
                 TimerWS.Text = "The WorldSkills Shanghai 2021 has started.";
             }
 
-            var img = AppData.Context.Tourism.ToList()[0];
-            img.travel = File.ReadAllBytes(@"C:\Users\Pol1na\Desktop");
-            AppData.Context.SaveChanges();
+            //var img = AppData.Context.Tourism.ToList()[2];
+            //img.travel = File.ReadAllBytes(@"C:\Users\Pol1na\Desktop\sh_travel3.jpg");
+            //AppData.Context.SaveChanges();
 
         }
 

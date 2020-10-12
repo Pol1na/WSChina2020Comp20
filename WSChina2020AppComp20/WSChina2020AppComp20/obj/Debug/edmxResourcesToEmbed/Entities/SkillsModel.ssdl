@@ -52,9 +52,9 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="travel" Type="image" Nullable="false" />
-    <Property Name="hotel" Type="image" Nullable="false" />
-    <Property Name="food" Type="image" Nullable="false" />
+    <Property Name="travel" Type="image" />
+    <Property Name="hotel" Type="image" />
+    <Property Name="food" Type="image" />
     <Property Name="id" Type="nchar" MaxLength="10" Nullable="false" />
   </EntityType>
   <Association Name="FK_Blocks_All Fields">

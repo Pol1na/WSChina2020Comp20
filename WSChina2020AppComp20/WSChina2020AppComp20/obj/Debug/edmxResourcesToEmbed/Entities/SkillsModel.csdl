@@ -97,9 +97,9 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="travel" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
-    <Property Name="hotel" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
-    <Property Name="food" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="travel" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="hotel" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="food" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="id" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
   </EntityType>
 </Schema>

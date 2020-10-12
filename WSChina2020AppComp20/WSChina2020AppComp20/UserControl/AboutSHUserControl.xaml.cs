@@ -12,19 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WSChina2020AppComp20.Entities;
 
-namespace WSChina2020AppComp20.Pages
+namespace WSChina2020AppComp20.UserControl
 {
     /// <summary>
-    /// Логика взаимодействия для AboutSHPage.xaml
+    /// Логика взаимодействия для AboutSHUserControl.xaml
     /// </summary>
-    public partial class AboutSHPage : Page
+    public partial class AboutSHUserControl
     {
-        public AboutSHPage()
+        public AboutSHUserControl()
         {
             InitializeComponent();
-            SHInfoLV.ItemsSource = AppData.Context.Events.ToList();
         }
     }
 }
