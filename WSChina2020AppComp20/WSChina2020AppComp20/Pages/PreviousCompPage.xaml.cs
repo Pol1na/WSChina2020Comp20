@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WSChina2020AppComp20.Entities;
 
 namespace WSChina2020AppComp20.Pages
 {
@@ -23,6 +24,21 @@ namespace WSChina2020AppComp20.Pages
         public PreviousCompPage()
         {
             InitializeComponent();
+            MembersDGrid.ItemsSource = AppData.Context.PrevCompetitions.ToList();
+            
         }
+
+        //private void SearchWSBtn_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if (OrdinalNumCBox.SelectedItem != null)
+        //    {
+        //        if (OrdinalNumCBox.SelectedIndex>0)
+        //        {
+        //            MembersDGrid.ItemsSource = AppData.Context.PrevCompetitions.ToList().Where(p => p.ordinalNum == (OrdinalNumCBox.SelectedItem as ))
+        //        }
+        //    }
+        //    else
+        //        MessageBox.Show("Вы не вписали данные для поиска!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+        //}
     }
 }

@@ -13,21 +13,19 @@
     <Property Name="BlockID" Type="int" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
   </EntityType>
-  <EntityType Name="Events">
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "WSChina2020BaseComp20.dbo.PrevCompetitions" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="PrevCompetitions">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="ordinalNum" />
+      <PropertyRef Name="Year" />
+      <PropertyRef Name="CityCountry" />
+      <PropertyRef Name="MemberNumber" />
     </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="date" Type="date" Nullable="false" />
-    <Property Name="description" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="id" Type="nchar" MaxLength="10" Nullable="false" />
-  </EntityType>
-  <EntityType Name="History">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="description" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="ordinalNum" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="Year" Type="int" Nullable="false" />
+    <Property Name="CityCountry" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="MemberNumber" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Skills">
     <Key>
@@ -84,11 +82,17 @@
   <EntityContainer Name="Хранилище WSChina2020BaseComp20ModelContainer">
     <EntitySet Name="All Fields" EntityType="Self.All Fields" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Blocks" EntityType="Self.Blocks" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Events" EntityType="Self.Events" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="History" EntityType="Self.History" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Skills" EntityType="Self.Skills" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tourism" EntityType="Self.Tourism" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PrevCompetitions" EntityType="Self.PrevCompetitions" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [PrevCompetitions].[ordinalNum] AS [ordinalNum], 
+    [PrevCompetitions].[Year] AS [Year], 
+    [PrevCompetitions].[CityCountry] AS [CityCountry], 
+    [PrevCompetitions].[MemberNumber] AS [MemberNumber]
+    FROM [dbo].[PrevCompetitions] AS [PrevCompetitions]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK_Blocks_All Fields" Association="Self.FK_Blocks_All Fields">
       <End Role="All Fields" EntitySet="All Fields" />
       <End Role="Blocks" EntitySet="Blocks" />

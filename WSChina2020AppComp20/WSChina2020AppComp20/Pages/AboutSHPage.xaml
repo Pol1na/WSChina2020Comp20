@@ -8,13 +8,56 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AboutSHPage">
     <Grid>
-        <ListView x:Name="SHInfoLV">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <usercontrol:AboutSHUserControl></usercontrol:AboutSHUserControl>
-                 </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="59*"/>
+            <RowDefinition Height="51*"/>
+            <RowDefinition Height="292*"/>
+            <RowDefinition Height="48*"/>
+        </Grid.RowDefinitions>
+        <Grid Background="Gray"></Grid>
+        <Grid Grid.Row="3" Background="Gray"></Grid>
+        <Image Source="..\Images\logo.png" Width="120" VerticalAlignment="Center" HorizontalAlignment="Left"></Image>
+        <TextBlock HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" FontWeight="Bold" Foreground="White">Worldskills China Competiton 2016</TextBlock>
+        <TextBlock FontSize="30" Grid.Row="1" HorizontalAlignment="Center" Grid.RowSpan="3">About ShangHai</TextBlock>
+        <TabControl x:Name="AboutSHTabControl" Grid.Row="2" Margin="10 0 10 20">
+            <TabItem x:Name="HistoryTab">
+                <TabItem.Header>
+                    <TextBlock Margin="3">History</TextBlock>
+                </TabItem.Header>
+                <TabItem.Content>
+
+                    <TextBlock TextWrapping="Wrap" Text="До того как стать городом, Шанхай был частью уезда Сунцзян под управлением Сучжоуской управы. Начиная со времён империи Сун, Шанхай постепенно становился оживлённым морским портом и перерос свой административный статус (сегодня Сунцзян — всего лишь один из районов Шанхая).
+
+В XV в (времена плаваний Чжэн Хэ) главным морским портом в устье Янцзы был Люцзяган, расположенный около 35 км выше по течению Янцзы от Шанхая, на территории современной провинции Цзянсу. Впоследствии, однако, он утратил своё значение из-за заиливания речными наносами.
+
+В 1553 году возведение крепостной стены ознаменовало возникновение Шанхая как города. Уже около 1600 года иезуит Маттео Риччи упоминал Шанхай как важный город.Однако до XIX века Шанхай всё же не был в числе важнейших городов страны, и в отличие от других городов Китая в нём мало исторических достопримечательностей.
+
+В XIX веке роль Шанхая коренным образом изменилась, поскольку стратегическое положение города в устье реки Янцзы сделало его идеальным местом для торговли с Западом.
+
+Во время Первой опиумной войны в первой половине XIX века некоторое время Шанхай удерживали войска Великобритании. Война окончилась в 1842 году подписанием Нанкинского договора, согласно которому ряд договорных портов, включая Шанхай, открывались для внешней торговли. По «Дополнительному протоколу» 1843 года и китайско-американскому Вансяскому договору 1844 года западные державы получили экстерриториальные права, действие которых фактически утратило силу к концу 1930-х, однако официально было отменено лишь в 1943."></TextBlock>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="EventTab">
+                <TabItem.Header>
+                    <TextBlock Margin="3">Event</TextBlock>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <TextBlock TextWrapping="Wrap" Name="EventNameTB" FontSize="16">2019-12-03 | 
+Automechanika Shanghai | Display directions: spare parts and systems, accessories and tuning, repair and maintenance, information technology and management, atoseris and car washes. It is Asia's largest trade fair for auto parts, accessories, equipment and services. Last year's event attracted 6,269 exhibitors, 150,568 visitors; the exhibition area was 350,000 sq. m.<LineBreak></LineBreak> 
+                    2019-04-18 | ABACE | International Asian Commercial Aviation Exhibition and Conference <LineBreak></LineBreak>
+                    2015-03-19 | Laser World of Photonics China | China Photoelectronics Exhibition </TextBlock>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="TourismTab">
+                <TabItem.Header>
+                    <TextBlock Margin="3">Tourism</TextBlock>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Image Source="{Binding travel}"></Image>
+                </TabItem.Content>
+            </TabItem>
+
+        </TabControl>
     </Grid>
     
 </Page>

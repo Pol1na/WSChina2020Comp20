@@ -24,7 +24,7 @@ namespace WSChina2020AppComp20.Pages
         public AboutSHPage()
         {
             InitializeComponent();
-            SHInfoLV.ItemsSource = AppData.Context.Events.ToList();
+            TourismTab.Content = AppData.Context.Tourism.ToList();
         }
     }
 }

@@ -28,11 +28,15 @@
         On October 7,2010 China is approved by the 2010 world skills organization, officially became the world skills 53rd members of the organization
         </TextBlock>
         <StackPanel Grid.Row="2" VerticalAlignment="Center" Margin="10">
-            <Button x:Name="AccessionButton" Height="65" Margin="5">China's Accession to the WorldSkills</Button>
+            <Button x:Name="AccessionButton" Height="65" Margin="5" Click="AccessionButton_Click">China's Accession to the WorldSkills</Button>
             <Button x:Name="CommitteeButton" Height="65" Margin="5">Committee of WorldSkills China</Button>
             <Button x:Name="ResultsButton" Height="65" Margin="5">Participation and Results</Button>
         </StackPanel>
-        <Border Grid.Row="2" Grid.Column="1" BorderThickness="1" BorderBrush="LightBlue" Margin="10"/>
-        
+        <ListBox x:Name="AboutWSCNListBox" Grid.Column="1" Grid.Row="2" >
+        <DockPanel>
+                <TextBlock Margin="5">China in the WorldSkills</TextBlock>    
+            <Button x:Name="SaveFileBtn" Width="100" Height="20">Download</Button>
+            </DockPanel>
+        </ListBox>
     </Grid>
 </Page>

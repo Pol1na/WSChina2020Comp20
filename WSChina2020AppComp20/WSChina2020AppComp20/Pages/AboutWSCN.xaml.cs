@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +25,17 @@ namespace WSChina2020AppComp20.Pages
         public AboutWSCN()
         {
             InitializeComponent();
+        }
+
+        private void SaveFileBtn_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            File.Move(saveFileDialog.FileName, "..\\Files\\China.txt");
+        }
+
+        private void AccessionButton_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

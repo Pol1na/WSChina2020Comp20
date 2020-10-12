@@ -37,24 +37,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Events">
-      <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Event">
-        <MappingFragment StoreEntitySet="Events">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="description" ColumnName="description" />
-          <ScalarProperty Name="date" ColumnName="date" />
-          <ScalarProperty Name="name" ColumnName="name" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Histories">
-      <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.History">
-        <MappingFragment StoreEntitySet="History">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="description" ColumnName="description" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Tourism">
       <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Tourism">
         <MappingFragment StoreEntitySet="Tourism">
@@ -62,6 +44,16 @@
           <ScalarProperty Name="food" ColumnName="food" />
           <ScalarProperty Name="hotel" ColumnName="hotel" />
           <ScalarProperty Name="travel" ColumnName="travel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PrevCompetitions">
+      <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.PrevCompetition">
+        <MappingFragment StoreEntitySet="PrevCompetitions">
+          <ScalarProperty Name="MemberNumber" ColumnName="MemberNumber" />
+          <ScalarProperty Name="CityCountry" ColumnName="CityCountry" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="ordinalNum" ColumnName="ordinalNum" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

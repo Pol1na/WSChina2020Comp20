@@ -64,8 +64,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="UserControl\AboutSHUserControl.xaml.cs">
-      <DependentUpon>AboutSHUserControl.xaml</DependentUpon>
+    <Compile Include="Entities\PrevCompetition.cs">
+      <DependentUpon>SkillsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ShpUC.xaml.cs">
+      <DependentUpon>ShpUC.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -80,12 +83,6 @@
     </Compile>
     <Compile Include="Entities\AppData.cs" />
     <Compile Include="Entities\Block.cs">
-      <DependentUpon>SkillsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Event.cs">
-      <DependentUpon>SkillsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\History.cs">
       <DependentUpon>SkillsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Skill.cs">
@@ -144,7 +141,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControl\AboutSHUserControl.xaml">
+    <Page Include="UserControl\ShpUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -228,6 +225,9 @@
       <DependentUpon>SkillsModel.edmx</DependentUpon>
       <LastGenOutput>SkillsModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Files\China.txt" />
+    <Resource Include="Files\Results.txt" />
+    <Resource Include="Files\China in the WS.txt" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
