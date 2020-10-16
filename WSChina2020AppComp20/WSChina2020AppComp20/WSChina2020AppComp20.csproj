@@ -67,6 +67,9 @@
     <Compile Include="Entities\PrevCompetition.cs">
       <DependentUpon>SkillsModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AdminMenuPage.xaml.cs">
+      <DependentUpon>AdminMenuPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AuthPage.xaml.cs">
       <DependentUpon>AuthPage.xaml</DependentUpon>
     </Compile>
@@ -128,6 +131,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\AboutWSPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AdminMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Pol1na\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\App.xaml
-11686842246
+12-274230223
 21904110229
-262028061013
+272109244501
 18-500893674
-MainWindow.xaml;Pages\AboutSHPage.xaml;Pages\AboutWSCN.xaml;Pages\AboutWSPage.xaml;Pages\AuthPage.xaml;Pages\CompetitionSkillsPage.xaml;Pages\CompetitorMenuPage.xaml;Pages\HistoryOfWSPage.xaml;Pages\MenuPage.xaml;Pages\PreviousCompPage.xaml;UserControl\ShpUC.xaml;
+MainWindow.xaml;Pages\AboutSHPage.xaml;Pages\AboutWSCN.xaml;Pages\AboutWSPage.xaml;Pages\AdminMenuPage.xaml;Pages\AuthPage.xaml;Pages\CompetitionSkillsPage.xaml;Pages\CompetitorMenuPage.xaml;Pages\HistoryOfWSPage.xaml;Pages\MenuPage.xaml;Pages\PreviousCompPage.xaml;UserControl\ShpUC.xaml;
 
 True
 
