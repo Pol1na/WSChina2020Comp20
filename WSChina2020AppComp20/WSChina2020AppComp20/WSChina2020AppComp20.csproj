@@ -76,6 +76,9 @@
     <Compile Include="Pages\CompetitorMenuPage.xaml.cs">
       <DependentUpon>CompetitorMenuPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\JudgerMenuPage.xaml.cs">
+      <DependentUpon>JudgerMenuPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControl\ShpUC.xaml.cs">
       <DependentUpon>ShpUC.xaml</DependentUpon>
     </Compile>
@@ -151,6 +154,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\HistoryOfWSPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\JudgerMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
