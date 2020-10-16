@@ -22,15 +22,7 @@
                 </TabItem.Header>
                 <TabItem.Content>
 
-                    <TextBlock TextWrapping="Wrap" Text="Before becoming a city, Shanghai was part of Songjiang County under the Suzhou government. Since the days of the Song Empire, Shanghai has gradually become a bustling seaport and has outgrown its administrative status (today Songjiang is just one of the districts of Shanghai).
-
-In the 15th century (during the voyages of Zheng He), the main seaport at the mouth of the Yangtze was Lujiagang, located about 35 km upstream of the Yangtze from Shanghai, in the territory of the modern province of Jiangsu. Subsequently, however, it lost its significance due to siltation by river sediments.
-
-In 1553, the construction of the fortress wall marked the emergence of Shanghai as a city. Already around 1600, the Jesuit Matteo Ricci referred to Shanghai as an important city, but until the 19th century Shanghai was still not one of the country's most important cities, and unlike other cities in China, it has few historical sites.
-
-In the 19th century, Shanghai's role changed dramatically as the city's strategic location at the mouth of the Yangtze River made it an ideal place for trade with the West.
-
-During the First Opium War in the first half of the 19th century, Shanghai was held for some time by British troops. The war ended in 1842 with the signing of the Nanking Treaty, according to which a number of treaty ports, including Shanghai, were opened for foreign trade. Under the Additional Protocol of 1843 and the Sino-American Wanxia Treaty of 1844, the Western powers received extraterritorial rights, which actually expired by the end of the 1930s, but were officially canceled only in 1943. "></TextBlock>
+                    <TextBlock Name="HistorySHTextBlock" TextWrapping="Wrap"></TextBlock>
                 </TabItem.Content>
             </TabItem>
             <TabItem x:Name="EventTab">
@@ -38,10 +30,7 @@ During the First Opium War in the first half of the 19th century, Shanghai was h
                     <TextBlock Margin="3">Event</TextBlock>
                 </TabItem.Header>
                 <TabItem.Content>
-                    <TextBlock TextWrapping="Wrap" Name="EventNameTB" FontSize="16">2019-12-03 | 
-Automechanika Shanghai | Display directions: spare parts and systems, accessories and tuning, repair and maintenance, information technology and management, atoseris and car washes. It is Asia's largest trade fair for auto parts, accessories, equipment and services. Last year's event attracted 6,269 exhibitors, 150,568 visitors; the exhibition area was 350,000 sq. m.<LineBreak></LineBreak> 
-                    2019-04-18 | ABACE | International Asian Commercial Aviation Exhibition and Conference <LineBreak></LineBreak>
-                    2015-03-19 | Laser World of Photonics China | China Photoelectronics Exhibition </TextBlock>
+                    <TextBlock TextWrapping="Wrap" Name="EventNameTB" FontSize="16"></TextBlock>
                 </TabItem.Content>
             </TabItem>
             <TabItem x:Name="TourismTab">

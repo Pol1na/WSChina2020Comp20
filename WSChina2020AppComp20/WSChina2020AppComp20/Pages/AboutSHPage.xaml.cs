@@ -25,6 +25,10 @@ namespace WSChina2020AppComp20.Pages
         {
             InitializeComponent();
             TourismTab.Content = AppData.Context.Tourism.ToList();
+            HistorySHTextBlock.Text = Properties.Resources.historySHString;
+            EventNameTB.Text = Properties.Resources.eventsSHString;
+
         }
+       
     }
 }
