@@ -18,11 +18,7 @@
             <RowDefinition Height="320*"/>
             <RowDefinition Height="45*"/>
         </Grid.RowDefinitions>
-        <Grid Background="Gray" Grid.ColumnSpan="2"></Grid>
-        <Grid Grid.Row="2" Background="Gray" Grid.ColumnSpan="2"></Grid>
-        <Image Source="..\Images\logo.png" Width="120" VerticalAlignment="Center" HorizontalAlignment="Left" ></Image>
-        <TextBlock HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" FontWeight="Bold" Foreground="White" Grid.ColumnSpan="2" Margin="234,16">Worldskills China Competiton 2016</TextBlock>
-        <TextBlock Grid.Row="1" FontSize="25" HorizontalAlignment="Center" Grid.ColumnSpan="2" Margin="301,0,300,0">Competition Skills</TextBlock>
+        <TextBlock FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2">Competition Skills</TextBlock>
         <Border BorderThickness="1" Grid.Row ="1" Grid.Column="1" BorderBrush="LightBlue" Margin="40" ></Border>
         <TreeView Name="SkillsTW" Grid.Row ="1" Margin="40">
             <TreeViewItem></TreeViewItem>    

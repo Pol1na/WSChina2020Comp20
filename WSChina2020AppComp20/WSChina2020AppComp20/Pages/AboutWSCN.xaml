@@ -19,10 +19,6 @@
             <RowDefinition Height="253*"/>
             <RowDefinition Height="47*"/>
         </Grid.RowDefinitions>
-        <Grid Background="Gray" Grid.ColumnSpan="2"></Grid>
-        <Grid Grid.Row="3" Background="Gray" Grid.ColumnSpan="2"></Grid>
-        <Image Source="..\Images\logo.png" Width="120" VerticalAlignment="Center" HorizontalAlignment="Left" Height="57"></Image>
-        <TextBlock HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" FontWeight="Bold" Foreground="White" Grid.ColumnSpan="2">Worldskills China Competiton 2016</TextBlock>
         <TextBlock Grid.Row="1" FontSize="25" HorizontalAlignment="Center" Margin="5" Grid.ColumnSpan="2" >About WorldSkills China</TextBlock>
         <TextBlock Grid.Row="1" Grid.ColumnSpan ="2" VerticalAlignment="Center" FontSize="18" TextWrapping="Wrap" Margin="0 30 0 0" TextAlignment="Center" >
         On October 7,2010 China is approved by the 2010 world skills organization, officially became the world skills 53rd members of the organization

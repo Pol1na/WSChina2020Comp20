@@ -16,10 +16,6 @@
             <RowDefinition Height="271*"/>
             <RowDefinition Height="48*"/>
         </Grid.RowDefinitions>
-        <Grid Background="Gray"/>
-        <Grid Grid.Row="3" Background="Gray"/>
-        <Image Source="..\Images\logo.png" Width="120" VerticalAlignment="Center" HorizontalAlignment="Left"/>
-        <TextBlock HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" FontWeight="Bold" Foreground="White" Margin="234,16"><Run Text="Worldskills China Competiton 2016"/></TextBlock>
         <TextBlock FontSize="30" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"><Run Text="Previous Competitions"/></TextBlock>
         <StackPanel Grid.Row="2" Margin="10 0 10 10" VerticalAlignment="Top" HorizontalAlignment="Center" Orientation="Horizontal">
             <Label FontSize="16" Margin="5" HorizontalAlignment="Left" Content="Ordinal No. :"/>

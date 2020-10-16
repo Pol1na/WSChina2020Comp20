@@ -6,13 +6,22 @@
         xmlns:local="clr-namespace:WSChina2020AppComp20"
         mc:Ignorable="d"
         Title="Main Screen" Height="450" Width="800"
-        MinHeight="500" MinWidth="900">
+        MinHeight="550" MinWidth="900">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="320*"/>
+            <RowDefinition Height="45*"/>
+        </Grid.RowDefinitions>
         <Frame x:Name="MainFrame" Grid.Row="1" 
                Navigated="MainFrame_Navigated" 
                NavigationUIVisibility="Hidden"
                ContentRendered="MainFrame_ContentRendered"></Frame>
+        <Grid Background="Gray"></Grid>
+        <Grid Grid.Row="2" Background="Gray"></Grid>
+        <Image Source="Images/logo.png" Width="120" VerticalAlignment="Center" HorizontalAlignment="Left"></Image>
+        <TextBlock HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" FontWeight="Bold" Foreground="White">Worldskills China Competiton 2016</TextBlock>
         <Button Name="BackBtn" Style="{StaticResource BackButton}" VerticalAlignment="Top" Margin="150 10" Click="BackBtn_Click"></Button>
-        <TextBlock Name="TimerWS"  FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="20"></TextBlock>
+        <TextBlock Name="TimerWS"  FontSize="16" HorizontalAlignment="Center" Grid.Row="2" Margin="5"></TextBlock>
     </Grid>
 </Window>

@@ -14,12 +14,8 @@
             <RowDefinition Height="320*"/>
             <RowDefinition Height="45*"/>
         </Grid.RowDefinitions>
-        <Grid Background="Gray"></Grid>
-        <Grid Grid.Row="2" Background="Gray"></Grid>
-        <Image Source="..\Images\logo.png" Width="120" VerticalAlignment="Center" HorizontalAlignment="Left"></Image>
-        <TextBlock HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" FontWeight="Bold" Foreground="White">Worldskills China Competiton 2016</TextBlock>
-        <TextBlock FontSize="25" Grid.Row="1" HorizontalAlignment="Center" Margin="5">About WorldSkills</TextBlock>
-        <StackPanel Margin="0 30 0 0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock FontSize="25" VerticalAlignment="Center" Margin="10" HorizontalAlignment="Center">About WorldSkills</TextBlock>
+        <StackPanel Margin="0 20 0 0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button Style="{StaticResource MainButton}" Name="HistoryWSBtn"  Content="History of WorldSkills" Margin="15" Click="HistoryWSBtn_Click"></Button>
             <Button Style="{StaticResource MainButton}" Name ="CompetitionSkillsBtn"  Content ="Competition Skills" Margin="15" Click="CompetitionSkillsBtn_Click"></Button>
             <Button Style="{StaticResource MainButton}" Name ="PreviousCompBtn"  Content ="Previous Competition" Margin="15" Click="PreviousCompBtn_Click"></Button>
