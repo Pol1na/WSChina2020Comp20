@@ -41,5 +41,10 @@ namespace WSChina2020AppComp20.Pages
             NavigationService.Navigate(new Pages.AboutSHPage());
 
         }
+
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Pages.AuthPage());
+        }
     }
 }

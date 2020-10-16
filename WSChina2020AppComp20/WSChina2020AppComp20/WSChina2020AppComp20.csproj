@@ -67,6 +67,12 @@
     <Compile Include="Entities\PrevCompetition.cs">
       <DependentUpon>SkillsModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AuthPage.xaml.cs">
+      <DependentUpon>AuthPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CompetitorMenuPage.xaml.cs">
+      <DependentUpon>CompetitorMenuPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControl\ShpUC.xaml.cs">
       <DependentUpon>ShpUC.xaml</DependentUpon>
     </Compile>
@@ -125,7 +131,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\AuthPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\CompetitionSkillsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CompetitorMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
