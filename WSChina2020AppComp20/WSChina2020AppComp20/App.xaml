@@ -24,12 +24,16 @@
             <Setter Property="VerticalAlignment" Value="Top"></Setter>
             <Setter Property="Width" Value="60"></Setter>
             <Setter Property="Height" Value="30"></Setter>
-            <Setter Property="Margin" Value=""></Setter>
+            <Setter Property="Margin" Value="5"></Setter>
             <Setter Property="Content" Value="Logout"></Setter>
             <Setter Property="Grid.Column" Value="1"></Setter>
             <Setter Property="HorizontalAlignment" Value="Right"></Setter>
-            <Setter Property="Cursor" Value="Hand"></Setter>
-
+            <Setter Property="Cursor" Value="Hand"></Setter>   
+        </Style>
+        <Style TargetType="Button" x:Key="SHButton">
+            <Setter Property="Width" Value="120"></Setter>
+            <Setter Property="Height" Value="85"></Setter>
+            <Setter Property="Margin" Value="10"></Setter>
         </Style>
     </Application.Resources>
 </Application>

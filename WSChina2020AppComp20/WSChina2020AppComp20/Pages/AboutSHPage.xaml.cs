@@ -24,11 +24,14 @@ namespace WSChina2020AppComp20.Pages
         public AboutSHPage()
         {
             InitializeComponent();
-            TourismTab.Content = AppData.Context.Tourism.ToList();
             HistorySHTextBlock.Text = Properties.Resources.historySHString;
             EventNameTB.Text = Properties.Resources.eventsSHString;
-
+            
         }
-       
+
+        private void Travel1Btn_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

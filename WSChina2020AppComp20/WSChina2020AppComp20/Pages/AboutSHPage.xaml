@@ -14,8 +14,8 @@
             <RowDefinition Height="292*"/>
             <RowDefinition Height="48*"/>
         </Grid.RowDefinitions>
-        <TextBlock FontSize="30" Grid.Row="1" HorizontalAlignment="Center" Grid.RowSpan="3">About ShangHai</TextBlock>
-        <TabControl x:Name="AboutSHTabControl" Grid.Row="2" Margin="10 0 10 20">
+        <TextBlock FontSize="30" HorizontalAlignment="Center" Grid.RowSpan="3">About ShangHai</TextBlock>
+        <TabControl x:Name="AboutSHTabControl" Grid.Row="1" Grid.RowSpan="2" Margin="10 0 10 0">
             <TabItem x:Name="HistoryTab">
                 <TabItem.Header>
                     <TextBlock Margin="3">History</TextBlock>
@@ -38,7 +38,80 @@
                     <TextBlock Margin="3">Tourism</TextBlock>
                 </TabItem.Header>
                 <TabItem.Content>
-                    <Image Source="{Binding travel}"></Image>
+                    <StackPanel Name="TourismSP" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <StackPanel Height="90" Orientation="Horizontal">
+                            <TextBlock FontSize="16" Margin="20 25 0 0">Travel Spot</TextBlock>
+                            <Button Style="{StaticResource SHButton}" Name="Travel1Btn"  VerticalAlignment="Top" Click="Travel1Btn_Click">
+                                <Button.Template>
+                                    <ControlTemplate>
+                                        <Image Source="..\Images\travel_sh_1.jpg"></Image>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Button Style="{StaticResource SHButton}" Name="Travel2Btn" VerticalAlignment="Top">
+                                <Button.Template>
+                                    <ControlTemplate>
+                                        <Image Source="..\Images\travel_sh_2.jpg"></Image>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Button Style="{StaticResource SHButton}" Name="Trave3Btn" VerticalAlignment="Top">
+                                <Button.Template>
+                                    <ControlTemplate>
+                                        <Image Source="..\Images\travel_sh_3.jpg"></Image>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Height="90" Orientation="Horizontal">
+                            <TextBlock FontSize="16" Margin="50 30 0 0">Hotel:</TextBlock>
+                            <Button Style="{StaticResource SHButton}" Name="Hotel1Btn"  VerticalAlignment="Top">
+                                <Button.Template>
+                                    <ControlTemplate>
+                                        <Image Source="..\Images\hotel_sh_1.jpg"></Image>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Button Style="{StaticResource SHButton}" Name="Hotel2Btn"  VerticalAlignment="Top">
+                                <Button.Template>
+                                    <ControlTemplate>
+                                        <Image Source="..\Images\hotel_sh_2.jpg"></Image>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Button Style="{StaticResource SHButton}" Name="Hotel3Btn"  VerticalAlignment="Top">
+                                <Button.Template>
+                                    <ControlTemplate>
+                                        <Image Source="..\Images\hotel_sh_3.jpg"></Image>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Height="90" Orientation="Horizontal">
+                            <TextBlock FontSize="16" Margin="55 30 0 0">Food:</TextBlock>
+                            <Button Style="{StaticResource SHButton}" Name="Food1Btn"  VerticalAlignment="Top">
+                                <Button.Template>
+                                    <ControlTemplate>
+                                        <Image Source="..\Images\food_sh_1.jpg"></Image>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Button Style="{StaticResource SHButton}" Name="Food2Btn"  VerticalAlignment="Top">
+                                <Button.Template>
+                                    <ControlTemplate>
+                                        <Image Source="..\Images\food_sh_2.jpg"></Image>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                            <Button Style="{StaticResource SHButton}" Name="Food3Btn"  VerticalAlignment="Top">
+                                <Button.Template>
+                                    <ControlTemplate>
+                                        <Image Source="..\Images\food_sh_3.jpg"></Image>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                    </StackPanel>
+                    </StackPanel>
                 </TabItem.Content>
             </TabItem>
 

@@ -44,6 +44,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
@@ -253,6 +254,15 @@
       <DependentUpon>SkillsModel.edmx</DependentUpon>
       <LastGenOutput>SkillsModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Images\food_sh_3.jpg" />
+    <Resource Include="Images\food_sh_1.jpg" />
+    <Resource Include="Images\food_sh_2.jpg" />
+    <Resource Include="Images\hotel_sh_3.jpg" />
+    <Resource Include="Images\hotel_sh_1.jpg" />
+    <Resource Include="Images\hotel_sh_2.jpg" />
+    <Resource Include="Images\travel_sh_1.jpg" />
+    <Resource Include="Images\travel_sh_2.jpg" />
+    <Resource Include="Images\travel_sh_3.jpg" />
     <Resource Include="Files\China.txt" />
     <Resource Include="Files\Results.txt" />
     <Resource Include="Files\China in the WS.txt" />
