@@ -37,5 +37,16 @@ namespace WSChina2020AppComp20.Pages
         {
             
         }
+
+        private void SaveFileBtn_Click_1(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Text file (*.txt)|*.txt";
+            if (sfd.ShowDialog() == true)
+            {
+                File.WriteAllText(sfd.FileName, Properties.Resources.China_in_the_WorldSkills);
+            }
+                
+        }
     }
 }

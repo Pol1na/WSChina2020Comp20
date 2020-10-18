@@ -61,6 +61,15 @@ namespace WSChina2020AppComp20.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на China has invested heavily in the development of the competition.
+        /// </summary>
+        internal static string China_in_the_WorldSkills {
+            get {
+                return ResourceManager.GetString("China in the WorldSkills", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на 2019-12-03 |  Automechanika Shanghai | Display directions: spare parts and systems, accessories and tuning, repair and maintenance, information technology and management, atoseris and car washes. It is Asia&apos;s largest trade fair for auto parts, accessories, equipment and services. Last year&apos;s event attracted 6,269 exhibitors, 150,568 visitors; the exhibition area was 350,000 sq. m.
         ///
         ///2019-04-18 | ABACE | International Asian Commercial Aviation Exhibition and Conference 

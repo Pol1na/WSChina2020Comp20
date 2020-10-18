@@ -254,6 +254,7 @@
       <DependentUpon>SkillsModel.edmx</DependentUpon>
       <LastGenOutput>SkillsModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\China in the WorldSkills.txt" />
     <Resource Include="Images\food_sh_3.jpg" />
     <Resource Include="Images\food_sh_1.jpg" />
     <Resource Include="Images\food_sh_2.jpg" />

@@ -31,7 +31,7 @@
         <ListBox x:Name="AboutWSCNListBox" Grid.Column="1" Grid.Row="2" >
         <DockPanel>
                 <TextBlock Margin="5">China in the WorldSkills</TextBlock>    
-            <Button x:Name="SaveFileBtn" Width="100" Height="20">Download</Button>
+            <Button x:Name="SaveFileBtn" Width="100" Height="20" Click="SaveFileBtn_Click_1">Download</Button>
             </DockPanel>
         </ListBox>
     </Grid>

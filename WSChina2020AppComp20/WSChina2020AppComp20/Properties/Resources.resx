@@ -117,6 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="China in the WorldSkills" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\China in the WorldSkills.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
   <data name="eventsSHString" xml:space="preserve">
     <value>2019-12-03 |  Automechanika Shanghai | Display directions: spare parts and systems, accessories and tuning, repair and maintenance, information technology and management, atoseris and car washes. It is Asia's largest trade fair for auto parts, accessories, equipment and services. Last year's event attracted 6,269 exhibitors, 150,568 visitors; the exhibition area was 350,000 sq. m.
 
