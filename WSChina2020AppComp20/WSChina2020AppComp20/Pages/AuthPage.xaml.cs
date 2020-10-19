@@ -77,29 +77,43 @@ namespace WSChina2020AppComp20.Pages
 
             if (LoginTB.Text != "" && PasswordTB.Password != "")
             {
-                var currentUser = loginpass.FirstOrDefault(i => i.login == LoginTB.Text && i.password == PasswordTB.Password && i.role == Convert.ToString(RoleComboBox.SelectedItem));
-                if(currentUser != null)
+                var currentUser = loginpass.FirstOrDefault(i => i.login == LoginTB.Text && i.password == PasswordTB.Password && i.role == RoleComboBox.SelectedItem); //вот тут ошибка из-за ролей скорее всего дебильная
+                if (currentUser != null)
                 {
-                    if(currentUser.role == "Administrator")
-                    {
-                        NavigationService.Navigate(new AdminMenuPage());
-                    }
-                    else if(currentUser.role == "Competitor")
-                    {
-                        NavigationService.Navigate(new CompetitorMenuPage());
+                    if (CaptchaTB.Text != _CaptchaText)
+                        {
+                            MessageBox.Show("Капча введена неверно.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
 
-                    }
-                    else if(currentUser.role == "Judger")
-                    {
-                        NavigationService.Navigate(new JudgerMenuPage());
+                        //switch (currentUser.role)
+                        //{
+                        //    case "Administrator":
+                        //        NavigationService.Navigate(new AdminMenuPage());
+                        //        break;
 
-                    }
-                    else if(currentUser.role == "Coordinator")
-                    {
-                        NavigationService.Navigate(new CoordinatorMenuPage());
 
+                        //}
+                        if (currentUser.role == "Administrator")
+                        {
+                            NavigationService.Navigate(new AdminMenuPage());
+                        }
+                        else if(currentUser.role == "Competitor")
+                        {
+                            NavigationService.Navigate(new CompetitorMenuPage());
+
+                        }
+                        else if(currentUser.role == "Judger")
+                        {
+                            NavigationService.Navigate(new JudgerMenuPage());
+
+                        }
+                        else if(currentUser.role == "Coordinator")
+                        {
+                            NavigationService.Navigate(new CoordinatorMenuPage());
+
+                        }
                     }
                 }
+
                 else
                 {
                     MessageBox.Show("Пользователь не найден. Перепроверьте вводимые данные", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);

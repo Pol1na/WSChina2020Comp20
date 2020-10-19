@@ -32,7 +32,8 @@ namespace WSChina2020AppComp20.Pages
 
         private void AboutWSCNButton_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Pages.AboutWSCN());
+            // NavigationService.Navigate(new Pages.AboutWSCN());
+            NavigationService.Navigate(new CoordinatorMenuPage());
 
         }
 

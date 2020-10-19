@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:WSChina2020AppComp20.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="CoordinatorMenuPage">
+      Title="CoordinatorMenuPage" MinHeight="450">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
         <Button Style="{StaticResource LogoutButton}"></Button>
         <TextBlock Grid.Row="1" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" >Coordinator Menu</TextBlock>
-        <StackPanel Grid.Row="1" Width="750" Height="300">
+        <StackPanel Grid.Row="1" Width="750" Margin="20" Height="300">
             <TextBlock FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="15">Hello, Username</TextBlock>
             <Button Style="{StaticResource MainButton}" Margin="5">Volunteer Managment</Button>
             <Button Style="{StaticResource MainButton}" Margin="5">Sponsorship Managment</Button>

@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:WSChina2020AppComp20.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="JudgerMenuPage">
+      Title="JudgerMenuPage" MinHeight="450">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -15,8 +15,8 @@
             <RowDefinition Height="45*"/>
         </Grid.RowDefinitions>
         <Button Style="{StaticResource LogoutButton}"></Button>
-        <TextBlock Grid.Row="1" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" >Judger Menu</TextBlock>
-        <StackPanel Grid.Row="1" Width="750" Height="300">
+        <TextBlock Grid.Row="1" FontSize="25" HorizontalAlignment="Center" VerticalAlignment="Top" >Judger Menu</TextBlock>
+        <StackPanel Grid.Row="1" Margin="20" Width="750" Height="350">
             <TextBlock FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="15">Hello, Username</TextBlock>
             <Button Style="{StaticResource MainButton}" Margin="5">Draw Lots</Button>
             <Button Style="{StaticResource MainButton}" Margin="5">Input Score</Button>

@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
         <Button Style="{StaticResource LogoutButton}"></Button>
         <TextBlock Grid.Row="1" FontSize="30" HorizontalAlignment="Center" >Administrator Menu</TextBlock>
-        <StackPanel Grid.Row="1" Width="750" Height="300" Margin="20">
+        <StackPanel Grid.Row="1" Width="750" Height="300" Margin="5">
             <TextBlock FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="40">Hello, Username</TextBlock>
             <Button Style="{StaticResource MainButton}" Margin="5">Event Managment</Button>
             <Button Style="{StaticResource MainButton}" Margin="5">Competitor Managment</Button>
