@@ -73,18 +73,14 @@
       <End Role="Blocks" EntitySet="Blocks" />
       <End Role="Skills" EntitySet="Skills" />
     </AssociationSet>
-    <EntitySet Name="Tourism" EntityType="WSChina2020BaseComp20Model.Tourism" />
     <EntitySet Name="PrevCompetitions" EntityType="WSChina2020BaseComp20Model.PrevCompetition" />
+    <EntitySet Name="LogPass" EntityType="WSChina2020BaseComp20Model.LogPass" />
+    <EntitySet Name="Roles" EntityType="WSChina2020BaseComp20Model.Roles" />
+    <AssociationSet Name="FK_LogPass_Roles" Association="WSChina2020BaseComp20Model.FK_LogPass_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="LogPass" EntitySet="LogPass" />
+    </AssociationSet>
   </EntityContainer>
-  <EntityType Name="Tourism">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="travel" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <Property Name="hotel" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <Property Name="food" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <Property Name="id" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
-  </EntityType>
   <EntityType Name="PrevCompetition">
     <Key>
       <PropertyRef Name="ordinalNum" />
@@ -97,4 +93,36 @@
     <Property Name="CityCountry" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="MemberNumber" Type="Int32" Nullable="false" />
   </EntityType>
+  <EntityType Name="LogPass">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Roles" Relationship="WSChina2020BaseComp20Model.FK_LogPass_Roles" FromRole="LogPass" ToRole="Roles" />
+    <Property Name="role" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="surname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="role" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="LogPass" Relationship="WSChina2020BaseComp20Model.FK_LogPass_Roles" FromRole="Roles" ToRole="LogPass" />
+  </EntityType>
+  <Association Name="FK_LogPass_Roles">
+    <End Type="WSChina2020BaseComp20Model.Roles" Role="Roles" Multiplicity="1" />
+    <End Type="WSChina2020BaseComp20Model.LogPass" Role="LogPass" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="LogPass">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

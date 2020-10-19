@@ -65,7 +65,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Entities\LogPass.cs">
+      <DependentUpon>SkillsModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\PrevCompetition.cs">
+      <DependentUpon>SkillsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Roles.cs">
       <DependentUpon>SkillsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Pages\AdminMenuPage.xaml.cs">
@@ -76,6 +82,9 @@
     </Compile>
     <Compile Include="Pages\CompetitorMenuPage.xaml.cs">
       <DependentUpon>CompetitorMenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CoordinatorMenuPage.xaml.cs">
+      <DependentUpon>CoordinatorMenuPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\JudgerMenuPage.xaml.cs">
       <DependentUpon>JudgerMenuPage.xaml</DependentUpon>
@@ -119,9 +128,6 @@
     <Compile Include="Entities\sysdiagram.cs">
       <DependentUpon>SkillsModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\Tourism.cs">
-      <DependentUpon>SkillsModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -151,6 +157,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\CompetitorMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CoordinatorMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -264,9 +274,6 @@
     <Resource Include="Images\travel_sh_1.jpg" />
     <Resource Include="Images\travel_sh_2.jpg" />
     <Resource Include="Images\travel_sh_3.jpg" />
-    <Resource Include="Files\China.txt" />
-    <Resource Include="Files\Results.txt" />
-    <Resource Include="Files\China in the WS.txt" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

@@ -45,3 +45,5 @@ C:\Users\Pol1na\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020A
 C:\Users\Pol1na\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\Pages\AdminMenuPage.baml
 C:\Users\Pol1na\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\Pages\CompetitorMenuPage.baml
 C:\Users\Pol1na\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\Pages\JudgerMenuPage.baml
+C:\Users\Pol1na\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\Pages\CoordinatorMenuPage.g.cs
+C:\Users\Pol1na\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\Pages\CoordinatorMenuPage.baml

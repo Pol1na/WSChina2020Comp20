@@ -13,6 +13,15 @@
     <Property Name="BlockID" Type="int" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
   </EntityType>
+  <EntityType Name="LogPass">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="login" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="role" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
   <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "WSChina2020BaseComp20.dbo.PrevCompetitions" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
   <EntityType Name="PrevCompetitions">
@@ -26,6 +35,15 @@
     <Property Name="Year" Type="int" Nullable="false" />
     <Property Name="CityCountry" Type="nvarchar" MaxLength="200" Nullable="false" />
     <Property Name="MemberNumber" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="surname" Type="nvarchar" MaxLength="100" />
+    <Property Name="role" Type="nvarchar" MaxLength="30" Nullable="false" />
   </EntityType>
   <EntityType Name="Skills">
     <Key>
@@ -46,15 +64,6 @@
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
-  <EntityType Name="Tourism">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="travel" Type="image" />
-    <Property Name="hotel" Type="image" />
-    <Property Name="food" Type="image" />
-    <Property Name="id" Type="nchar" MaxLength="10" Nullable="false" />
-  </EntityType>
   <Association Name="FK_Blocks_All Fields">
     <End Role="All Fields" Type="Self.All Fields" Multiplicity="1" />
     <End Role="Blocks" Type="Self.Blocks" Multiplicity="0..1" />
@@ -64,6 +73,18 @@
       </Principal>
       <Dependent Role="Blocks">
         <PropertyRef Name="BlockID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LogPass_Roles1">
+    <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+    <End Role="LogPass" Type="Self.LogPass" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="LogPass">
+        <PropertyRef Name="id" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -82,9 +103,10 @@
   <EntityContainer Name="Хранилище WSChina2020BaseComp20ModelContainer">
     <EntitySet Name="All Fields" EntityType="Self.All Fields" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Blocks" EntityType="Self.Blocks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogPass" EntityType="Self.LogPass" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Skills" EntityType="Self.Skills" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Tourism" EntityType="Self.Tourism" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PrevCompetitions" EntityType="Self.PrevCompetitions" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [PrevCompetitions].[ordinalNum] AS [ordinalNum], 
@@ -96,6 +118,10 @@
     <AssociationSet Name="FK_Blocks_All Fields" Association="Self.FK_Blocks_All Fields">
       <End Role="All Fields" EntitySet="All Fields" />
       <End Role="Blocks" EntitySet="Blocks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LogPass_Roles1" Association="Self.FK_LogPass_Roles1">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="LogPass" EntitySet="LogPass" />
     </AssociationSet>
     <AssociationSet Name="FK_Skills_Blocks" Association="Self.FK_Skills_Blocks">
       <End Role="Blocks" EntitySet="Blocks" />

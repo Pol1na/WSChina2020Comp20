@@ -11,8 +11,10 @@
         <EntityTypeShape EntityType="WSChina2020BaseComp20Model.sysdiagram" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <AssociationConnector Association="WSChina2020BaseComp20Model.FK_Blocks_All_Fields" ManuallyRouted="false" />
         <AssociationConnector Association="WSChina2020BaseComp20Model.FK_Skills_Blocks" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.Tourism" Width="1.5" PointX="0.75" PointY="6.75" />
-        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.PrevCompetition" Width="1.5" PointX="3.375" PointY="6.75" />
+        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.PrevCompetition" Width="1.5" PointX="2.75" PointY="3.5" />
+        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.LogPass" Width="1.5" PointX="7.125" PointY="3.5" />
+        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.Roles" Width="1.5" PointX="5.125" PointY="3.5" />
+        <AssociationConnector Association="WSChina2020BaseComp20Model.FK_LogPass_Roles" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

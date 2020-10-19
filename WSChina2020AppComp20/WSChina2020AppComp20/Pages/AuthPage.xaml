@@ -6,22 +6,35 @@
       xmlns:local="clr-namespace:WSChina2020AppComp20.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Authorization">
-
+      Title="Authorization" MinHeight="600">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="55*"/>
             <RowDefinition Height="320*"/>
             <RowDefinition Height="45*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="1" Width="600" Height="300">
+        <StackPanel Grid.Row="1" Width="600" Height="450">
             <TextBlock FontSize="25" HorizontalAlignment="Center">Auth Page in WorldSkills System</TextBlock>
-            <TextBlock FontSize="18" HorizontalAlignment="Center" Margin="0 40 0 0">Введите логин:                </TextBlock>
-            <TextBox Margin="5" HorizontalAlignment="Center" Width="200"></TextBox>
-            <TextBlock FontSize="18" Margin="5" HorizontalAlignment="Center">Введите пароль:              </TextBlock>
-            <PasswordBox Margin="5" Width="200"></PasswordBox>
-            <Button Margin="5" Width="200" Height="50" Name="AuthButton">Войти</Button>
-                
+            <StackPanel Orientation="Horizontal">
+                <TextBlock FontSize="18" HorizontalAlignment="Center" Width="130" Margin="20 10 0 0">Введите логин:</TextBlock>
+                <TextBox Name="LoginTB" HorizontalAlignment="Center" Width="240" Margin="10 10 0 0"></TextBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock FontSize="18" Width="130" Margin="20 10 0 0" HorizontalAlignment="Center">Введите пароль:</TextBlock>
+                <PasswordBox Name="PasswordTB" Margin="10 10 0 0" Width="240"></PasswordBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="35">
+                <TextBlock Margin="20 10 0 0" HorizontalAlignment="Center" FontSize="18" >Выберите свою роль</TextBlock>
+                <ComboBox Name="RoleComboBox" Margin="10 10 0 0" Width="200">
+                    <ComboBoxItem Content="Competitor" HorizontalAlignment="Left" Width="198"/>
+                    <ComboBoxItem Content="Coordinator" HorizontalAlignment="Left" Width="198"/>
+                    <ComboBoxItem Content="Administrator" HorizontalAlignment="Left" Width="198"/>
+                    <ComboBoxItem Content="Judger" HorizontalAlignment="Left" Width="198"/>
+                </ComboBox>
+            </StackPanel>
+            <Image Name="CaptchaImage"  Height="50" Width="600" Margin="5" MouseDown="CaptchaImage_MouseDown_1"></Image>
+            <TextBox Name="CaptchaTB" Width="100" Margin="5"></TextBox>
+            <Button Margin="5" Width="200" Height="50" Name="AuthButton" Click="AuthButton_Click">Войти</Button>
         </StackPanel>
     </Grid>
 </Page>

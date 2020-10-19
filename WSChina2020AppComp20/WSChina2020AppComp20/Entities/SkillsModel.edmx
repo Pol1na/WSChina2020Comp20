@@ -18,6 +18,15 @@
           <Property Name="BlockID" Type="int" Nullable="false" />
           <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
+        <EntityType Name="LogPass">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="login" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="role" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "WSChina2020BaseComp20.dbo.PrevCompetitions" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="PrevCompetitions">
@@ -31,6 +40,15 @@
           <Property Name="Year" Type="int" Nullable="false" />
           <Property Name="CityCountry" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="MemberNumber" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="surname" Type="nvarchar" MaxLength="100" />
+          <Property Name="role" Type="nvarchar" MaxLength="30" Nullable="false" />
         </EntityType>
         <EntityType Name="Skills">
           <Key>
@@ -51,15 +69,6 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
-        <EntityType Name="Tourism">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="travel" Type="image" />
-          <Property Name="hotel" Type="image" />
-          <Property Name="food" Type="image" />
-          <Property Name="id" Type="nchar" MaxLength="10" Nullable="false" />
-        </EntityType>
         <Association Name="FK_Blocks_All Fields">
           <End Role="All Fields" Type="Self.All Fields" Multiplicity="1" />
           <End Role="Blocks" Type="Self.Blocks" Multiplicity="0..1" />
@@ -69,6 +78,18 @@
             </Principal>
             <Dependent Role="Blocks">
               <PropertyRef Name="BlockID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LogPass_Roles1">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="LogPass" Type="Self.LogPass" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="LogPass">
+              <PropertyRef Name="id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -87,9 +108,10 @@
         <EntityContainer Name="Хранилище WSChina2020BaseComp20ModelContainer">
           <EntitySet Name="All Fields" EntityType="Self.All Fields" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Blocks" EntityType="Self.Blocks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LogPass" EntityType="Self.LogPass" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Skills" EntityType="Self.Skills" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Tourism" EntityType="Self.Tourism" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PrevCompetitions" EntityType="Self.PrevCompetitions" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [PrevCompetitions].[ordinalNum] AS [ordinalNum], 
@@ -101,6 +123,10 @@
           <AssociationSet Name="FK_Blocks_All Fields" Association="Self.FK_Blocks_All Fields">
             <End Role="All Fields" EntitySet="All Fields" />
             <End Role="Blocks" EntitySet="Blocks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LogPass_Roles1" Association="Self.FK_LogPass_Roles1">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="LogPass" EntitySet="LogPass" />
           </AssociationSet>
           <AssociationSet Name="FK_Skills_Blocks" Association="Self.FK_Skills_Blocks">
             <End Role="Blocks" EntitySet="Blocks" />
@@ -184,18 +210,14 @@
             <End Role="Blocks" EntitySet="Blocks" />
             <End Role="Skills" EntitySet="Skills" />
           </AssociationSet>
-          <EntitySet Name="Tourism" EntityType="WSChina2020BaseComp20Model.Tourism" />
           <EntitySet Name="PrevCompetitions" EntityType="WSChina2020BaseComp20Model.PrevCompetition" />
+          <EntitySet Name="LogPass" EntityType="WSChina2020BaseComp20Model.LogPass" />
+          <EntitySet Name="Roles" EntityType="WSChina2020BaseComp20Model.Roles" />
+          <AssociationSet Name="FK_LogPass_Roles" Association="WSChina2020BaseComp20Model.FK_LogPass_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="LogPass" EntitySet="LogPass" />
+          </AssociationSet>
         </EntityContainer>
-        <EntityType Name="Tourism">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="travel" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="hotel" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="food" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="id" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
-        </EntityType>
         <EntityType Name="PrevCompetition">
           <Key>
             <PropertyRef Name="ordinalNum" />
@@ -208,6 +230,38 @@
           <Property Name="CityCountry" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Name="MemberNumber" Type="Int32" Nullable="false" />
         </EntityType>
+        <EntityType Name="LogPass">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Roles" Relationship="WSChina2020BaseComp20Model.FK_LogPass_Roles" FromRole="LogPass" ToRole="Roles" />
+          <Property Name="role" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="surname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="role" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LogPass" Relationship="WSChina2020BaseComp20Model.FK_LogPass_Roles" FromRole="Roles" ToRole="LogPass" />
+        </EntityType>
+        <Association Name="FK_LogPass_Roles">
+          <End Type="WSChina2020BaseComp20Model.Roles" Role="Roles" Multiplicity="1" />
+          <End Type="WSChina2020BaseComp20Model.LogPass" Role="LogPass" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="LogPass">
+              <PropertyRef Name="id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -250,16 +304,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Tourism">
-            <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Tourism">
-              <MappingFragment StoreEntitySet="Tourism">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="food" ColumnName="food" />
-                <ScalarProperty Name="hotel" ColumnName="hotel" />
-                <ScalarProperty Name="travel" ColumnName="travel" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="PrevCompetitions">
             <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.PrevCompetition">
               <MappingFragment StoreEntitySet="PrevCompetitions">
@@ -267,6 +311,26 @@
                 <ScalarProperty Name="CityCountry" ColumnName="CityCountry" />
                 <ScalarProperty Name="Year" ColumnName="Year" />
                 <ScalarProperty Name="ordinalNum" ColumnName="ordinalNum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogPass">
+            <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.LogPass">
+              <MappingFragment StoreEntitySet="LogPass">
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Roles">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="role" ColumnName="role" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -284,7 +348,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />

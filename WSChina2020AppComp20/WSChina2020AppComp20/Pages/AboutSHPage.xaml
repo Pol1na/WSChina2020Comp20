@@ -39,12 +39,13 @@
                 </TabItem.Header>
                 <TabItem.Content>
                     <StackPanel Name="TourismSP" VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Image Name="ShangHaiImage"></Image>
                         <StackPanel Height="90" Orientation="Horizontal">
                             <TextBlock FontSize="16" Margin="20 25 0 0">Travel Spot</TextBlock>
                             <Button Style="{StaticResource SHButton}" Name="Travel1Btn"  VerticalAlignment="Top" Click="Travel1Btn_Click">
                                 <Button.Template>
                                     <ControlTemplate>
-                                        <Image Source="..\Images\travel_sh_1.jpg"></Image>
+                                        <Image Name="TryImage"  Source="..\Images\travel_sh_1.jpg"></Image>
                                     </ControlTemplate>
                                 </Button.Template>
                             </Button>

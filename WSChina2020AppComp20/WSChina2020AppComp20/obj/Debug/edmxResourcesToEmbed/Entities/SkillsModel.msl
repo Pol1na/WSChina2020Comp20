@@ -37,16 +37,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Tourism">
-      <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Tourism">
-        <MappingFragment StoreEntitySet="Tourism">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="food" ColumnName="food" />
-          <ScalarProperty Name="hotel" ColumnName="hotel" />
-          <ScalarProperty Name="travel" ColumnName="travel" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="PrevCompetitions">
       <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.PrevCompetition">
         <MappingFragment StoreEntitySet="PrevCompetitions">
@@ -54,6 +44,26 @@
           <ScalarProperty Name="CityCountry" ColumnName="CityCountry" />
           <ScalarProperty Name="Year" ColumnName="Year" />
           <ScalarProperty Name="ordinalNum" ColumnName="ordinalNum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LogPass">
+      <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.LogPass">
+        <MappingFragment StoreEntitySet="LogPass">
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Roles">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="role" ColumnName="role" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
