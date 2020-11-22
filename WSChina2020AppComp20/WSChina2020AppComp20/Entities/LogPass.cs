@@ -18,7 +18,8 @@ namespace WSChina2020AppComp20.Entities
         public string login { get; set; }
         public string password { get; set; }
         public string role { get; set; }
-    
-        public virtual Roles Roles { get; set; }
+        public string name { get; set; }
+        public string surname { get; set; }
+        public string gender { get; set; }
     }
 }

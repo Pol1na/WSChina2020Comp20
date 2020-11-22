@@ -12,9 +12,9 @@ namespace WSChina2020AppComp20.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class PrevCompetition
+    public partial class PrevCompetitions
     {
-        public string ordinalNum { get; set; }
+        public int ordinalNum { get; set; }
         public int Year { get; set; }
         public string CityCountry { get; set; }
         public int MemberNumber { get; set; }

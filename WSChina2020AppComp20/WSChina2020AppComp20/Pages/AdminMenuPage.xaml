@@ -9,15 +9,9 @@
       Title="AdminMenuPage">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="55*"/>
-            <RowDefinition Height="320*"/>
-            <RowDefinition Height="45*"/>
-        </Grid.RowDefinitions>
-        <Button Style="{StaticResource LogoutButton}"></Button>
-        <TextBlock Grid.Row="1" FontSize="30" HorizontalAlignment="Center" >Administrator Menu</TextBlock>
-        <StackPanel Grid.Row="1" Width="750" Height="300" Margin="5">
-            <TextBlock FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="40">Hello, Username</TextBlock>
+        <TextBlock Style="{StaticResource MainTB}">Administrator Menu</TextBlock>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
+            <TextBlock Name="HelloTB" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="40"></TextBlock>
             <Button Style="{StaticResource MainButton}" Margin="5">Event Managment</Button>
             <Button Style="{StaticResource MainButton}" Margin="5">Competitor Managment</Button>
         </StackPanel>

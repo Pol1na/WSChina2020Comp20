@@ -1,97 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="WSChina2020BaseComp20Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="All_Field">
-    <Key>
-      <PropertyRef Name="BlockID" />
-    </Key>
-    <Property Name="BlockID" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Block" Relationship="Self.FK_Blocks_All_Fields" FromRole="All_Fields" ToRole="Blocks" />
-  </EntityType>
-  <EntityType Name="Block">
-    <Key>
-      <PropertyRef Name="BlockID" />
-    </Key>
-    <Property Name="BlockID" Type="Int32" Nullable="false" />
-    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="All_Fields" Relationship="Self.FK_Blocks_All_Fields" FromRole="Blocks" ToRole="All_Fields" />
-    <NavigationProperty Name="Skills" Relationship="Self.FK_Skills_Blocks" FromRole="Blocks" ToRole="Skills" />
-  </EntityType>
-  <EntityType Name="Skill">
-    <Key>
-      <PropertyRef Name="SkillID" />
-    </Key>
-    <Property Name="SkillID" Type="Int32" Nullable="false" />
-    <Property Name="BlockID" Type="Int32" Nullable="false" />
-    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Block" Relationship="Self.FK_Skills_Blocks" FromRole="Skills" ToRole="Blocks" />
-  </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
-  <Association Name="FK_Blocks_All_Fields">
-    <End Role="All_Fields" Type="Self.All_Field" Multiplicity="1" />
-    <End Role="Blocks" Type="Self.Block" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="All_Fields">
-        <PropertyRef Name="BlockID" />
-      </Principal>
-      <Dependent Role="Blocks">
-        <PropertyRef Name="BlockID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Skills_Blocks">
-    <End Role="Blocks" Type="Self.Block" Multiplicity="1" />
-    <End Role="Skills" Type="Self.Skill" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Blocks">
-        <PropertyRef Name="BlockID" />
-      </Principal>
-      <Dependent Role="Skills">
-        <PropertyRef Name="BlockID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="WSChina2020BaseComp20Entities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="All_Fields" EntityType="Self.All_Field" />
-    <EntitySet Name="Blocks" EntityType="Self.Block" />
-    <EntitySet Name="Skills" EntityType="Self.Skill" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-    <AssociationSet Name="FK_Blocks_All_Fields" Association="Self.FK_Blocks_All_Fields">
-      <End Role="All_Fields" EntitySet="All_Fields" />
-      <End Role="Blocks" EntitySet="Blocks" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Skills_Blocks" Association="Self.FK_Skills_Blocks">
+    <EntitySet Name="Blocks" EntityType="WSChina2020BaseComp20Model.Blocks" />
+    <EntitySet Name="LogPass" EntityType="WSChina2020BaseComp20Model.LogPass" />
+    <EntitySet Name="PrevCompetitions" EntityType="WSChina2020BaseComp20Model.PrevCompetitions" />
+    <EntitySet Name="Roles" EntityType="WSChina2020BaseComp20Model.Roles" />
+    <EntitySet Name="Skills" EntityType="WSChina2020BaseComp20Model.Skills" />
+    <EntitySet Name="sysdiagrams" EntityType="WSChina2020BaseComp20Model.sysdiagrams" />
+    <AssociationSet Name="FK_Skills_Blocks" Association="WSChina2020BaseComp20Model.FK_Skills_Blocks">
       <End Role="Blocks" EntitySet="Blocks" />
       <End Role="Skills" EntitySet="Skills" />
     </AssociationSet>
-    <EntitySet Name="PrevCompetitions" EntityType="WSChina2020BaseComp20Model.PrevCompetition" />
-    <EntitySet Name="LogPass" EntityType="WSChina2020BaseComp20Model.LogPass" />
-    <EntitySet Name="Roles" EntityType="WSChina2020BaseComp20Model.Roles" />
-    <AssociationSet Name="FK_LogPass_Roles" Association="WSChina2020BaseComp20Model.FK_LogPass_Roles">
-      <End Role="Roles" EntitySet="Roles" />
-      <End Role="LogPass" EntitySet="LogPass" />
-    </AssociationSet>
   </EntityContainer>
-  <EntityType Name="PrevCompetition">
+  <EntityType Name="Blocks">
     <Key>
-      <PropertyRef Name="ordinalNum" />
-      <PropertyRef Name="Year" />
-      <PropertyRef Name="CityCountry" />
-      <PropertyRef Name="MemberNumber" />
+      <PropertyRef Name="BlockID" />
     </Key>
-    <Property Name="ordinalNum" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-    <Property Name="Year" Type="Int32" Nullable="false" />
-    <Property Name="CityCountry" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-    <Property Name="MemberNumber" Type="Int32" Nullable="false" />
+    <Property Name="BlockID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Skills" Relationship="WSChina2020BaseComp20Model.FK_Skills_Blocks" FromRole="Blocks" ToRole="Skills" />
   </EntityType>
   <EntityType Name="LogPass">
     <Key>
@@ -100,8 +27,19 @@
     <Property Name="id" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="Roles" Relationship="WSChina2020BaseComp20Model.FK_LogPass_Roles" FromRole="LogPass" ToRole="Roles" />
     <Property Name="role" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PrevCompetitions">
+    <Key>
+      <PropertyRef Name="ordinalNum" />
+    </Key>
+    <Property Name="ordinalNum" Type="Int32" Nullable="false" />
+    <Property Name="Year" Type="Int32" Nullable="false" />
+    <Property Name="CityCountry" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="MemberNumber" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="Roles">
     <Key>
@@ -111,17 +49,36 @@
     <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="surname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="role" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="LogPass" Relationship="WSChina2020BaseComp20Model.FK_LogPass_Roles" FromRole="Roles" ToRole="LogPass" />
   </EntityType>
-  <Association Name="FK_LogPass_Roles">
-    <End Type="WSChina2020BaseComp20Model.Roles" Role="Roles" Multiplicity="1" />
-    <End Type="WSChina2020BaseComp20Model.LogPass" Role="LogPass" Multiplicity="0..1" />
+  <EntityType Name="Skills">
+    <Key>
+      <PropertyRef Name="SkillID" />
+    </Key>
+    <Property Name="SkillID" Type="Int32" Nullable="false" />
+    <Property Name="BlockID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Blocks" Relationship="WSChina2020BaseComp20Model.FK_Skills_Blocks" FromRole="Skills" ToRole="Blocks" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Skills_Blocks">
+    <End Type="WSChina2020BaseComp20Model.Blocks" Role="Blocks" Multiplicity="1" />
+    <End Type="WSChina2020BaseComp20Model.Skills" Role="Skills" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Roles">
-        <PropertyRef Name="id" />
+      <Principal Role="Blocks">
+        <PropertyRef Name="BlockID" />
       </Principal>
-      <Dependent Role="LogPass">
-        <PropertyRef Name="id" />
+      <Dependent Role="Skills">
+        <PropertyRef Name="BlockID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

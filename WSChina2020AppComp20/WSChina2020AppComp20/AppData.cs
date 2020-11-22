@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WSChina2020AppComp20.Entities
+namespace WSChina2020AppComp20
 {
     public class AppData
     {

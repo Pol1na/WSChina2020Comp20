@@ -38,7 +38,7 @@ namespace WSChina2020AppComp20
 
         void timer_tick(object sender, EventArgs e)
         {
-            if((MainFrame.Content as Page).Title is null)
+            if ((MainFrame.Content as Page).Title is null)
             {
                 Title = "Skills Competition Managment System: " + (MainFrame.Content as Page).Title;
 
@@ -64,14 +64,6 @@ namespace WSChina2020AppComp20
 
         }
 
-        private void MainFrame_Navigated(object sender, NavigationEventArgs e)
-        {
-
-        }
-
-        private void AboutWSBtn_Click(object sender, RoutedEventArgs e)
-        {
-        }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {

@@ -25,12 +25,11 @@ namespace WSChina2020AppComp20.Entities
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<All_Field> All_Fields { get; set; }
-        public virtual DbSet<Block> Blocks { get; set; }
-        public virtual DbSet<Skill> Skills { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<PrevCompetition> PrevCompetitions { get; set; }
+        public virtual DbSet<Blocks> Blocks { get; set; }
         public virtual DbSet<LogPass> LogPass { get; set; }
+        public virtual DbSet<PrevCompetitions> PrevCompetitions { get; set; }
         public virtual DbSet<Roles> Roles { get; set; }
+        public virtual DbSet<Skills> Skills { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

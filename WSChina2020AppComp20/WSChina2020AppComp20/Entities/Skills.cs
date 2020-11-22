@@ -12,19 +12,13 @@ namespace WSChina2020AppComp20.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class Block
+    public partial class Skills
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Block()
-        {
-            this.Skills = new HashSet<Skill>();
-        }
-    
+        public int SkillID { get; set; }
         public int BlockID { get; set; }
         public string Name { get; set; }
+        public string Description { get; set; }
     
-        public virtual All_Field All_Fields { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Skill> Skills { get; set; }
+        public virtual Blocks Blocks { get; set; }
     }
 }

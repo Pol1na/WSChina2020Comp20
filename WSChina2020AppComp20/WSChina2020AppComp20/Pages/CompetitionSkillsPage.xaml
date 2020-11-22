@@ -25,7 +25,7 @@
         </TreeView>
         <Border BorderThickness="1" Grid.Row ="1" BorderBrush="LightBlue" Margin="40" />
         <ScrollViewer Name="Scroll" CanContentScroll="True" Grid.Column="1" Grid.Row="1" Margin="40">
-            <TextBox Name="CompetitionSkillsTextBox" TextWrapping="Wrap"></TextBox>
+            <TextBlock Name="CompetitionSkillsTextBox" TextWrapping="Wrap"></TextBlock>
         </ScrollViewer>
     </Grid>
 </Page>

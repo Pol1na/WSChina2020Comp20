@@ -18,7 +18,5 @@ namespace WSChina2020AppComp20.Entities
         public string name { get; set; }
         public string surname { get; set; }
         public string role { get; set; }
-    
-        public virtual LogPass LogPass { get; set; }
     }
 }

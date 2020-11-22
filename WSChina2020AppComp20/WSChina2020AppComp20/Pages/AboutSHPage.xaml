@@ -35,7 +35,7 @@
             </TabItem>
             <TabItem x:Name="TourismTab">
                 <TabItem.Header>
-                    <TextBlock Margin="3">Tourism</TextBlock>
+                    <TextBlock Margin="0,3">Tourism</TextBlock>
                 </TabItem.Header>
                 <TabItem.Content>
                     <StackPanel Name="TourismSP" VerticalAlignment="Center" HorizontalAlignment="Center">

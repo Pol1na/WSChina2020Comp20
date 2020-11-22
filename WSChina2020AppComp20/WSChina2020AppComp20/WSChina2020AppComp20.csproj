@@ -65,13 +65,23 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AppData.cs" />
+    <Compile Include="Entities\Blocks.cs">
+      <DependentUpon>SkillsModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\LogPass.cs">
       <DependentUpon>SkillsModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\PrevCompetition.cs">
+    <Compile Include="Entities\PrevCompetitions.cs">
       <DependentUpon>SkillsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Roles.cs">
+      <DependentUpon>SkillsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Skills.cs">
+      <DependentUpon>SkillsModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\sysdiagrams.cs">
       <DependentUpon>SkillsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Pages\AdminMenuPage.xaml.cs">
@@ -100,16 +110,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Entities\All_Field.cs">
-      <DependentUpon>SkillsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\AppData.cs" />
-    <Compile Include="Entities\Block.cs">
-      <DependentUpon>SkillsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\Skill.cs">
-      <DependentUpon>SkillsModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Entities\SkillsModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -124,9 +124,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SkillsModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\sysdiagram.cs">
-      <DependentUpon>SkillsModel.tt</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

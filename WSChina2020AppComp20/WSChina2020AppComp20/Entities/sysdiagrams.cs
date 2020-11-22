@@ -12,10 +12,12 @@ namespace WSChina2020AppComp20.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class All_Field
+    public partial class sysdiagrams
     {
-        public int BlockID { get; set; }
-    
-        public virtual Block Block { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

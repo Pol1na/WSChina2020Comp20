@@ -13,18 +13,13 @@
             <ColumnDefinition Width="383*"/>
             <ColumnDefinition Width="417*"/>
         </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="55*"/>
-            <RowDefinition Height="320*"/>
-            <RowDefinition Height="45*"/>
-        </Grid.RowDefinitions>
-        <Button Style="{StaticResource LogoutButton}"></Button>
-        <TextBlock Grid.Row="1" FontSize="25" HorizontalAlignment="Center" Grid.ColumnSpan="2">Competitor menu</TextBlock>
-        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
-            <TextBlock FontSize="24" Margin="20">Hello, Username</TextBlock>
-            <Image HorizontalAlignment="Left" Margin="40 0 0 0" Source="/WSChina2020AppComp20;component/Images/no-image.png" Width="100"></Image>
+        <TextBlock FontSize="25" HorizontalAlignment="Center" Grid.ColumnSpan="2">Competitor menu</TextBlock>
+        <StackPanel VerticalAlignment="Center">
+        <TextBlock Name="HelloTB" FontSize="25"  Margin="40"></TextBlock>
+        <Image HorizontalAlignment="Left" Margin="40 0 0 0" Source="/WSChina2020AppComp20;component/Images/no-image.png" Width="100"></Image>
         </StackPanel>
-        <StackPanel Grid.Row="1" Grid.Column="1">
+
+        <StackPanel Margin="30" Grid.Column="1">
             <Button Style="{StaticResource MainButton}" Margin="0 60 0 0">My Profile</Button>
             <Button Style="{StaticResource MainButton}" Margin="5">My Skills</Button>
             <Button Style="{StaticResource MainButton}" Margin="5">My Results</Button>

@@ -9,17 +9,12 @@
       Title="MenuPage">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="55*"/>
-            <RowDefinition Height="320*"/>
-            <RowDefinition Height="45*"/>
-        </Grid.RowDefinitions>
-
-        <Button Name="LoginButton"  Content="Login" Grid.Row ="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="5" Width="70" Click="LoginButton_Click"></Button>
-        <StackPanel HorizontalAlignment="Center" Height="300" Grid.Row="1" VerticalAlignment="Center" Width="354">
-            <Button Name="AboutWSBtn" Content ="About WorldSkills" Style="{StaticResource MainButton}" Margin="5" Click="AboutWSBtn_Click"></Button>
-            <Button x:Name="AboutWSCNButton" Content ="About WorldSkills China" Style="{StaticResource MainButton}" Margin="5" Click="AboutWSCNButton_Click"></Button>
-            <Button x:Name="AboutSHButton" Content ="About Shang Hai" Style="{StaticResource MainButton}" Margin="5" Click="AboutSHButton_Click"></Button>
+        <TextBlock Style="{StaticResource MainTB}">Main Menu</TextBlock>
+        <Button Name="LoginButton"  Content="Login" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="5" Width="70" Click="LoginButton_Click"></Button>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Name="AboutWSBtn" Content ="About WorldSkills" Style="{StaticResource MainButton}" Click="AboutWSBtn_Click"></Button>
+            <Button x:Name="AboutWSCNButton" Content ="About WorldSkills China" Style="{StaticResource MainButton}" Click="AboutWSCNButton_Click"></Button>
+            <Button x:Name="AboutSHButton" Content ="About Shang Hai" Style="{StaticResource MainButton}" Click="AboutSHButton_Click"></Button>
         </StackPanel>
     </Grid>
 </Page>
