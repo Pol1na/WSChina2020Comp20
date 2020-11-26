@@ -28,7 +28,7 @@ namespace WSChina2020AppComp20.Pages
         private void AlbertImage_Click(object sender, RoutedEventArgs e)
         {
             {
-                HistoryWSTextBox.Text = "The Albert Vidal Award \n "
+                HistoryWSTextBLock.Text = "The Albert Vidal Award \n "
                   + "The Albert Vidal Award is a prestigious award, named after the founder of WorldSkills "
                   + "International(formerly known as the International Vocational Training Organisation)."
                   + "During the first thirty - one WorldSkills Competitions(formerly known as the Vocational"
@@ -58,13 +58,13 @@ namespace WSChina2020AppComp20.Pages
 
         private void NoImage_Click(object sender, RoutedEventArgs e)
         {
-            HistoryWSTextBox.Text = "DESCRIPTION";
+            HistoryWSTextBLock.Text = "DESCRIPTION";
         }
 
         private void DirectorsImage_Click(object sender, RoutedEventArgs e)
         {
             {
-                HistoryWSTextBox.Text = "On 15 September 2014, the new WorldSkills International Board of " +
+                HistoryWSTextBLock.Text = "On 15 September 2014, the new WorldSkills International Board of " +
                   "Directors for 2015-2019 was selected during the WorldSkills General Assembly in beautiful " +
                   "Lucerne, Switzerland. The election process began after Chair Simon Bartley and CEO David " +
                   "Hoey welcomed everyone to the WorldSkills General Assembly 2014.The new Board will include" +

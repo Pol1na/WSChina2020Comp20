@@ -45,7 +45,7 @@
         </Button>
         <Border BorderThickness="1" Grid.Row ="1" Grid.RowSpan="3" Grid.Column="1" BorderBrush="LightBlue" Margin="40" ></Border>
         <ScrollViewer Name="Scroll" CanContentScroll="True" Grid.Column="1" Grid.Row="1" Grid.RowSpan="3" Margin="40">
-            <TextBox Name="HistoryWSTextBox" TextWrapping="Wrap"></TextBox>
+            <TextBlock Name="HistoryWSTextBLock"  TextWrapping="Wrap"></TextBlock>
         </ScrollViewer>
         
     </Grid>
