@@ -29,12 +29,71 @@ namespace WSChina2020AppComp20.Pages
 
         }
 
-        private void Travel1Btn_Click(object sender, RoutedEventArgs e)
+        private void Travel1_MouseDown(object sender, MouseButtonEventArgs e)
         {
-           //  ShangHaiImage.Source = "..\\Images\\travel_sh_1.jpg"
+            ShowImage.Source = Travel1.Source;
+            ShowImage.Visibility = Visibility.Visible;
+
         }
 
-        // дальше будет очень плохо не нада 
+        private void Travel3_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ShowImage.Source = Travel3.Source;
+            ShowImage.Visibility = Visibility.Visible;
 
+        }
+
+        private void Travel2_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ShowImage.Source = Travel2.Source;
+            ShowImage.Visibility = Visibility.Visible;
+
+        }
+
+        private void Hotel1_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ShowImage.Source = Hotel1.Source;
+            ShowImage.Visibility = Visibility.Visible;
+
+        }
+
+        private void Hotel2_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ShowImage.Source = Hotel2.Source;
+            ShowImage.Visibility = Visibility.Visible;
+
+        }
+
+        private void Hotel3_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ShowImage.Source = Hotel3.Source;
+            ShowImage.Visibility = Visibility.Visible;
+
+        }
+
+        private void Food1_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ShowImage.Source = Food1.Source;
+            ShowImage.Visibility = Visibility.Visible;
+
+        }
+
+        private void Food2_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ShowImage.Source = Food2.Source;
+            ShowImage.Visibility = Visibility.Visible;
+
+        }
+
+        private void Food3_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ShowImage.Visibility = Visibility.Visible;
+            ShowImage.Source = Food3.Source;
+        }
+
+        private void ShowImage_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ShowImage.Visibility = Visibility.Hidden;
+        }
     }
 }

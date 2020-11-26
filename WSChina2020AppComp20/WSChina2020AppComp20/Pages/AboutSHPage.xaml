@@ -21,7 +21,6 @@
                     <TextBlock Margin="3">History</TextBlock>
                 </TabItem.Header>
                 <TabItem.Content>
-
                     <TextBlock Name="HistorySHTextBlock" TextWrapping="Wrap"></TextBlock>
                 </TabItem.Content>
             </TabItem>
@@ -38,81 +37,30 @@
                     <TextBlock Margin="0,3">Tourism</TextBlock>
                 </TabItem.Header>
                 <TabItem.Content>
-                    <StackPanel Name="TourismSP" VerticalAlignment="Center" HorizontalAlignment="Center">
-                        <Image Name="ShangHaiImage"></Image>
-                        <StackPanel Height="90" Orientation="Horizontal">
-                            <TextBlock FontSize="16" Margin="20 25 0 0">Travel Spot</TextBlock>
-                            <Button Style="{StaticResource SHButton}" Name="Travel1Btn"  VerticalAlignment="Top" Click="Travel1Btn_Click">
-                                <Button.Template>
-                                    <ControlTemplate>
-                                        <Image Name="TryImage"  Source="..\Images\travel_sh_1.jpg"></Image>
-                                    </ControlTemplate>
-                                </Button.Template>
-                            </Button>
-                            <Button Style="{StaticResource SHButton}" Name="Travel2Btn" VerticalAlignment="Top">
-                                <Button.Template>
-                                    <ControlTemplate>
-                                        <Image Source="..\Images\travel_sh_2.jpg"></Image>
-                                    </ControlTemplate>
-                                </Button.Template>
-                            </Button>
-                            <Button Style="{StaticResource SHButton}" Name="Trave3Btn" VerticalAlignment="Top">
-                                <Button.Template>
-                                    <ControlTemplate>
-                                        <Image Source="..\Images\travel_sh_3.jpg"></Image>
-                                    </ControlTemplate>
-                                </Button.Template>
-                            </Button>
+                    <Grid>
+                        <StackPanel Name="TourismSP" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            <StackPanel Height="90" Orientation="Horizontal" HorizontalAlignment="Center">
+                                <TextBlock FontSize="16" Margin="20 25 0 0">Travel Spot</TextBlock>
+                                <Image Name="Travel1" Margin="5" Source="..\Images\travel_sh_1.jpg" MouseDown="Travel1_MouseDown"></Image>
+                                <Image Name="Travel2" Source="..\Images\travel_sh_2.jpg" Margin="5" MouseDown="Travel2_MouseDown"></Image>
+                                <Image Name="Travel3" Source="..\Images\travel_sh_3.jpg" Margin="5" MouseDown="Travel3_MouseDown"></Image>
+                            </StackPanel>
+                            <StackPanel Height="90" Orientation="Horizontal" HorizontalAlignment="Center">
+                                <TextBlock FontSize="16" Margin="50 30 0 0">Hotel:</TextBlock>
+                                <Image Name="Hotel1" Source="..\Images\hotel_sh_1.jpg" Margin="5" MouseDown="Hotel1_MouseDown"></Image>
+                                <Image Name="Hotel2" Source="..\Images\hotel_sh_2.jpg" Margin="5" MouseDown="Hotel2_MouseDown"></Image>
+                                <Image Name="Hotel3" Source="..\Images\hotel_sh_3.jpg" Margin="5" MouseDown="Hotel3_MouseDown"></Image>
+                            </StackPanel>
+                            <StackPanel Height="90" Orientation="Horizontal" HorizontalAlignment="Center">
+                                <TextBlock FontSize="16" Margin="55 30 0 0">Food:</TextBlock>
+                                <Image Name="Food1" Source="..\Images\food_sh_1.jpg" Margin="5" MouseDown="Food1_MouseDown"></Image>
+                                <Image Name="Food2" Source="..\Images\food_sh_2.jpg" Margin="5" MouseDown="Food2_MouseDown"></Image>
+                            <Image Name="Food3" Source="..\Images\food_sh_3.jpg" Margin="5" MouseDown="Food3_MouseDown"></Image>
                         </StackPanel>
-                        <StackPanel Height="90" Orientation="Horizontal">
-                            <TextBlock FontSize="16" Margin="50 30 0 0">Hotel:</TextBlock>
-                            <Button Style="{StaticResource SHButton}" Name="Hotel1Btn"  VerticalAlignment="Top">
-                                <Button.Template>
-                                    <ControlTemplate>
-                                        <Image Source="..\Images\hotel_sh_1.jpg"></Image>
-                                    </ControlTemplate>
-                                </Button.Template>
-                            </Button>
-                            <Button Style="{StaticResource SHButton}" Name="Hotel2Btn"  VerticalAlignment="Top">
-                                <Button.Template>
-                                    <ControlTemplate>
-                                        <Image Source="..\Images\hotel_sh_2.jpg"></Image>
-                                    </ControlTemplate>
-                                </Button.Template>
-                            </Button>
-                            <Button Style="{StaticResource SHButton}" Name="Hotel3Btn"  VerticalAlignment="Top">
-                                <Button.Template>
-                                    <ControlTemplate>
-                                        <Image Source="..\Images\hotel_sh_3.jpg"></Image>
-                                    </ControlTemplate>
-                                </Button.Template>
-                            </Button>
+
                         </StackPanel>
-                        <StackPanel Height="90" Orientation="Horizontal">
-                            <TextBlock FontSize="16" Margin="55 30 0 0">Food:</TextBlock>
-                            <Button Style="{StaticResource SHButton}" Name="Food1Btn"  VerticalAlignment="Top">
-                                <Button.Template>
-                                    <ControlTemplate>
-                                        <Image Source="..\Images\food_sh_1.jpg"></Image>
-                                    </ControlTemplate>
-                                </Button.Template>
-                            </Button>
-                            <Button Style="{StaticResource SHButton}" Name="Food2Btn"  VerticalAlignment="Top">
-                                <Button.Template>
-                                    <ControlTemplate>
-                                        <Image Source="..\Images\food_sh_2.jpg"></Image>
-                                    </ControlTemplate>
-                                </Button.Template>
-                            </Button>
-                            <Button Style="{StaticResource SHButton}" Name="Food3Btn"  VerticalAlignment="Top">
-                                <Button.Template>
-                                    <ControlTemplate>
-                                        <Image Source="..\Images\food_sh_3.jpg"></Image>
-                                    </ControlTemplate>
-                                </Button.Template>
-                            </Button>
-                    </StackPanel>
-                    </StackPanel>
+                        <Image Name="ShowImage" Height="450" Width="800" MouseDown="ShowImage_MouseDown"></Image>
+                    </Grid>
                 </TabItem.Content>
             </TabItem>
 
