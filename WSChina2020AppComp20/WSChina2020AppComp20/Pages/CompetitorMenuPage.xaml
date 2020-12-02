@@ -20,9 +20,9 @@
         </StackPanel>
 
         <StackPanel Margin="30" Grid.Column="1">
-            <Button Style="{StaticResource MainButton}" Margin="0 60 0 0">My Profile</Button>
+            <Button Style="{StaticResource MainButton}" Margin="0 60 0 0" Name="MyProfileBtn" Click="MyProfileBtn_Click">My Profile</Button>
             <Button Style="{StaticResource MainButton}" Margin="5" Name="MySkillsBtn" Click="MySkillsBtn_Click">My Skills</Button>
-            <Button Style="{StaticResource MainButton}" Margin="5">My Results</Button>
+            <Button Style="{StaticResource MainButton}" Margin="5" Name="MyResultsBtn" Click="MyResultsBtn_Click">My Results</Button>
         </StackPanel>
     </Grid>
 </Page>

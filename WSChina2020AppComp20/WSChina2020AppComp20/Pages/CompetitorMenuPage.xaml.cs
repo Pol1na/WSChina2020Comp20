@@ -51,5 +51,16 @@ namespace WSChina2020AppComp20.Pages
         {
             NavigationService.Navigate(new MySkillsPage());
         }
+
+        private void MyProfileBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Функционал в разработке, и вообще это не в этой сессии", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+
+        private void MyResultsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Функционал в разработке, и вообще это не в этой сессии", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+
+        }
     }
 }
