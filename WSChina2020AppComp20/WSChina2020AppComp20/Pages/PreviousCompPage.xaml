@@ -22,15 +22,15 @@
             <TextBox x:Name="OrdinalNumTBox" AutoWordSelection="True" Width="200" Margin="10"/>
             <Label FontSize="16" Margin="30 5 0 5" Content="City or Country:"/>
             <TextBox x:Name="CityCountryTBox" Width="200" Margin="10"/>
-            <Button x:Name ="SearchWSBtn" Margin="10" Width="80" Content="Search"/>
+            <Button x:Name ="SearchWSBtn" Margin="10" Width="80" Click="SearchWSBtn_Click" Content="Search"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Margin="10 60 10 10">
             <Label HorizontalAlignment="Center" FontSize="10" Content="Total Records: XXX"/>
-            <DataGrid x:Name="MembersDGrid" IsReadOnly="True" FontSize="18" RowBackground="DarkGray" AutoGenerateColumns="False" AlternatingRowBackground="White">
+            <DataGrid Height="150" ScrollViewer.CanContentScroll="True" x:Name="MembersDGrid" IsReadOnly="True" FontSize="18" RowBackground="DarkGray" AutoGenerateColumns="False" AlternatingRowBackground="White">
                 <DataGrid.Columns>
-                    <DataGridTextColumn x:Name="OrdN" Width="*" Binding="{Binding ordinalNum}" Header="Ordinal No."/>
+                    <DataGridTextColumn x:Name="OrdN" Width="*" Binding="{Binding id}" Header="Ordinal No."/>
                     <DataGridTextColumn Width="*" Binding="{Binding Year}" Header="Year"/>
-                    <DataGridTextColumn Width="*" Binding ="{Binding CityCountry}" Header="City, Country"/>
+                    <DataGridTextColumn Width="*" Binding ="{Binding CityCountry}" Header="Country"/>
                     <DataGridTextColumn Width="*" Binding="{Binding MemberNumber}" Header="Member Number"/>
                 </DataGrid.Columns>
             </DataGrid>

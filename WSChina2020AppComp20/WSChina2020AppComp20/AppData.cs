@@ -8,7 +8,6 @@ namespace WSChina2020AppComp20
 {
     public class AppData
     {
-        public static Entities.WSChina2020BaseComp20Entities Context =
-            new Entities.WSChina2020BaseComp20Entities();
+        public static Entities.WSChina2020BaseComp20Entity Context = new Entities.WSChina2020BaseComp20Entity();
     }
 }

@@ -15,13 +15,13 @@
         </Grid.ColumnDefinitions>
         <TextBlock FontSize="25" HorizontalAlignment="Center" Grid.ColumnSpan="2">Competitor menu</TextBlock>
         <StackPanel VerticalAlignment="Center">
-        <TextBlock Name="HelloTB" FontSize="25"  Margin="40"></TextBlock>
-        <Image HorizontalAlignment="Left" Margin="40 0 0 0" Source="/WSChina2020AppComp20;component/Images/no-image.png" Width="100"></Image>
+            <TextBlock Name="HelloTB" FontSize="25"  Margin="40"></TextBlock>
+            <Image Source="{Binding image}" Margin="10" Height="300" ></Image>
         </StackPanel>
 
         <StackPanel Margin="30" Grid.Column="1">
             <Button Style="{StaticResource MainButton}" Margin="0 60 0 0">My Profile</Button>
-            <Button Style="{StaticResource MainButton}" Margin="5">My Skills</Button>
+            <Button Style="{StaticResource MainButton}" Margin="5" Name="MySkillsBtn" Click="MySkillsBtn_Click">My Skills</Button>
             <Button Style="{StaticResource MainButton}" Margin="5">My Results</Button>
         </StackPanel>
     </Grid>

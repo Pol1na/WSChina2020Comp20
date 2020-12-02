@@ -30,6 +30,9 @@ namespace WSChina2020AppComp20
         {
             InitializeComponent();
             MainFrame.Navigate(new Pages.MenuPage());
+            //var currentUser = AppData.Context.Users.ToList()[2];
+            //currentUser.image = File.ReadAllBytes(@"C:\Users\Lenovo\Desktop\images\cat.jpg");
+            //AppData.Context.SaveChanges();
 
             DispatcherTimer timer = new DispatcherTimer();
             timer.Tick += timer_tick;

@@ -23,6 +23,7 @@ namespace WSChina2020AppComp20.Entities
         public int BlockID { get; set; }
         public string Name { get; set; }
     
+        public virtual All_Fields All_Fields { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Skills> Skills { get; set; }
     }

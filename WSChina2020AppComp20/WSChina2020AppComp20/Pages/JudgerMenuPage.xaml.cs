@@ -21,28 +21,28 @@ namespace WSChina2020AppComp20.Pages
     /// </summary>
     public partial class JudgerMenuPage : Page
     {
-        public JudgerMenuPage(LogPass log)
+        public JudgerMenuPage(Users user)
         {
             InitializeComponent();
             InitializeComponent();
-            if (log.gender == "Male")
+            if (user.gender == "Male")
             {
-                HelloTB.Text = $"Hello, Mr. {log.name}";
+                HelloTB.Text = $"Hello, Mr. {user.name}";
 
             }
-            else if (log.gender == "Female")
+            else if (user.gender == "Female")
             {
-                HelloTB.Text = $"Hello, Mrs. {log.name}";
+                HelloTB.Text = $"Hello, Mrs. {user.name}";
 
             }
-            else if (log.gender == "Attack Helicopter")
+            else if (user.gender == "Attack Helicopter")
             {
-                HelloTB.Text = $"Hello, PLEASE DONT ATTACK. {log.name}";
+                HelloTB.Text = $"Hello, PLEASE DONT ATTACK. {user.name}";
 
             }
             else
             {
-                HelloTB.Text = $"Hello, {log.name}";
+                HelloTB.Text = $"Hello, {user.name}";
 
             }
         }

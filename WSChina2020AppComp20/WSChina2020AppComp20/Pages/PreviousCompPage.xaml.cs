@@ -24,8 +24,24 @@ namespace WSChina2020AppComp20.Pages
         public PreviousCompPage()
         {
             InitializeComponent();
-            MembersDGrid.ItemsSource = AppData.Context.PrevCompetitions.ToList();
+            MembersDGrid.ItemsSource = AppData.Context.Competitions.ToList();
             
+        }
+
+        private void SearchWSBtn_Click(object sender, RoutedEventArgs e)
+        {
+                if (OrdinalNumTBox.Text != "" && CityCountryTBox.Text == "")
+                {
+                    MembersDGrid.ItemsSource = AppData.Context.Competitions.ToList().Where(i => i.id == Convert.ToInt32(OrdinalNumTBox.Text));
+                }
+                else if(OrdinalNumTBox.Text == "" && CityCountryTBox.Text != "")
+                {
+                    MembersDGrid.ItemsSource = AppData.Context.Competitions.ToList().Where(i => i.CityCountry == CityCountryTBox.Text);
+                }
+                else
+                {
+                    MessageBox.Show("error");
+                }
         }
 
         //private void SearchWSBtn_Click(object sender, RoutedEventArgs e)

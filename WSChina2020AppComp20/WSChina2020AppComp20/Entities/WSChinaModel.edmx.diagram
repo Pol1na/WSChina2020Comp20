@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cdd9830577144cafaac9cef57503f33e" Name="Diagram1">
+        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.All_Fields" Width="1.5" PointX="1.5" PointY="13.75" />
+        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.Blocks" Width="1.5" PointX="0.75" PointY="10.625" />
+        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.City" Width="1.5" PointX="3" PointY="1.125" />
+        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.Competitions" Width="1.5" PointX="3" PointY="7.375" />
+        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.Coutry" Width="1.5" PointX="0.75" PointY="3" />
+        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.Skills" Width="1.5" PointX="3" PointY="10.125" />
+        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.SkillsShedule" Width="1.5" PointX="5.25" PointY="10.375" />
+        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.UserSkills" Width="1.5" PointX="5.25" PointY="3.875" />
+        <AssociationConnector Association="WSChina2020BaseComp20Model.FK_Blocks_All_Fields" />
+        <AssociationConnector Association="WSChina2020BaseComp20Model.FK_Skills_Blocks" />
+        <AssociationConnector Association="WSChina2020BaseComp20Model.FK_City_Coutry" />
+        <AssociationConnector Association="WSChina2020BaseComp20Model.FK_UserSkills_Competitions" />
+        <AssociationConnector Association="WSChina2020BaseComp20Model.FK_SkillsShedule_Skills" />
+        <AssociationConnector Association="WSChina2020BaseComp20Model.FK_UserSkills_Skills" />
+        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.Users" Width="1.5" PointX="3" PointY="16.375" />
+        <AssociationConnector Association="WSChina2020BaseComp20Model.FK_Users_Coutry" />
+        <AssociationConnector Association="WSChina2020BaseComp20Model.FK_UserSkills_Users" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

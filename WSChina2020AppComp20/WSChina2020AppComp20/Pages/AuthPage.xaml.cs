@@ -27,7 +27,7 @@ namespace WSChina2020AppComp20.Pages
 
         private void AuthBtn_Click(object sender, RoutedEventArgs e)
         {
-            var loginpass = AppData.Context.LogPass.ToList();
+            var loginpass = AppData.Context.Users.ToList();
 
             if (LoginTBox.Text != "" && PasswordPB.Password != "")
             {

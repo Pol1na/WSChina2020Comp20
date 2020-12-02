@@ -96,3 +96,5 @@ C:\Users\Lenovo\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020A
 C:\Users\Lenovo\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\WSChina2020AppComp20.csproj.CopyComplete
 C:\Users\Lenovo\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\WSChina2020AppComp20.exe
 C:\Users\Lenovo\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\WSChina2020AppComp20.pdb
+C:\Users\Lenovo\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\Pages\MySkillsPage.g.cs
+C:\Users\Lenovo\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\Pages\MySkillsPage.baml

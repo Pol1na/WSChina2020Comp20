@@ -66,23 +66,50 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AppData.cs" />
+    <Compile Include="Entities\All_Fields.cs">
+      <DependentUpon>WSChinaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Blocks.cs">
-      <DependentUpon>SkillsModel.tt</DependentUpon>
+      <DependentUpon>WSChinaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\LogPass.cs">
-      <DependentUpon>SkillsModel.tt</DependentUpon>
+    <Compile Include="Entities\City.cs">
+      <DependentUpon>WSChinaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\PrevCompetitions.cs">
-      <DependentUpon>SkillsModel.tt</DependentUpon>
+    <Compile Include="Entities\Competitions.cs">
+      <DependentUpon>WSChinaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\Roles.cs">
-      <DependentUpon>SkillsModel.tt</DependentUpon>
+    <Compile Include="Entities\Coutry.cs">
+      <DependentUpon>WSChinaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Skills.cs">
-      <DependentUpon>SkillsModel.tt</DependentUpon>
+      <DependentUpon>WSChinaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\SkillsShedule.cs">
+      <DependentUpon>WSChinaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\sysdiagrams.cs">
-      <DependentUpon>SkillsModel.tt</DependentUpon>
+      <DependentUpon>WSChinaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Users.cs">
+      <DependentUpon>WSChinaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\UserSkills.cs">
+      <DependentUpon>WSChinaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\WSChinaModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WSChinaModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\WSChinaModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WSChinaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\WSChinaModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WSChinaModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Pages\AdminMenuPage.xaml.cs">
       <DependentUpon>AdminMenuPage.xaml</DependentUpon>
@@ -99,6 +126,9 @@
     <Compile Include="Pages\JudgerMenuPage.xaml.cs">
       <DependentUpon>JudgerMenuPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\MySkillsPage.xaml.cs">
+      <DependentUpon>MySkillsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControl\ShpUC.xaml.cs">
       <DependentUpon>ShpUC.xaml</DependentUpon>
     </Compile>
@@ -109,21 +139,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Entities\SkillsModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SkillsModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\SkillsModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SkillsModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Entities\SkillsModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SkillsModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -170,6 +185,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MySkillsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -221,12 +240,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Entities\SkillsModel.edmx">
+    <EntityDeploy Include="Entities\WSChinaModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SkillsModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>WSChinaModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Entities\SkillsModel.edmx.diagram">
-      <DependentUpon>SkillsModel.edmx</DependentUpon>
+    <None Include="Entities\WSChinaModel.edmx.diagram">
+      <DependentUpon>WSChinaModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -251,16 +270,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Entities\SkillsModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>SkillsModel.Context.cs</LastGenOutput>
-      <DependentUpon>SkillsModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="Entities\SkillsModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SkillsModel.edmx</DependentUpon>
-      <LastGenOutput>SkillsModel.cs</LastGenOutput>
-    </Content>
     <None Include="Resources\China in the WorldSkills.txt" />
     <Resource Include="Images\food_sh_3.jpg" />
     <Resource Include="Images\food_sh_1.jpg" />
@@ -274,6 +283,18 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entities\WSChinaModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WSChinaModel.edmx</DependentUpon>
+      <LastGenOutput>WSChinaModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entities\WSChinaModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WSChinaModel.edmx</DependentUpon>
+      <LastGenOutput>WSChinaModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

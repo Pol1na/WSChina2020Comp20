@@ -14,11 +14,24 @@ namespace WSChina2020AppComp20.Entities
     
     public partial class Skills
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Skills()
+        {
+            this.SkillsShedule = new HashSet<SkillsShedule>();
+            this.UserSkills = new HashSet<UserSkills>();
+        }
+    
         public int SkillID { get; set; }
         public int BlockID { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+        public byte[] WorkshopLayout { get; set; }
+        public byte[] Infrastructure { get; set; }
     
         public virtual Blocks Blocks { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SkillsShedule> SkillsShedule { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UserSkills> UserSkills { get; set; }
     }
 }
