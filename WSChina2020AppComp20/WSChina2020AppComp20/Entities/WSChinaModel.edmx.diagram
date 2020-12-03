@@ -20,7 +20,7 @@
         <AssociationConnector Association="WSChina2020BaseComp20Model.FK_UserSkills_Competitions" />
         <AssociationConnector Association="WSChina2020BaseComp20Model.FK_SkillsShedule_Skills" />
         <AssociationConnector Association="WSChina2020BaseComp20Model.FK_UserSkills_Skills" />
-        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.Users" Width="1.5" PointX="3" PointY="16.375" />
+        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.Users" Width="1.5" PointX="3" PointY="16" />
         <AssociationConnector Association="WSChina2020BaseComp20Model.FK_Users_Coutry" />
         <AssociationConnector Association="WSChina2020BaseComp20Model.FK_UserSkills_Users" />
       </Diagram>

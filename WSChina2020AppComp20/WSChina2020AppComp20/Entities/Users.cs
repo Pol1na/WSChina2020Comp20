@@ -27,8 +27,11 @@ namespace WSChina2020AppComp20.Entities
         public string name { get; set; }
         public string surname { get; set; }
         public string gender { get; set; }
-        public Nullable<int> CountryId { get; set; }
+        public int CountryId { get; set; }
         public byte[] image { get; set; }
+        public string phone { get; set; }
+        public System.DateTime dateOfBirth { get; set; }
+        public string email { get; set; }
     
         public virtual Coutry Coutry { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

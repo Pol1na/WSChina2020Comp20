@@ -34,13 +34,14 @@ namespace WSChina2020AppComp20.Pages
                 var currentUser = loginpass.FirstOrDefault(i => i.login == LoginTBox.Text && i.password == PasswordPB.Password);
                 if (currentUser != null)
                 {
+                    AppData.currentUser = currentUser;
                     switch (currentUser.role)
                     {
                         case "Administrator":
                             NavigationService.Navigate(new AdminMenuPage(currentUser));
                             break;
                         case "Competitor":
-                            NavigationService.Navigate(new CompetitorMenuPage(currentUser));
+                            NavigationService.Navigate(new CompetitorMenuPage());
                             break;
                         case "Judger":
                             NavigationService.Navigate(new JudgerMenuPage(currentUser));

@@ -82,11 +82,14 @@
     <Property Name="login" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="role" Type="nvarchar" MaxLength="30" Nullable="false" />
-    <Property Name="name" Type="nvarchar" MaxLength="50" />
-    <Property Name="surname" Type="nvarchar" MaxLength="50" />
-    <Property Name="gender" Type="nvarchar" MaxLength="50" />
-    <Property Name="CountryId" Type="int" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="gender" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CountryId" Type="int" Nullable="false" />
     <Property Name="image" Type="image" />
+    <Property Name="phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="dateOfBirth" Type="date" Nullable="false" />
+    <Property Name="email" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="UserSkills">
     <Key>
@@ -146,7 +149,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_Users_Coutry">
-    <End Role="Coutry" Type="Self.Coutry" Multiplicity="0..1" />
+    <End Role="Coutry" Type="Self.Coutry" Multiplicity="1" />
     <End Role="Users" Type="Self.Users" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Coutry">

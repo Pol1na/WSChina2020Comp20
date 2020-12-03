@@ -215,16 +215,19 @@
     <Property Name="login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="role" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="CountryId" Type="Int32" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="surname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CountryId" Type="Int32" Nullable="false" />
     <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="dateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Coutry" Relationship="WSChina2020BaseComp20Model.FK_Users_Coutry" FromRole="Users" ToRole="Coutry" />
     <NavigationProperty Name="UserSkills" Relationship="WSChina2020BaseComp20Model.FK_UserSkills_Users" FromRole="Users" ToRole="UserSkills" />
   </EntityType>
   <Association Name="FK_Users_Coutry">
-    <End Type="WSChina2020BaseComp20Model.Coutry" Role="Coutry" Multiplicity="0..1" />
+    <End Type="WSChina2020BaseComp20Model.Coutry" Role="Coutry" Multiplicity="1" />
     <End Type="WSChina2020BaseComp20Model.Users" Role="Users" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Coutry">

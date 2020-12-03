@@ -126,6 +126,12 @@
     <Compile Include="Pages\JudgerMenuPage.xaml.cs">
       <DependentUpon>JudgerMenuPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\MyProfilePage.xaml.cs">
+      <DependentUpon>MyProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\MyResultsPage.xaml.cs">
+      <DependentUpon>MyResultsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MySkillsPage.xaml.cs">
       <DependentUpon>MySkillsPage.xaml</DependentUpon>
     </Compile>
@@ -185,6 +191,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MyProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MyResultsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

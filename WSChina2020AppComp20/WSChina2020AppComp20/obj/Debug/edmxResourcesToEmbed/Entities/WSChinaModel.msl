@@ -90,6 +90,9 @@
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Users">
         <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="dateOfBirth" ColumnName="dateOfBirth" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
           <ScalarProperty Name="image" ColumnName="image" />
           <ScalarProperty Name="CountryId" ColumnName="CountryId" />
           <ScalarProperty Name="gender" ColumnName="gender" />

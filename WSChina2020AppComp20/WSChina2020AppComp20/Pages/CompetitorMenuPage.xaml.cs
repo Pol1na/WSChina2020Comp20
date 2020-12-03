@@ -21,28 +21,28 @@ namespace WSChina2020AppComp20.Pages
     /// </summary>
     public partial class CompetitorMenuPage : Page
     {
-        public CompetitorMenuPage(Users user)
+        public CompetitorMenuPage()
         {
             InitializeComponent();
-            this.DataContext = user;
-            if (user.gender == "Male")
+            this.DataContext = AppData.currentUser;
+            if (AppData.currentUser.gender == "Male")
             {
-                HelloTB.Text = $"Hello, Mr. {user.name}";
+                HelloTB.Text = $"Hello, Mr. {AppData.currentUser.name}";
 
             }
-            else if (user.gender == "Female")
+            else if (AppData.currentUser.gender == "Female")
             {
-                HelloTB.Text = $"Hello, Mrs. {user.name}";
+                HelloTB.Text = $"Hello, Mrs. {AppData.currentUser.name}";
 
             }
-            else if (user.gender == "Attack Helicopter")
+            else if (AppData.currentUser.gender == "Attack Helicopter")
             {
-                HelloTB.Text = $"Hello, DONT ATTACK. {user.name}";
+                HelloTB.Text = $"Hello, DONT ATTACK. {AppData.currentUser.name}";
 
             }
             else
             {
-                HelloTB.Text = $"Hello, {user.name}";
+                HelloTB.Text = $"Hello, {AppData.currentUser.name}";
 
             }
         }
@@ -54,13 +54,12 @@ namespace WSChina2020AppComp20.Pages
 
         private void MyProfileBtn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Функционал в разработке, и вообще это не в этой сессии", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            NavigationService.Navigate(new MyProfilePage());
         }
 
         private void MyResultsBtn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Функционал в разработке, и вообще это не в этой сессии", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-
+            NavigationService.Navigate(new MyResultsPage());
         }
     }
 }
