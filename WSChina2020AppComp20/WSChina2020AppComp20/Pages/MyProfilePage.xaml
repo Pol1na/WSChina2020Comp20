@@ -15,12 +15,12 @@
         </Grid.ColumnDefinitions>
         <TextBlock Style="{StaticResource MainTB}" Grid.ColumnSpan="2">My Profile</TextBlock>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Column="0" VerticalAlignment="Center" >
-            <TextBlock Style="{StaticResource SecondaryTB}" Text="{Binding StringFormat=Name:{0}, Path=name}" HorizontalAlignment="Left" Margin="5"></TextBlock>
-            <TextBlock Style="{StaticResource SecondaryTB}" Text="{Binding StringFormat=Gender:{0}, Path=gender}" HorizontalAlignment="Left" Margin="5"></TextBlock>
-            <TextBlock Style="{StaticResource SecondaryTB}" Text="{Binding StringFormat=UserId:{0}, Path=id}" HorizontalAlignment="Left" Margin="5"></TextBlock>
-            <TextBlock Style="{StaticResource SecondaryTB}" Text="{Binding Coutry.name}" HorizontalAlignment="Left" Margin="5"/>
-            <TextBlock Style="{StaticResource SecondaryTB}" Text="{Binding StringFormat=Phone:{0}, Path=phone}" HorizontalAlignment="Left" Margin="5"></TextBlock>
-            <TextBlock Style="{StaticResource SecondaryTB}" Text="{Binding StringFormat=Email:{0}, Path=email}" HorizontalAlignment="Left" Margin="5"></TextBlock>
+            <TextBlock Style="{StaticResource SecondaryTB}" Text="{Binding StringFormat=Name: {0}, Path=name}" HorizontalAlignment="Left" Margin="5"></TextBlock>
+            <TextBlock Style="{StaticResource SecondaryTB}" Text="{Binding StringFormat=Gender: {0}, Path=gender}" HorizontalAlignment="Left" Margin="5"></TextBlock>
+            <TextBlock Style="{StaticResource SecondaryTB}" Text="{Binding StringFormat=UserId: {0}, Path=id}" HorizontalAlignment="Left" Margin="5"></TextBlock>
+            <TextBlock Style="{StaticResource SecondaryTB}" Text="{Binding StringFormat=Country: {0} , Path = Coutry.name}" HorizontalAlignment="Left" Margin="5"/>
+            <TextBlock Style="{StaticResource SecondaryTB}" Text="{Binding StringFormat=Phone: {0}, Path=phone}" HorizontalAlignment="Left" Margin="5"></TextBlock>
+            <TextBlock Style="{StaticResource SecondaryTB}" Text="{Binding StringFormat=Email: {0}, Path=email}" HorizontalAlignment="Left" Margin="5"></TextBlock>
         </StackPanel>
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center">
             <Image Name="ProfileImage" Source="{Binding image}" Width="170" Height="170"></Image>
@@ -37,7 +37,7 @@
                 <PasswordBox Name="RePasswordPB" Width="120" Height="25"></PasswordBox>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Name="SavePasswordBtn" Width="100" Height="25" Margin="5">Save</Button>
+                <Button Name="SavePasswordBtn" Width="100" Height="25" Margin="5" Click="SavePasswordBtn_Click">Save</Button>
                 <Button Name="CancelPasswordBtn" Width="100" Height="25" Margin="5">Cancel</Button>
             </StackPanel>
         </StackPanel>

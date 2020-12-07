@@ -32,7 +32,7 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Year" Type="int" Nullable="false" />
-          <Property Name="CityCountry" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="CityId" Type="int" />
           <Property Name="MemberNumber" Type="int" Nullable="false" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
@@ -47,6 +47,13 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Organizations">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Skills">
           <Key>
@@ -95,6 +102,7 @@
           <Property Name="phone" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="dateOfBirth" Type="date" Nullable="false" />
           <Property Name="email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="OrganizationId" Type="int" />
         </EntityType>
         <EntityType Name="UserSkills">
           <Key>
@@ -102,8 +110,8 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserId" Type="int" />
-          <Property Name="CompetitionId" Type="int" />
           <Property Name="SkillsId" Type="int" />
+          <Property Name="event" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK_Blocks_All Fields">
           <End Role="All Fields" Type="Self.All Fields" Multiplicity="1" />
@@ -126,6 +134,18 @@
             </Principal>
             <Dependent Role="City">
               <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Competitions_City">
+          <End Role="City" Type="Self.City" Multiplicity="0..1" />
+          <End Role="Competitions" Type="Self.Competitions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Competitions">
+              <PropertyRef Name="CityId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -165,15 +185,27 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_UserSkills_Competitions">
-          <End Role="Competitions" Type="Self.Competitions" Multiplicity="0..1" />
+        <Association Name="FK_Users_Organizations">
+          <End Role="Organizations" Type="Self.Organizations" Multiplicity="0..1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organizations">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="OrganizationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_UsersSkills">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
           <End Role="UserSkills" Type="Self.UserSkills" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Competitions">
+            <Principal Role="Users">
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="UserSkills">
-              <PropertyRef Name="CompetitionId" />
+              <PropertyRef Name="UserId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -189,24 +221,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_UserSkills_Users">
-          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
-          <End Role="UserSkills" Type="Self.UserSkills" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Users">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="UserSkills">
-              <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="Хранилище WSChina2020BaseComp20ModelContainer">
           <EntitySet Name="All Fields" EntityType="Self.All Fields" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Blocks" EntityType="Self.Blocks" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Competitions" EntityType="Self.Competitions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Coutry" EntityType="Self.Coutry" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Organizations" EntityType="Self.Organizations" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Skills" EntityType="Self.Skills" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SkillsShedule" EntityType="Self.SkillsShedule" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
@@ -220,6 +241,10 @@
             <End Role="Coutry" EntitySet="Coutry" />
             <End Role="City" EntitySet="City" />
           </AssociationSet>
+          <AssociationSet Name="FK_Competitions_City" Association="Self.FK_Competitions_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="Competitions" EntitySet="Competitions" />
+          </AssociationSet>
           <AssociationSet Name="FK_Skills_Blocks" Association="Self.FK_Skills_Blocks">
             <End Role="Blocks" EntitySet="Blocks" />
             <End Role="Skills" EntitySet="Skills" />
@@ -232,16 +257,16 @@
             <End Role="Coutry" EntitySet="Coutry" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
-          <AssociationSet Name="FK_UserSkills_Competitions" Association="Self.FK_UserSkills_Competitions">
-            <End Role="Competitions" EntitySet="Competitions" />
+          <AssociationSet Name="FK_Users_Organizations" Association="Self.FK_Users_Organizations">
+            <End Role="Organizations" EntitySet="Organizations" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_UsersSkills" Association="Self.FK_Users_UsersSkills">
+            <End Role="Users" EntitySet="Users" />
             <End Role="UserSkills" EntitySet="UserSkills" />
           </AssociationSet>
           <AssociationSet Name="FK_UserSkills_Skills" Association="Self.FK_UserSkills_Skills">
             <End Role="Skills" EntitySet="Skills" />
-            <End Role="UserSkills" EntitySet="UserSkills" />
-          </AssociationSet>
-          <AssociationSet Name="FK_UserSkills_Users" Association="Self.FK_UserSkills_Users">
-            <End Role="Users" EntitySet="Users" />
             <End Role="UserSkills" EntitySet="UserSkills" />
           </AssociationSet>
         </EntityContainer>
@@ -255,9 +280,11 @@
           <EntitySet Name="City" EntityType="WSChina2020BaseComp20Model.City" />
           <EntitySet Name="Competitions" EntityType="WSChina2020BaseComp20Model.Competitions" />
           <EntitySet Name="Coutry" EntityType="WSChina2020BaseComp20Model.Coutry" />
+          <EntitySet Name="Organizations" EntityType="WSChina2020BaseComp20Model.Organizations" />
           <EntitySet Name="Skills" EntityType="WSChina2020BaseComp20Model.Skills" />
           <EntitySet Name="SkillsShedule" EntityType="WSChina2020BaseComp20Model.SkillsShedule" />
           <EntitySet Name="sysdiagrams" EntityType="WSChina2020BaseComp20Model.sysdiagrams" />
+          <EntitySet Name="Users" EntityType="WSChina2020BaseComp20Model.Users" />
           <EntitySet Name="UserSkills" EntityType="WSChina2020BaseComp20Model.UserSkills" />
           <AssociationSet Name="FK_Blocks_All_Fields" Association="WSChina2020BaseComp20Model.FK_Blocks_All_Fields">
             <End Role="All_Fields" EntitySet="All_Fields" />
@@ -271,9 +298,17 @@
             <End Role="Coutry" EntitySet="Coutry" />
             <End Role="City" EntitySet="City" />
           </AssociationSet>
-          <AssociationSet Name="FK_UserSkills_Competitions" Association="WSChina2020BaseComp20Model.FK_UserSkills_Competitions">
+          <AssociationSet Name="FK_Competitions_City" Association="WSChina2020BaseComp20Model.FK_Competitions_City">
+            <End Role="City" EntitySet="City" />
             <End Role="Competitions" EntitySet="Competitions" />
-            <End Role="UserSkills" EntitySet="UserSkills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Coutry" Association="WSChina2020BaseComp20Model.FK_Users_Coutry">
+            <End Role="Coutry" EntitySet="Coutry" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Organizations" Association="WSChina2020BaseComp20Model.FK_Users_Organizations">
+            <End Role="Organizations" EntitySet="Organizations" />
+            <End Role="Users" EntitySet="Users" />
           </AssociationSet>
           <AssociationSet Name="FK_SkillsShedule_Skills" Association="WSChina2020BaseComp20Model.FK_SkillsShedule_Skills">
             <End Role="Skills" EntitySet="Skills" />
@@ -283,12 +318,7 @@
             <End Role="Skills" EntitySet="Skills" />
             <End Role="UserSkills" EntitySet="UserSkills" />
           </AssociationSet>
-          <EntitySet Name="Users" EntityType="WSChina2020BaseComp20Model.Users" />
-          <AssociationSet Name="FK_Users_Coutry" Association="WSChina2020BaseComp20Model.FK_Users_Coutry">
-            <End Role="Coutry" EntitySet="Coutry" />
-            <End Role="Users" EntitySet="Users" />
-          </AssociationSet>
-          <AssociationSet Name="FK_UserSkills_Users" Association="WSChina2020BaseComp20Model.FK_UserSkills_Users">
+          <AssociationSet Name="FK_Users_UsersSkills" Association="WSChina2020BaseComp20Model.FK_Users_UsersSkills">
             <End Role="Users" EntitySet="Users" />
             <End Role="UserSkills" EntitySet="UserSkills" />
           </AssociationSet>
@@ -317,6 +347,7 @@
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="CountryId" Type="Int32" />
           <NavigationProperty Name="Coutry" Relationship="WSChina2020BaseComp20Model.FK_City_Coutry" FromRole="City" ToRole="Coutry" />
+          <NavigationProperty Name="Competitions" Relationship="WSChina2020BaseComp20Model.FK_Competitions_City" FromRole="City" ToRole="Competitions" />
         </EntityType>
         <EntityType Name="Competitions">
           <Key>
@@ -324,9 +355,9 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Year" Type="Int32" Nullable="false" />
-          <Property Name="CityCountry" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CityId" Type="Int32" />
           <Property Name="MemberNumber" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="UserSkills" Relationship="WSChina2020BaseComp20Model.FK_UserSkills_Competitions" FromRole="Competitions" ToRole="UserSkills" />
+          <NavigationProperty Name="City" Relationship="WSChina2020BaseComp20Model.FK_Competitions_City" FromRole="Competitions" ToRole="City" />
         </EntityType>
         <EntityType Name="Coutry">
           <Key>
@@ -336,6 +367,14 @@
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="City" Relationship="WSChina2020BaseComp20Model.FK_City_Coutry" FromRole="Coutry" ToRole="City" />
           <NavigationProperty Name="Users" Relationship="WSChina2020BaseComp20Model.FK_Users_Coutry" FromRole="Coutry" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Organizations">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Users" Relationship="WSChina2020BaseComp20Model.FK_Users_Organizations" FromRole="Organizations" ToRole="Users" />
         </EntityType>
         <EntityType Name="Skills">
           <Key>
@@ -372,17 +411,37 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="role" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="surname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CountryId" Type="Int32" Nullable="false" />
+          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OrganizationId" Type="Int32" />
+          <NavigationProperty Name="Coutry" Relationship="WSChina2020BaseComp20Model.FK_Users_Coutry" FromRole="Users" ToRole="Coutry" />
+          <NavigationProperty Name="Organizations" Relationship="WSChina2020BaseComp20Model.FK_Users_Organizations" FromRole="Users" ToRole="Organizations" />
+          <NavigationProperty Name="UserSkills" Relationship="WSChina2020BaseComp20Model.FK_Users_UsersSkills" FromRole="Users" ToRole="UserSkills" />
+        </EntityType>
         <EntityType Name="UserSkills">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserId" Type="Int32" />
-          <Property Name="CompetitionId" Type="Int32" />
           <Property Name="SkillsId" Type="Int32" />
-          <NavigationProperty Name="Competitions" Relationship="WSChina2020BaseComp20Model.FK_UserSkills_Competitions" FromRole="UserSkills" ToRole="Competitions" />
+          <Property Name="event" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Skills" Relationship="WSChina2020BaseComp20Model.FK_UserSkills_Skills" FromRole="UserSkills" ToRole="Skills" />
-          <NavigationProperty Name="Users" Relationship="WSChina2020BaseComp20Model.FK_UserSkills_Users" FromRole="UserSkills" ToRole="Users" />
+          <NavigationProperty Name="Users" Relationship="WSChina2020BaseComp20Model.FK_Users_UsersSkills" FromRole="UserSkills" ToRole="Users" />
         </EntityType>
         <Association Name="FK_Blocks_All_Fields">
           <End Type="WSChina2020BaseComp20Model.All_Fields" Role="All_Fields" Multiplicity="1" />
@@ -420,15 +479,39 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_UserSkills_Competitions">
-          <End Type="WSChina2020BaseComp20Model.Competitions" Role="Competitions" Multiplicity="0..1" />
-          <End Type="WSChina2020BaseComp20Model.UserSkills" Role="UserSkills" Multiplicity="*" />
+        <Association Name="FK_Competitions_City">
+          <End Type="WSChina2020BaseComp20Model.City" Role="City" Multiplicity="0..1" />
+          <End Type="WSChina2020BaseComp20Model.Competitions" Role="Competitions" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Competitions">
+            <Principal Role="City">
               <PropertyRef Name="id" />
             </Principal>
-            <Dependent Role="UserSkills">
-              <PropertyRef Name="CompetitionId" />
+            <Dependent Role="Competitions">
+              <PropertyRef Name="CityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Coutry">
+          <End Type="WSChina2020BaseComp20Model.Coutry" Role="Coutry" Multiplicity="1" />
+          <End Type="WSChina2020BaseComp20Model.Users" Role="Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Coutry">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Organizations">
+          <End Type="WSChina2020BaseComp20Model.Organizations" Role="Organizations" Multiplicity="0..1" />
+          <End Type="WSChina2020BaseComp20Model.Users" Role="Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Organizations">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="OrganizationId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -456,38 +539,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="Users">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="role" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="surname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CountryId" Type="Int32" Nullable="false" />
-          <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="dateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="email" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Coutry" Relationship="WSChina2020BaseComp20Model.FK_Users_Coutry" FromRole="Users" ToRole="Coutry" />
-          <NavigationProperty Name="UserSkills" Relationship="WSChina2020BaseComp20Model.FK_UserSkills_Users" FromRole="Users" ToRole="UserSkills" />
-        </EntityType>
-        <Association Name="FK_Users_Coutry">
-          <End Type="WSChina2020BaseComp20Model.Coutry" Role="Coutry" Multiplicity="1" />
-          <End Type="WSChina2020BaseComp20Model.Users" Role="Users" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Coutry">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="Users">
-              <PropertyRef Name="CountryId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_UserSkills_Users">
+        <Association Name="FK_Users_UsersSkills">
           <End Type="WSChina2020BaseComp20Model.Users" Role="Users" Multiplicity="0..1" />
           <End Type="WSChina2020BaseComp20Model.UserSkills" Role="UserSkills" Multiplicity="*" />
           <ReferentialConstraint>
@@ -499,7 +551,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -533,7 +585,7 @@
             <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Competitions">
               <MappingFragment StoreEntitySet="Competitions">
                 <ScalarProperty Name="MemberNumber" ColumnName="MemberNumber" />
-                <ScalarProperty Name="CityCountry" ColumnName="CityCountry" />
+                <ScalarProperty Name="CityId" ColumnName="CityId" />
                 <ScalarProperty Name="Year" ColumnName="Year" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
@@ -542,6 +594,14 @@
           <EntitySetMapping Name="Coutry">
             <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Coutry">
               <MappingFragment StoreEntitySet="Coutry">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Organizations">
+            <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Organizations">
+              <MappingFragment StoreEntitySet="Organizations">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
@@ -581,19 +641,10 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="UserSkills">
-            <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.UserSkills">
-              <MappingFragment StoreEntitySet="UserSkills">
-                <ScalarProperty Name="SkillsId" ColumnName="SkillsId" />
-                <ScalarProperty Name="CompetitionId" ColumnName="CompetitionId" />
-                <ScalarProperty Name="UserId" ColumnName="UserId" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Users">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="dateOfBirth" ColumnName="dateOfBirth" />
                 <ScalarProperty Name="phone" ColumnName="phone" />
@@ -605,6 +656,16 @@
                 <ScalarProperty Name="role" ColumnName="role" />
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserSkills">
+            <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.UserSkills">
+              <MappingFragment StoreEntitySet="UserSkills">
+                <ScalarProperty Name="event" ColumnName="event" />
+                <ScalarProperty Name="SkillsId" ColumnName="SkillsId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

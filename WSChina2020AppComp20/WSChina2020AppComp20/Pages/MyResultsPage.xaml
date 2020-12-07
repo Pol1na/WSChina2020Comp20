@@ -15,16 +15,18 @@
         </Grid.ColumnDefinitions>
         <TextBlock Style="{StaticResource MainTB}" Grid.ColumnSpan="2">My Results</TextBlock>
         <StackPanel Style="{StaticResource MSP}" Grid.Column ="0">
-            <TextBlock Style="{StaticResource SecondaryTB}" Text="{Binding StringFormat=Name:{0}, Path=name}" HorizontalAlignment="Left" Margin="5"></TextBlock>
-            <TextBlock Style="{StaticResource SecondaryTB}" Text="{Binding StringFormat=Gender:{0}, Path=gender}" HorizontalAlignment="Left" Margin="5"></TextBlock>
-            <TextBlock Style="{StaticResource SecondaryTB}" Text="{Binding StringFormat=UserId:{0}, Path=id}" HorizontalAlignment="Left" Margin="5"></TextBlock>
-            <TextBlock Style="{StaticResource SecondaryTB}" Text="{Binding Coutry.name}" HorizontalAlignment="Left" Margin="5"/>
-            <TextBlock>организация не забудь добавить ок да</TextBlock>
+            <TextBlock Style="{StaticResource SecondaryTB}" Text="{Binding StringFormat=Name: {0}, Path=Users.name}" HorizontalAlignment="Left" Margin="5"></TextBlock>
+            <TextBlock Style="{StaticResource SecondaryTB}" Text="{Binding StringFormat=Gender: {0}, Path=Users.gender}" HorizontalAlignment="Left" Margin="5"></TextBlock>
+            <TextBlock Style="{StaticResource SecondaryTB}" Text="{Binding StringFormat=UserId: {0}, Path=Users.id}" HorizontalAlignment="Left" Margin="5"></TextBlock>
+            <TextBlock Style="{StaticResource SecondaryTB}" Text="{Binding StringFormat=Country: {0} , Path = Users.Coutry.name}" HorizontalAlignment="Left" Margin="5"/>
+            <TextBlock Style="{StaticResource SecondaryTB}" Text="{Binding StringFormat=Organization: {0}, Path=Users.organization}" HorizontalAlignment="Left" Margin="5"></TextBlock>
         </StackPanel>
         <StackPanel Style="{StaticResource MSP}" Grid.Column="1">
 
-            <TextBlock>сюда тоже с бд поработать дадада</TextBlock>
-            
+            <TextBlock Style="{StaticResource SecondaryTB}" Text="{Binding StringFormat=Event: {0}, Path=event}" HorizontalAlignment="Left" Margin="5"></TextBlock>
+            <TextBlock Style="{StaticResource SecondaryTB}" Text="{Binding StringFormat=Skills: {0}, Path=Skills.Name}" HorizontalAlignment="Left" Margin="5"></TextBlock>
+            <TextBlock Style="{StaticResource SecondaryTB}" Text="{Binding StringFormat=CompetitorNumber: {0}, Path=Users.id}" HorizontalAlignment="Left" Margin="5"></TextBlock>
+
         </StackPanel>
     </Grid>
 </Page>

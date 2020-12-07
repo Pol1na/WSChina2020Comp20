@@ -25,7 +25,7 @@ namespace WSChina2020AppComp20.Pages
             InitializeComponent();
 
             // Здесь была попытка сделать добавление картинок и текста автоматом, но я не осилила, и меня картинки послали далеко и надолго((
-
+            // поэтому тут датагрид
             //this.DataContext = AppData.Context.Users.ToList();
             //var competitors = AppData.Context.Users.ToList().Where(i => i.role == "Competitor").ToList();
             //for(var i = 0; competitors.Count>i; i++)

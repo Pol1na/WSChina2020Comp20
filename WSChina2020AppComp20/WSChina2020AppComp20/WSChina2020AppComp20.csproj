@@ -81,6 +81,9 @@
     <Compile Include="Entities\Coutry.cs">
       <DependentUpon>WSChinaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Organizations.cs">
+      <DependentUpon>WSChinaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Skills.cs">
       <DependentUpon>WSChinaModel.tt</DependentUpon>
     </Compile>

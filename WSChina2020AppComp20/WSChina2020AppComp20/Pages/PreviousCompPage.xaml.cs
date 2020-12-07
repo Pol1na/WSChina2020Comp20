@@ -36,7 +36,7 @@ namespace WSChina2020AppComp20.Pages
                 }
                 else if(OrdinalNumTBox.Text == "" && CityCountryTBox.Text != "")
                 {
-                    MembersDGrid.ItemsSource = AppData.Context.Competitions.ToList().Where(i => i.CityCountry == CityCountryTBox.Text);
+                   // MembersDGrid.ItemsSource = AppData.Context.Competitions.ToList().Where(i => i.CityCountry == CityCountryTBox.Text);
                 }
                 else
                 {
@@ -44,17 +44,5 @@ namespace WSChina2020AppComp20.Pages
                 }
         }
 
-        //private void SearchWSBtn_Click(object sender, RoutedEventArgs e)
-        //{
-        //    if (OrdinalNumCBox.SelectedItem != null)
-        //    {
-        //        if (OrdinalNumCBox.SelectedIndex>0)
-        //        {
-        //            MembersDGrid.ItemsSource = AppData.Context.PrevCompetitions.ToList().Where(p => p.ordinalNum == (OrdinalNumCBox.SelectedItem as ))
-        //        }
-        //    }
-        //    else
-        //        MessageBox.Show("Вы не вписали данные для поиска!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-        //}
     }
 }

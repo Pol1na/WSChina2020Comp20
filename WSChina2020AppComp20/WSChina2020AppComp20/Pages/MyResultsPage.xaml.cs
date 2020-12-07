@@ -23,7 +23,8 @@ namespace WSChina2020AppComp20.Pages
         public MyResultsPage()
         {
             InitializeComponent();
-            this.DataContext = AppData.currentUser;
+            this.DataContext = AppData.currentUser.UserSkills; 
+
         }
     }
 }

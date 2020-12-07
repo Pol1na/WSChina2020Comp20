@@ -29,7 +29,7 @@
       <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Competitions">
         <MappingFragment StoreEntitySet="Competitions">
           <ScalarProperty Name="MemberNumber" ColumnName="MemberNumber" />
-          <ScalarProperty Name="CityCountry" ColumnName="CityCountry" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
           <ScalarProperty Name="Year" ColumnName="Year" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
@@ -38,6 +38,14 @@
     <EntitySetMapping Name="Coutry">
       <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Coutry">
         <MappingFragment StoreEntitySet="Coutry">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Organizations">
+      <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Organizations">
+        <MappingFragment StoreEntitySet="Organizations">
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
@@ -77,19 +85,10 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="UserSkills">
-      <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.UserSkills">
-        <MappingFragment StoreEntitySet="UserSkills">
-          <ScalarProperty Name="SkillsId" ColumnName="SkillsId" />
-          <ScalarProperty Name="CompetitionId" ColumnName="CompetitionId" />
-          <ScalarProperty Name="UserId" ColumnName="UserId" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Users">
         <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
           <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="dateOfBirth" ColumnName="dateOfBirth" />
           <ScalarProperty Name="phone" ColumnName="phone" />
@@ -101,6 +100,16 @@
           <ScalarProperty Name="role" ColumnName="role" />
           <ScalarProperty Name="password" ColumnName="password" />
           <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserSkills">
+      <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.UserSkills">
+        <MappingFragment StoreEntitySet="UserSkills">
+          <ScalarProperty Name="event" ColumnName="event" />
+          <ScalarProperty Name="SkillsId" ColumnName="SkillsId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>

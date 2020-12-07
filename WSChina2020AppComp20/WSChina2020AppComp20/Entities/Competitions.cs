@@ -14,18 +14,11 @@ namespace WSChina2020AppComp20.Entities
     
     public partial class Competitions
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Competitions()
-        {
-            this.UserSkills = new HashSet<UserSkills>();
-        }
-    
         public int id { get; set; }
         public int Year { get; set; }
-        public string CityCountry { get; set; }
+        public Nullable<int> CityId { get; set; }
         public int MemberNumber { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserSkills> UserSkills { get; set; }
+        public virtual City City { get; set; }
     }
 }

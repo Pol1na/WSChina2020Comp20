@@ -12,31 +12,18 @@ namespace WSChina2020AppComp20.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class Users
+    public partial class Organizations
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Users()
+        public Organizations()
         {
-            this.UserSkills = new HashSet<UserSkills>();
+            this.Users = new HashSet<Users>();
         }
     
         public int id { get; set; }
-        public string login { get; set; }
-        public string password { get; set; }
-        public string role { get; set; }
         public string name { get; set; }
-        public string surname { get; set; }
-        public string gender { get; set; }
-        public int CountryId { get; set; }
-        public byte[] image { get; set; }
-        public string phone { get; set; }
-        public System.DateTime dateOfBirth { get; set; }
-        public string email { get; set; }
-        public Nullable<int> OrganizationId { get; set; }
     
-        public virtual Coutry Coutry { get; set; }
-        public virtual Organizations Organizations { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserSkills> UserSkills { get; set; }
+        public virtual ICollection<Users> Users { get; set; }
     }
 }

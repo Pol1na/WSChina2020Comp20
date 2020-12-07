@@ -30,7 +30,7 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn x:Name="OrdN" Width="*" Binding="{Binding id}" Header="Ordinal No."/>
                     <DataGridTextColumn Width="*" Binding="{Binding Year}" Header="Year"/>
-                    <DataGridTextColumn Width="*" Binding ="{Binding CityCountry}" Header="Country"/>
+                    <DataGridTextColumn Width="*" Binding ="{Binding City.name}" Header="City"/>
                     <DataGridTextColumn Width="*" Binding="{Binding MemberNumber}" Header="Member Number"/>
                 </DataGrid.Columns>
             </DataGrid>
