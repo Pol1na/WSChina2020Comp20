@@ -42,7 +42,7 @@ namespace WSChina2020AppComp20.Pages
             CompetitorsDataGrid.ItemsSource = AppData.Context.Users.ToList().Where(i => i.role == "Competitor");
             
             JudgersDataGrid.ItemsSource = AppData.Context.Users.ToList().Where(i => i.role == "Judger");
-
+            WorkshopTab.DataContext = AppData.Context.UserSkills.ToList();
 
 
         }

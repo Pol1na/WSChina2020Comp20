@@ -25,20 +25,22 @@
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Column="1" VerticalAlignment="Center">
             <Image Name="ProfileImage" Source="{Binding image}" Width="170" Height="170"></Image>
             <StackPanel Orientation="Horizontal" Margin="10">
-                <CheckBox Name="ModifyCheckBox" Margin="5"/>
+                <CheckBox Name="ModifyCheckBox" Margin="5" Checked="ModifyCheckBox_Checked"/>
                 <TextBlock VerticalAlignment="Center">Modify Password</TextBlock>
             </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment='Right'>
-                <TextBlock Style="{StaticResource SecondaryTB}" FontSize="18">Password: </TextBlock>
-                <PasswordBox Name="PasswordPB" Width="120" Height="25"></PasswordBox>
-            </StackPanel>            
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Style="{StaticResource SecondaryTB}" FontSize="18">RePassword: </TextBlock>
-                <PasswordBox Name="RePasswordPB" Width="120" Height="25"></PasswordBox>
-            </StackPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button Name="SavePasswordBtn" Width="100" Height="25" Margin="5" Click="SavePasswordBtn_Click">Save</Button>
-                <Button Name="CancelPasswordBtn" Width="100" Height="25" Margin="5">Cancel</Button>
+            <StackPanel Name="forMuteSP" Visibility="Hidden">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment='Right'>
+                    <TextBlock Style="{StaticResource SecondaryTB}" FontSize="18">Password: </TextBlock>
+                    <PasswordBox Name="PasswordPB" Width="120" Height="25"></PasswordBox>
+                </StackPanel>            
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Style="{StaticResource SecondaryTB}" FontSize="18">RePassword: </TextBlock>
+                    <PasswordBox Name="RePasswordPB" Width="120" Height="25"></PasswordBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Name="SavePasswordBtn" Width="100" Height="25" Margin="5" Click="SavePasswordBtn_Click">Save</Button>
+                    <Button Name="CancelPasswordBtn" Width="100" Height="25" Margin="5">Cancel</Button>
+                </StackPanel>
             </StackPanel>
         </StackPanel>
     </Grid>

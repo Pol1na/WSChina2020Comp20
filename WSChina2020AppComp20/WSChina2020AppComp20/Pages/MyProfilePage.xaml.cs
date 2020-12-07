@@ -27,6 +27,7 @@ namespace WSChina2020AppComp20.Pages
         {
             InitializeComponent();
             this.DataContext = AppData.currentUser;
+            
 
         }
 
@@ -62,6 +63,11 @@ namespace WSChina2020AppComp20.Pages
             {
                 MessageBox.Show("Полина II не нашла никаких ошибок для try, но обязательно найдет, а пока пусть будет так","панкова дебилка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void ModifyCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            forMuteSP.Visibility = Visibility.Visible;
         }
     }
 }

@@ -43,7 +43,7 @@
                     </DataGrid>
                 </TabItem>
                 <TabItem Name="WorkshopTab" Header="Workshop Layout">
-                    <TextBlock>тут будет картинка ЛэЙаУт, но если я ее не найду, то будет стимовский воркшоп >:c</TextBlock>
+                    <Image Source="{Binding Skills.WorkshopLayout}"></Image>
                 </TabItem>
                 <TabItem Name="InfrastructureTab" Header="Infrastructure"></TabItem>
                 
