@@ -43,9 +43,12 @@
                     </DataGrid>
                 </TabItem>
                 <TabItem Name="WorkshopTab" Header="Workshop Layout">
-                    <Image Source="{Binding Skills.WorkshopLayout}"></Image>
+                    <Image Source="{Binding Skills.WorkshopLayout}" Width="300"></Image>
                 </TabItem>
-                <TabItem Name="InfrastructureTab" Header="Infrastructure"></TabItem>
+                <TabItem Name="InfrastructureTab" Header="Infrastructure">
+                    <Image Source="{Binding Skills.Infrastructure}" Width="300"></Image>
+
+                </TabItem>
                 
                 <TabItem Name="SheduleTab" Header="Shedule"></TabItem>
             </TabControl>
