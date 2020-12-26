@@ -18,6 +18,7 @@ namespace WSChina2020AppComp20.Entities
         public City()
         {
             this.Competitions = new HashSet<Competitions>();
+            this.Volunteers = new HashSet<Volunteers>();
         }
     
         public int id { get; set; }
@@ -27,5 +28,7 @@ namespace WSChina2020AppComp20.Entities
         public virtual Coutry Coutry { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Competitions> Competitions { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Volunteers> Volunteers { get; set; }
     }
 }

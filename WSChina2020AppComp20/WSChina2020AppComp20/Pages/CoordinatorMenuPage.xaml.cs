@@ -23,18 +23,17 @@ namespace WSChina2020AppComp20.Pages
         public CoordinatorMenuPage(Users user)
         {
             InitializeComponent();
-            InitializeComponent();
-            if (user.gender == "Male")
+            if (user.genderId == 1)
             {
                 HelloTB.Text = $"Hello, Mr. {user.name}";
 
             }
-            else if (user.gender == "Female")
+            else if (user.genderId == 2)
             {
                 HelloTB.Text = $"Hello, Mrs. {user.name}";
 
             }
-            else if (user.gender == "Attack Helicopter")
+            else if (user.genderId == 3)
             {
                 HelloTB.Text = $"Hello, PLEASE DONT ATTACK. {user.name}";
 
@@ -44,6 +43,11 @@ namespace WSChina2020AppComp20.Pages
                 HelloTB.Text = $"Hello, {user.name}";
 
             }
+        }
+
+        private void VolunteerBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new VolunteerManagmentPage());
         }
     }
 }

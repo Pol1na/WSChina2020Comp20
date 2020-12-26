@@ -12,7 +12,7 @@
         <TextBlock FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20" >Coordinator Menu</TextBlock>
         <StackPanel Margin="20">
             <TextBlock Name="HelloTB" FontSize="25"  Margin="40"></TextBlock>
-            <Button Style="{StaticResource MainButton}" Margin="5">Volunteer Managment</Button>
+            <Button Style="{StaticResource MainButton}" Name="VolunteerBtn" Click="VolunteerBtn_Click" Margin="5">Volunteer Managment</Button>
             <Button Style="{StaticResource MainButton}" Margin="5">Sponsorship Managment</Button>
             <Button Style="{StaticResource MainButton}" Margin="5">Competition Service</Button>
         </StackPanel>

@@ -81,6 +81,9 @@
     <Compile Include="Entities\Coutry.cs">
       <DependentUpon>WSChinaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Genders.cs">
+      <DependentUpon>WSChinaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\Organizations.cs">
       <DependentUpon>WSChinaModel.tt</DependentUpon>
     </Compile>
@@ -99,6 +102,9 @@
     <Compile Include="Entities\UserSkills.cs">
       <DependentUpon>WSChinaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Volunteers.cs">
+      <DependentUpon>WSChinaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entities\WSChinaModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -114,6 +120,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>WSChinaModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AdjustVolunteers.xaml.cs">
+      <DependentUpon>AdjustVolunteers.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AdminMenuPage.xaml.cs">
       <DependentUpon>AdminMenuPage.xaml</DependentUpon>
     </Compile>
@@ -126,6 +135,9 @@
     <Compile Include="Pages\CoordinatorMenuPage.xaml.cs">
       <DependentUpon>CoordinatorMenuPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ImportPage.xaml.cs">
+      <DependentUpon>ImportPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\JudgerMenuPage.xaml.cs">
       <DependentUpon>JudgerMenuPage.xaml</DependentUpon>
     </Compile>
@@ -137,6 +149,9 @@
     </Compile>
     <Compile Include="Pages\MySkillsPage.xaml.cs">
       <DependentUpon>MySkillsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\VolunteerManagmentPage.xaml.cs">
+      <DependentUpon>VolunteerManagmentPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControl\ShpUC.xaml.cs">
       <DependentUpon>ShpUC.xaml</DependentUpon>
@@ -165,6 +180,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\AdjustVolunteers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AdminMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -189,6 +208,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ImportPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\JudgerMenuPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -210,6 +233,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PreviousCompPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\VolunteerManagmentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

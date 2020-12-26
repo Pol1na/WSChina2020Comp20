@@ -25,19 +25,19 @@ namespace WSChina2020AppComp20.Pages
         {
             InitializeComponent();
             this.DataContext = AppData.currentUser;
-            if (AppData.currentUser.gender == "Male")
+            if (AppData.currentUser.genderId == 1)
             {
                 HelloTB.Text = $"Hello, Mr. {AppData.currentUser.name}";
 
             }
-            else if (AppData.currentUser.gender == "Female")
+            else if (AppData.currentUser.genderId == 2)
             {
                 HelloTB.Text = $"Hello, Mrs. {AppData.currentUser.name}";
 
             }
-            else if (AppData.currentUser.gender == "Attack Helicopter")
+            else if (AppData.currentUser.genderId == 3)
             {
-                HelloTB.Text = $"Hello, DONT ATTACK. {AppData.currentUser.name}";
+                HelloTB.Text = $"Hello, Helicopter {AppData.currentUser.name}";
 
             }
             else

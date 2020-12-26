@@ -30,11 +30,13 @@ namespace WSChina2020AppComp20.Entities
         public virtual DbSet<City> City { get; set; }
         public virtual DbSet<Competitions> Competitions { get; set; }
         public virtual DbSet<Coutry> Coutry { get; set; }
+        public virtual DbSet<Genders> Genders { get; set; }
         public virtual DbSet<Organizations> Organizations { get; set; }
         public virtual DbSet<Skills> Skills { get; set; }
         public virtual DbSet<SkillsShedule> SkillsShedule { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<UserSkills> UserSkills { get; set; }
+        public virtual DbSet<Volunteers> Volunteers { get; set; }
     }
 }

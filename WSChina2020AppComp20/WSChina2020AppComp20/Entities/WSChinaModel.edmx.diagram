@@ -6,24 +6,30 @@
     <edmx:Diagrams>
       <Diagram DiagramId="cdd9830577144cafaac9cef57503f33e" Name="Diagram1">
         <EntityTypeShape EntityType="WSChina2020BaseComp20Model.All_Fields" Width="1.5" PointX="1.5" PointY="14.875" />
-        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.Blocks" Width="1.5" PointX="0.75" PointY="11.625" />
-        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.City" Width="1.5" PointX="3" PointY="8.375" />
-        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.Competitions" Width="1.5" PointX="5.25" PointY="8.375" />
-        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.Coutry" Width="1.5" PointX="0.75" PointY="3.625" />
-        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.Organizations" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.Skills" Width="1.5" PointX="3" PointY="11.25" />
-        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.SkillsShedule" Width="1.5" PointX="5.25" PointY="11.5" />
-        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.sysdiagrams" Width="1.5" PointX="5.75" PointY="0.75" />
-        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.Users" Width="1.5" PointX="3" PointY="2.5" />
-        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.UserSkills" Width="1.5" PointX="5.25" PointY="3.5" />
+        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.Blocks" Width="1.5" PointX="0.75" PointY="17.75" />
+        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.City" Width="1.5" PointX="3" PointY="10.5" />
+        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.Competitions" Width="1.5" PointX="5.25" PointY="14.125" />
+        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.Coutry" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.Genders" Width="1.5" PointX="0.75" PointY="8.875" />
+        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.Organizations" Width="1.5" PointX="0.75" PointY="2.5" />
+        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.Skills" Width="1.5" PointX="3" PointY="17.125" />
+        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.SkillsShedule" Width="1.5" PointX="5.25" PointY="17.5" />
+        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.sysdiagrams" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.Users" Width="1.5" PointX="3" PointY="4.5" />
+        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.UserSkills" Width="1.5" PointX="5.25" PointY="5.5" />
+        <EntityTypeShape EntityType="WSChina2020BaseComp20Model.Volunteers" Width="1.5" PointX="5.25" PointY="10.25" />
         <AssociationConnector Association="WSChina2020BaseComp20Model.FK_Blocks_All_Fields" />
         <AssociationConnector Association="WSChina2020BaseComp20Model.FK_Skills_Blocks" />
         <AssociationConnector Association="WSChina2020BaseComp20Model.FK_City_Coutry" />
         <AssociationConnector Association="WSChina2020BaseComp20Model.FK_Competitions_City" />
+        <AssociationConnector Association="WSChina2020BaseComp20Model.FK_Volunteers_City" />
         <AssociationConnector Association="WSChina2020BaseComp20Model.FK_Users_Coutry" />
+        <AssociationConnector Association="WSChina2020BaseComp20Model.FK_Users_Genders" />
+        <AssociationConnector Association="WSChina2020BaseComp20Model.FK_Volunteers_Genders" />
         <AssociationConnector Association="WSChina2020BaseComp20Model.FK_Users_Organizations" />
         <AssociationConnector Association="WSChina2020BaseComp20Model.FK_SkillsShedule_Skills" />
         <AssociationConnector Association="WSChina2020BaseComp20Model.FK_UserSkills_Skills" />
+        <AssociationConnector Association="WSChina2020BaseComp20Model.FK_Volunteers_Skills" />
         <AssociationConnector Association="WSChina2020BaseComp20Model.FK_Users_UsersSkills" />
       </Diagram>
     </edmx:Diagrams>

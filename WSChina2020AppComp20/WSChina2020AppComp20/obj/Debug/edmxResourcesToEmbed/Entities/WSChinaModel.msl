@@ -43,6 +43,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Genders">
+      <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Genders">
+        <MappingFragment StoreEntitySet="Genders">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Organizations">
       <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Organizations">
         <MappingFragment StoreEntitySet="Organizations">
@@ -94,7 +102,7 @@
           <ScalarProperty Name="phone" ColumnName="phone" />
           <ScalarProperty Name="image" ColumnName="image" />
           <ScalarProperty Name="CountryId" ColumnName="CountryId" />
-          <ScalarProperty Name="gender" ColumnName="gender" />
+          <ScalarProperty Name="genderId" ColumnName="genderId" />
           <ScalarProperty Name="surname" ColumnName="surname" />
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="role" ColumnName="role" />
@@ -110,6 +118,18 @@
           <ScalarProperty Name="event" ColumnName="event" />
           <ScalarProperty Name="SkillsId" ColumnName="SkillsId" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Volunteers">
+      <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Volunteers">
+        <MappingFragment StoreEntitySet="Volunteers">
+          <ScalarProperty Name="skillsId" ColumnName="skillsId" />
+          <ScalarProperty Name="cityId" ColumnName="cityId" />
+          <ScalarProperty Name="manageCityId" ColumnName="manageCityId" />
+          <ScalarProperty Name="genderId" ColumnName="genderId" />
+          <ScalarProperty Name="fullname" ColumnName="fullname" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
