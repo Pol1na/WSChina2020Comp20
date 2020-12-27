@@ -21,10 +21,10 @@
                 <ComboBox Name="SortComboBox">
                     <ComboBoxItem Content="id"/>
                     <ComboBoxItem Content="name"/>
-                    <ComboBoxItem Content="genderId"/>
-                    <ComboBoxItem Content="manageCityId"/>
-                    <ComboBoxItem Content="cityId"/>
-                    <ComboBoxItem Content="skillsId"/>
+                    <ComboBoxItem Content="gender"/>
+                    <ComboBoxItem Content="occupation"/>
+                    <ComboBoxItem Content="province"/>
+                    <ComboBoxItem Content="skills of service"/>
                 </ComboBox>
             </StackPanel>
             <Button Name="SearchBtn" Click="SearchBtn_Click" Style="{StaticResource BackButton}" HorizontalAlignment="Center">Search</Button>
@@ -34,9 +34,9 @@
             <Button Name="AdjustBtn" Style="{StaticResource MainButton}" Height="60" Click="AdjustBtn_Click">
                 <TextBlock TextWrapping="Wrap" TextAlignment="Center">Adjust volunteers between skills</TextBlock></Button>
         </StackPanel>
-        <StackPanel Style="{StaticResource MSP}" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Style="{StaticResource MSP}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
             <TextBlock Style="{StaticResource SecondaryTB}" FontSize="12">Total volunteers</TextBlock>
-            <DataGrid Name="VolunteersDGrid" ScrollViewer.CanContentScroll="True"  IsReadOnly="True" AutoGenerateColumns="False" Margin="10">
+            <DataGrid Name="VolunteersDGrid" ScrollViewer.CanContentScroll="True" Height="150"  IsReadOnly="True" AutoGenerateColumns="False" Margin="10">
                 <DataGrid.Columns>
                     <DataGridTextColumn Width="*" Header="IdNumber" Binding="{Binding id}"></DataGridTextColumn>
                     <DataGridTextColumn Width="*" Header="Name" Binding="{Binding fullname}"></DataGridTextColumn>
@@ -46,6 +46,18 @@
                     <DataGridTextColumn Width="*" Header="SkillsOfService" Binding="{Binding Skills.Name}"></DataGridTextColumn>
                 </DataGrid.Columns>
             </DataGrid>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Name="TotalTB" Style="{StaticResource SecondaryTB}" FontSize="12" VerticalAlignment="Center"></TextBlock>
+                <TextBlock Name="CurrentTB" Style="{StaticResource SecondaryTB}" FontSize="12" VerticalAlignment="Center"></TextBlock>
+                <Button Style="{StaticResource BackButton}">First</Button>
+                <Button Style="{StaticResource BackButton}">Previous</Button>
+                <Button Name="NextBtn" Style="{StaticResource BackButton}" Click="NextBtn_Click">Next</Button>
+                <Button Style="{StaticResource BackButton}">Last</Button>
+                <TextBlock Style="{StaticResource SecondaryTB}" FontSize="12" VerticalAlignment="Center">Go to page</TextBlock>
+                <TextBox Name="PaginationTB" Width="30"></TextBox>
+                <Button Name="GoBtn" Style="{StaticResource BackButton}" Width="50" Click="GoBtn_Click">Go</Button>
+                <TextBlock Name="PageNumTB" Style="{StaticResource SecondaryTB}"></TextBlock>
+            </StackPanel>
         </StackPanel>
 
         

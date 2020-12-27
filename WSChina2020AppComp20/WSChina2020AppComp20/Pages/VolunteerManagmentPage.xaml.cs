@@ -23,26 +23,78 @@ namespace WSChina2020AppComp20.Pages
         public VolunteerManagmentPage()
         {
             InitializeComponent();
+            const int Num = 10;
             ServiceSkillsComboBox.ItemsSource = AppData.Context.Skills.ToList();
             ServiceSkillsComboBox.DisplayMemberPath = "Name";
             VolunteersDGrid.ItemsSource = AppData.Context.Volunteers.ToList();
+            Binding(Num, 1);
 
         }
 
         private void SearchBtn_Click(object sender, RoutedEventArgs e)
         {
-            if(SortComboBox.Text !="" || ServiceSkillsComboBox.Text != "")
-            {
+            //int pagination = VolunteersDGrid.Items.Count;
+            
+            //if(ServiceSkillsComboBox.Text != "" && SortComboBox.Text != "") 
+            //{
 
-                VolunteersDGrid.ItemsSource = AppData.Context.Volunteers.ToList().Where(i => i.Skills.Name == Convert.ToString(ServiceSkillsComboBox.SelectedItem)).ToList();
+            //    VolunteersDGrid.ItemsSource = AppData.Context.Volunteers.ToList().Where(i => i.Skills.Name == ServiceSkillsComboBox.Text).ToList();
+            //    if(SortComboBox.Text == "id")
+            //    {
+            //        VolunteersDGrid.ItemsSource = AppData.Context.Volunteers.ToList().Where(i => i.Skills.Name == ServiceSkillsComboBox.Text).ToList().OrderBy(i=>i.id);
+
+            //    }
+            //    else if(SortComboBox.Text == "name")
+            //    {
+            //        VolunteersDGrid.ItemsSource = AppData.Context.Volunteers.ToList().Where(i => i.Skills.Name == ServiceSkillsComboBox.Text).ToList().OrderBy(i => i.fullname);
+
+            //    }
+            //    else if(SortComboBox.Text == "gender")
+            //    {
+            //        VolunteersDGrid.ItemsSource = AppData.Context.Volunteers.ToList().Where(i => i.Skills.Name == ServiceSkillsComboBox.Text).ToList().OrderBy(i => i.Genders.name);
+
+            //    }
+            //    else if(SortComboBox.Text == "occupation")
+            //    {
+            //        VolunteersDGrid.ItemsSource = AppData.Context.Volunteers.ToList().Where(i => i.Skills.Name == ServiceSkillsComboBox.Text).ToList().OrderBy(i => i.City.name);
+
+            //    }
+            //    else if(SortComboBox.Text == "province")
+            //    {
+            //        VolunteersDGrid.ItemsSource = AppData.Context.Volunteers.ToList().Where(i => i.Skills.Name == ServiceSkillsComboBox.Text).ToList().OrderBy(i => i.City.name);
+
+            //    }  
+            //    else if(SortComboBox.Text == "skills of service")
+            //    {
+            //        VolunteersDGrid.ItemsSource = AppData.Context.Volunteers.ToList().Where(i => i.Skills.Name == ServiceSkillsComboBox.Text).ToList().OrderBy(i => i.Skills.Name);
+
+            //    }
                 
+                
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Выберите что-то, пожалуйста", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            //}
+        }
+        private void Binding(int number, int currentPage)
+        {
+            int i = 0;
+            int count = VolunteersDGrid.Items.Count;
+            int pageSize = 0;
+            if (count % number == 0)
+            {
+                pageSize = count / number;
             }
             else
             {
-                MessageBox.Show("Выберите что-то, пожалуйста", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                pageSize = count / number + 1;
             }
-        }
+            TotalTB.Text = $"{pageSize.ToString()}";
+            CurrentTB.Text = $"{currentPage.ToString()}";
+            VolunteersDGrid.ItemsSource = AppData.Context.Volunteers.Take(number * currentPage).OrderBy(p=>p.id).Skip(number * (currentPage - 1)).ToList();
 
+        }
         private void ImportBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new ImportPage());
@@ -51,6 +103,30 @@ namespace WSChina2020AppComp20.Pages
         private void AdjustBtn_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new AdjustVolunteers());
+        }
+
+        private void NextBtn_Click(object sender, RoutedEventArgs e)
+        {
+            int total = Convert.ToInt32(TotalTB.Text);
+            int currentPage = Convert.ToInt32(CurrentTB.Text);
+            if (currentPage < total)
+            {
+                Binding(10, currentPage + 1);
+            }
+        }
+
+        private void GoBtn_Click(object sender, RoutedEventArgs e)
+        {
+            int pageGoNum;
+            if (PageNumTB.Text != null && int.TryParse(PageNumTB.Text, out pageGoNum))
+            {
+                int pageNum = int.Parse(PageNumTB.Text);
+                int total = int.Parse(TotalTB.Text);
+                if (pageNum >= 1 && pageNum <= total)
+                {
+                    Binding(10, pageNum);
+                }
+            }
         }
     }
 }

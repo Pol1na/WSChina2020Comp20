@@ -49,9 +49,7 @@ namespace WSChina2020AppComp20.Pages
         }
 
         private void ImportBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Entities.WSChina2020BaseComp20Entity bd = new Entities.WSChina2020BaseComp20Entity();
-                        
+        {                        
         }
     }
 }
