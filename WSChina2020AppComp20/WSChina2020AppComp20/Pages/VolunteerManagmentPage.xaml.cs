@@ -35,47 +35,47 @@ namespace WSChina2020AppComp20.Pages
         {
             //int pagination = VolunteersDGrid.Items.Count;
             
-            //if(ServiceSkillsComboBox.Text != "" && SortComboBox.Text != "") 
-            //{
+            if(ServiceSkillsComboBox.Text != "" && SortComboBox.Text != "") 
+            {
+                VolunteersDGrid.ItemsSource = AppData.Context.Volunteers.ToList().Where(i => i.Skills.Name == ServiceSkillsComboBox.Text).ToList();
 
-            //    VolunteersDGrid.ItemsSource = AppData.Context.Volunteers.ToList().Where(i => i.Skills.Name == ServiceSkillsComboBox.Text).ToList();
-            //    if(SortComboBox.Text == "id")
-            //    {
-            //        VolunteersDGrid.ItemsSource = AppData.Context.Volunteers.ToList().Where(i => i.Skills.Name == ServiceSkillsComboBox.Text).ToList().OrderBy(i=>i.id);
-
-            //    }
-            //    else if(SortComboBox.Text == "name")
-            //    {
-            //        VolunteersDGrid.ItemsSource = AppData.Context.Volunteers.ToList().Where(i => i.Skills.Name == ServiceSkillsComboBox.Text).ToList().OrderBy(i => i.fullname);
-
-            //    }
-            //    else if(SortComboBox.Text == "gender")
-            //    {
-            //        VolunteersDGrid.ItemsSource = AppData.Context.Volunteers.ToList().Where(i => i.Skills.Name == ServiceSkillsComboBox.Text).ToList().OrderBy(i => i.Genders.name);
-
-            //    }
-            //    else if(SortComboBox.Text == "occupation")
-            //    {
-            //        VolunteersDGrid.ItemsSource = AppData.Context.Volunteers.ToList().Where(i => i.Skills.Name == ServiceSkillsComboBox.Text).ToList().OrderBy(i => i.City.name);
-
-            //    }
-            //    else if(SortComboBox.Text == "province")
-            //    {
-            //        VolunteersDGrid.ItemsSource = AppData.Context.Volunteers.ToList().Where(i => i.Skills.Name == ServiceSkillsComboBox.Text).ToList().OrderBy(i => i.City.name);
-
-            //    }  
-            //    else if(SortComboBox.Text == "skills of service")
-            //    {
-            //        VolunteersDGrid.ItemsSource = AppData.Context.Volunteers.ToList().Where(i => i.Skills.Name == ServiceSkillsComboBox.Text).ToList().OrderBy(i => i.Skills.Name);
-
-            //    }
+                if (SortComboBox.Text == "id")
+                {
+                    VolunteersDGrid.ItemsSource = AppData.Context.Volunteers.ToList().OrderBy(i => i.id).Where(i => i.Skills.Name == ServiceSkillsComboBox.Text);
+                }
                 
-                
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Выберите что-то, пожалуйста", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            //}
+                else if (SortComboBox.Text == "name")
+                {
+                    VolunteersDGrid.ItemsSource = AppData.Context.Volunteers.ToList().OrderBy(i => i.fullname).Where(i => i.Skills.Name == ServiceSkillsComboBox.Text);
+
+                }
+                else if (SortComboBox.Text == "gender")
+                {
+                    VolunteersDGrid.ItemsSource = AppData.Context.Volunteers.ToList().OrderBy(i => i.Genders.name).Where(i => i.Skills.Name == ServiceSkillsComboBox.Text);
+
+                }
+                else if (SortComboBox.Text == "occupation")
+                {
+                    VolunteersDGrid.ItemsSource = AppData.Context.Volunteers.ToList().OrderBy(i => i.City.name).Where(i => i.Skills.Name == ServiceSkillsComboBox.Text);
+
+                }
+                else if (SortComboBox.Text == "province")
+                {
+                    VolunteersDGrid.ItemsSource = AppData.Context.Volunteers.ToList().OrderBy(i => i.City.name).Where(i => i.Skills.Name == ServiceSkillsComboBox.Text);
+
+                }
+                else if (SortComboBox.Text == "skills of service")
+                {
+                    VolunteersDGrid.ItemsSource = AppData.Context.Volunteers.ToList().OrderBy(i => i.Skills.Name).Where(i => i.Skills.Name == ServiceSkillsComboBox.Text);
+
+                }
+
+
+            }
+            else
+            {
+                MessageBox.Show("Выберите что-то, пожалуйста", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
         private void Binding(int number, int currentPage)
         {
