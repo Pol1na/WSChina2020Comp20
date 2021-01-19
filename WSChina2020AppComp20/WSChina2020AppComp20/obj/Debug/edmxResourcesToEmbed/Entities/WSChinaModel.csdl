@@ -6,10 +6,12 @@
     <EntitySet Name="City" EntityType="WSChina2020BaseComp20Model.City" />
     <EntitySet Name="Competitions" EntityType="WSChina2020BaseComp20Model.Competitions" />
     <EntitySet Name="Coutry" EntityType="WSChina2020BaseComp20Model.Coutry" />
+    <EntitySet Name="Events" EntityType="WSChina2020BaseComp20Model.Events" />
     <EntitySet Name="Genders" EntityType="WSChina2020BaseComp20Model.Genders" />
     <EntitySet Name="Organizations" EntityType="WSChina2020BaseComp20Model.Organizations" />
     <EntitySet Name="Skills" EntityType="WSChina2020BaseComp20Model.Skills" />
     <EntitySet Name="SkillsShedule" EntityType="WSChina2020BaseComp20Model.SkillsShedule" />
+    <EntitySet Name="Sponsorship" EntityType="WSChina2020BaseComp20Model.Sponsorship" />
     <EntitySet Name="sysdiagrams" EntityType="WSChina2020BaseComp20Model.sysdiagrams" />
     <EntitySet Name="Users" EntityType="WSChina2020BaseComp20Model.Users" />
     <EntitySet Name="UserSkills" EntityType="WSChina2020BaseComp20Model.UserSkills" />
@@ -37,6 +39,14 @@
     <AssociationSet Name="FK_Users_Coutry" Association="WSChina2020BaseComp20Model.FK_Users_Coutry">
       <End Role="Coutry" EntitySet="Coutry" />
       <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sponsorship_Events" Association="WSChina2020BaseComp20Model.FK_Sponsorship_Events">
+      <End Role="Events" EntitySet="Events" />
+      <End Role="Sponsorship" EntitySet="Sponsorship" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserSkills_Events" Association="WSChina2020BaseComp20Model.FK_UserSkills_Events">
+      <End Role="Events" EntitySet="Events" />
+      <End Role="UserSkills" EntitySet="UserSkills" />
     </AssociationSet>
     <AssociationSet Name="FK_Users_Genders" Association="WSChina2020BaseComp20Model.FK_Users_Genders">
       <End Role="Genders" EntitySet="Genders" />
@@ -113,6 +123,15 @@
     <NavigationProperty Name="City" Relationship="WSChina2020BaseComp20Model.FK_City_Coutry" FromRole="Coutry" ToRole="City" />
     <NavigationProperty Name="Users" Relationship="WSChina2020BaseComp20Model.FK_Users_Coutry" FromRole="Coutry" ToRole="Users" />
   </EntityType>
+  <EntityType Name="Events">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Sponsorship" Relationship="WSChina2020BaseComp20Model.FK_Sponsorship_Events" FromRole="Events" ToRole="Sponsorship" />
+    <NavigationProperty Name="UserSkills" Relationship="WSChina2020BaseComp20Model.FK_UserSkills_Events" FromRole="Events" ToRole="UserSkills" />
+  </EntityType>
   <EntityType Name="Genders">
     <Key>
       <PropertyRef Name="id" />
@@ -156,6 +175,18 @@
     <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Skills" Relationship="WSChina2020BaseComp20Model.FK_SkillsShedule_Skills" FromRole="SkillsShedule" ToRole="Skills" />
   </EntityType>
+  <EntityType Name="Sponsorship">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="item" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="amount" Type="Int32" Nullable="false" />
+    <Property Name="eventId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Events" Relationship="WSChina2020BaseComp20Model.FK_Sponsorship_Events" FromRole="Sponsorship" ToRole="Events" />
+  </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -195,7 +226,8 @@
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="UserId" Type="Int32" />
     <Property Name="SkillsId" Type="Int32" />
-    <Property Name="event" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="eventId" Type="Int32" />
+    <NavigationProperty Name="Events" Relationship="WSChina2020BaseComp20Model.FK_UserSkills_Events" FromRole="UserSkills" ToRole="Events" />
     <NavigationProperty Name="Skills" Relationship="WSChina2020BaseComp20Model.FK_UserSkills_Skills" FromRole="UserSkills" ToRole="Skills" />
     <NavigationProperty Name="Users" Relationship="WSChina2020BaseComp20Model.FK_Users_UsersSkills" FromRole="UserSkills" ToRole="Users" />
   </EntityType>
@@ -209,6 +241,7 @@
     <Property Name="manageCityId" Type="Int32" Nullable="false" />
     <Property Name="cityId" Type="Int32" Nullable="false" />
     <Property Name="skillsId" Type="Int32" Nullable="false" />
+    <Property Name="age" Type="Int32" Nullable="false" />
     <NavigationProperty Name="City" Relationship="WSChina2020BaseComp20Model.FK_Volunteers_City" FromRole="Volunteers" ToRole="City" />
     <NavigationProperty Name="Genders" Relationship="WSChina2020BaseComp20Model.FK_Volunteers_Genders" FromRole="Volunteers" ToRole="Genders" />
     <NavigationProperty Name="Skills" Relationship="WSChina2020BaseComp20Model.FK_Volunteers_Skills" FromRole="Volunteers" ToRole="Skills" />
@@ -282,6 +315,30 @@
       </Principal>
       <Dependent Role="Users">
         <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sponsorship_Events">
+    <End Type="WSChina2020BaseComp20Model.Events" Role="Events" Multiplicity="1" />
+    <End Type="WSChina2020BaseComp20Model.Sponsorship" Role="Sponsorship" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Events">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Sponsorship">
+        <PropertyRef Name="eventId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserSkills_Events">
+    <End Type="WSChina2020BaseComp20Model.Events" Role="Events" Multiplicity="0..1" />
+    <End Type="WSChina2020BaseComp20Model.UserSkills" Role="UserSkills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Events">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="UserSkills">
+        <PropertyRef Name="eventId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

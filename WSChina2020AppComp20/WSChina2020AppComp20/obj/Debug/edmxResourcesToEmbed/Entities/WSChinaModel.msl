@@ -43,6 +43,14 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Events">
+      <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Events">
+        <MappingFragment StoreEntitySet="Events">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Genders">
       <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Genders">
         <MappingFragment StoreEntitySet="Genders">
@@ -82,6 +90,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Sponsorship">
+      <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Sponsorship">
+        <MappingFragment StoreEntitySet="Sponsorship">
+          <ScalarProperty Name="eventId" ColumnName="eventId" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="photo" ColumnName="photo" />
+          <ScalarProperty Name="item" ColumnName="item" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.sysdiagrams">
         <MappingFragment StoreEntitySet="sysdiagrams">
@@ -115,7 +135,7 @@
     <EntitySetMapping Name="UserSkills">
       <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.UserSkills">
         <MappingFragment StoreEntitySet="UserSkills">
-          <ScalarProperty Name="event" ColumnName="event" />
+          <ScalarProperty Name="eventId" ColumnName="eventId" />
           <ScalarProperty Name="SkillsId" ColumnName="SkillsId" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="id" ColumnName="id" />
@@ -125,6 +145,7 @@
     <EntitySetMapping Name="Volunteers">
       <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Volunteers">
         <MappingFragment StoreEntitySet="Volunteers">
+          <ScalarProperty Name="age" ColumnName="age" />
           <ScalarProperty Name="skillsId" ColumnName="skillsId" />
           <ScalarProperty Name="cityId" ColumnName="cityId" />
           <ScalarProperty Name="manageCityId" ColumnName="manageCityId" />

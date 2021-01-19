@@ -1,0 +1,19 @@
+﻿<Page x:Class="WSChina2020AppComp20.Pages.SponsorShipMngPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WSChina2020AppComp20.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SponsorShipMngPage">
+
+    <Grid>
+        <StackPanel Style="{StaticResource MSP}">
+            <TextBlock Style="{StaticResource MainTB}">Sponsorship Managment</TextBlock>
+            <Button Name="StatisticsBtn" Style="{StaticResource MainButton}" Click="StatisticsBtn_Click">Sponsorship Statistics</Button>
+            <Button Name="ViewBtn" Style="{StaticResource MainButton}" Click="ViewBtn_Click">Sponsorship View</Button>
+            <Button Name="ChartBtn" Style="{StaticResource MainButton}" Click="ChartBtn_Click">Sponsorship Chart</Button>
+        </StackPanel>
+    </Grid>
+</Page>

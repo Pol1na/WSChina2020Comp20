@@ -20,6 +20,7 @@ namespace WSChina2020AppComp20.Entities
         public int manageCityId { get; set; }
         public int cityId { get; set; }
         public int skillsId { get; set; }
+        public int age { get; set; }
     
         public virtual City City { get; set; }
         public virtual Genders Genders { get; set; }

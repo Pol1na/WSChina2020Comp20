@@ -42,6 +42,13 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Events">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="Genders">
           <Key>
             <PropertyRef Name="id" />
@@ -76,6 +83,17 @@
           <Property Name="DateStart" Type="date" />
           <Property Name="DateEnd" Type="date" />
           <Property Name="name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Sponsorship">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="item" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="photo" Type="image" />
+          <Property Name="amount" Type="int" Nullable="false" />
+          <Property Name="eventId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -112,7 +130,7 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserId" Type="int" />
           <Property Name="SkillsId" Type="int" />
-          <Property Name="event" Type="nvarchar" MaxLength="50" />
+          <Property Name="eventId" Type="int" />
         </EntityType>
         <EntityType Name="Volunteers">
           <Key>
@@ -124,6 +142,7 @@
           <Property Name="manageCityId" Type="int" Nullable="false" />
           <Property Name="cityId" Type="int" Nullable="false" />
           <Property Name="skillsId" Type="int" Nullable="false" />
+          <Property Name="age" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Blocks_All Fields">
           <End Role="All Fields" Type="Self.All Fields" Multiplicity="1" />
@@ -185,6 +204,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Sponsorship_Events">
+          <End Role="Events" Type="Self.Events" Multiplicity="1" />
+          <End Role="Sponsorship" Type="Self.Sponsorship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Events">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Sponsorship">
+              <PropertyRef Name="eventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Users_Coutry">
           <End Role="Coutry" Type="Self.Coutry" Multiplicity="1" />
           <End Role="Users" Type="Self.Users" Multiplicity="*" />
@@ -230,6 +261,18 @@
             </Principal>
             <Dependent Role="UserSkills">
               <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserSkills_Events">
+          <End Role="Events" Type="Self.Events" Multiplicity="0..1" />
+          <End Role="UserSkills" Type="Self.UserSkills" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Events">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="UserSkills">
+              <PropertyRef Name="eventId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -287,10 +330,12 @@
           <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Competitions" EntityType="Self.Competitions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Coutry" EntityType="Self.Coutry" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Events" EntityType="Self.Events" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Genders" EntityType="Self.Genders" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Organizations" EntityType="Self.Organizations" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Skills" EntityType="Self.Skills" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SkillsShedule" EntityType="Self.SkillsShedule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sponsorship" EntityType="Self.Sponsorship" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserSkills" EntityType="Self.UserSkills" Schema="dbo" store:Type="Tables" />
@@ -315,6 +360,10 @@
             <End Role="Skills" EntitySet="Skills" />
             <End Role="SkillsShedule" EntitySet="SkillsShedule" />
           </AssociationSet>
+          <AssociationSet Name="FK_Sponsorship_Events" Association="Self.FK_Sponsorship_Events">
+            <End Role="Events" EntitySet="Events" />
+            <End Role="Sponsorship" EntitySet="Sponsorship" />
+          </AssociationSet>
           <AssociationSet Name="FK_Users_Coutry" Association="Self.FK_Users_Coutry">
             <End Role="Coutry" EntitySet="Coutry" />
             <End Role="Users" EntitySet="Users" />
@@ -329,6 +378,10 @@
           </AssociationSet>
           <AssociationSet Name="FK_Users_UsersSkills" Association="Self.FK_Users_UsersSkills">
             <End Role="Users" EntitySet="Users" />
+            <End Role="UserSkills" EntitySet="UserSkills" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserSkills_Events" Association="Self.FK_UserSkills_Events">
+            <End Role="Events" EntitySet="Events" />
             <End Role="UserSkills" EntitySet="UserSkills" />
           </AssociationSet>
           <AssociationSet Name="FK_UserSkills_Skills" Association="Self.FK_UserSkills_Skills">
@@ -358,10 +411,12 @@
           <EntitySet Name="City" EntityType="WSChina2020BaseComp20Model.City" />
           <EntitySet Name="Competitions" EntityType="WSChina2020BaseComp20Model.Competitions" />
           <EntitySet Name="Coutry" EntityType="WSChina2020BaseComp20Model.Coutry" />
+          <EntitySet Name="Events" EntityType="WSChina2020BaseComp20Model.Events" />
           <EntitySet Name="Genders" EntityType="WSChina2020BaseComp20Model.Genders" />
           <EntitySet Name="Organizations" EntityType="WSChina2020BaseComp20Model.Organizations" />
           <EntitySet Name="Skills" EntityType="WSChina2020BaseComp20Model.Skills" />
           <EntitySet Name="SkillsShedule" EntityType="WSChina2020BaseComp20Model.SkillsShedule" />
+          <EntitySet Name="Sponsorship" EntityType="WSChina2020BaseComp20Model.Sponsorship" />
           <EntitySet Name="sysdiagrams" EntityType="WSChina2020BaseComp20Model.sysdiagrams" />
           <EntitySet Name="Users" EntityType="WSChina2020BaseComp20Model.Users" />
           <EntitySet Name="UserSkills" EntityType="WSChina2020BaseComp20Model.UserSkills" />
@@ -389,6 +444,14 @@
           <AssociationSet Name="FK_Users_Coutry" Association="WSChina2020BaseComp20Model.FK_Users_Coutry">
             <End Role="Coutry" EntitySet="Coutry" />
             <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sponsorship_Events" Association="WSChina2020BaseComp20Model.FK_Sponsorship_Events">
+            <End Role="Events" EntitySet="Events" />
+            <End Role="Sponsorship" EntitySet="Sponsorship" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserSkills_Events" Association="WSChina2020BaseComp20Model.FK_UserSkills_Events">
+            <End Role="Events" EntitySet="Events" />
+            <End Role="UserSkills" EntitySet="UserSkills" />
           </AssociationSet>
           <AssociationSet Name="FK_Users_Genders" Association="WSChina2020BaseComp20Model.FK_Users_Genders">
             <End Role="Genders" EntitySet="Genders" />
@@ -465,6 +528,15 @@
           <NavigationProperty Name="City" Relationship="WSChina2020BaseComp20Model.FK_City_Coutry" FromRole="Coutry" ToRole="City" />
           <NavigationProperty Name="Users" Relationship="WSChina2020BaseComp20Model.FK_Users_Coutry" FromRole="Coutry" ToRole="Users" />
         </EntityType>
+        <EntityType Name="Events">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Sponsorship" Relationship="WSChina2020BaseComp20Model.FK_Sponsorship_Events" FromRole="Events" ToRole="Sponsorship" />
+          <NavigationProperty Name="UserSkills" Relationship="WSChina2020BaseComp20Model.FK_UserSkills_Events" FromRole="Events" ToRole="UserSkills" />
+        </EntityType>
         <EntityType Name="Genders">
           <Key>
             <PropertyRef Name="id" />
@@ -508,6 +580,18 @@
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Skills" Relationship="WSChina2020BaseComp20Model.FK_SkillsShedule_Skills" FromRole="SkillsShedule" ToRole="Skills" />
         </EntityType>
+        <EntityType Name="Sponsorship">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="item" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="amount" Type="Int32" Nullable="false" />
+          <Property Name="eventId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Events" Relationship="WSChina2020BaseComp20Model.FK_Sponsorship_Events" FromRole="Sponsorship" ToRole="Events" />
+        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -547,7 +631,8 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserId" Type="Int32" />
           <Property Name="SkillsId" Type="Int32" />
-          <Property Name="event" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="eventId" Type="Int32" />
+          <NavigationProperty Name="Events" Relationship="WSChina2020BaseComp20Model.FK_UserSkills_Events" FromRole="UserSkills" ToRole="Events" />
           <NavigationProperty Name="Skills" Relationship="WSChina2020BaseComp20Model.FK_UserSkills_Skills" FromRole="UserSkills" ToRole="Skills" />
           <NavigationProperty Name="Users" Relationship="WSChina2020BaseComp20Model.FK_Users_UsersSkills" FromRole="UserSkills" ToRole="Users" />
         </EntityType>
@@ -561,6 +646,7 @@
           <Property Name="manageCityId" Type="Int32" Nullable="false" />
           <Property Name="cityId" Type="Int32" Nullable="false" />
           <Property Name="skillsId" Type="Int32" Nullable="false" />
+          <Property Name="age" Type="Int32" Nullable="false" />
           <NavigationProperty Name="City" Relationship="WSChina2020BaseComp20Model.FK_Volunteers_City" FromRole="Volunteers" ToRole="City" />
           <NavigationProperty Name="Genders" Relationship="WSChina2020BaseComp20Model.FK_Volunteers_Genders" FromRole="Volunteers" ToRole="Genders" />
           <NavigationProperty Name="Skills" Relationship="WSChina2020BaseComp20Model.FK_Volunteers_Skills" FromRole="Volunteers" ToRole="Skills" />
@@ -634,6 +720,30 @@
             </Principal>
             <Dependent Role="Users">
               <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sponsorship_Events">
+          <End Type="WSChina2020BaseComp20Model.Events" Role="Events" Multiplicity="1" />
+          <End Type="WSChina2020BaseComp20Model.Sponsorship" Role="Sponsorship" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Events">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Sponsorship">
+              <PropertyRef Name="eventId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserSkills_Events">
+          <End Type="WSChina2020BaseComp20Model.Events" Role="Events" Multiplicity="0..1" />
+          <End Type="WSChina2020BaseComp20Model.UserSkills" Role="UserSkills" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Events">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="UserSkills">
+              <PropertyRef Name="eventId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -769,6 +879,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Events">
+            <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Events">
+              <MappingFragment StoreEntitySet="Events">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Genders">
             <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Genders">
               <MappingFragment StoreEntitySet="Genders">
@@ -808,6 +926,18 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Sponsorship">
+            <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Sponsorship">
+              <MappingFragment StoreEntitySet="Sponsorship">
+                <ScalarProperty Name="eventId" ColumnName="eventId" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="photo" ColumnName="photo" />
+                <ScalarProperty Name="item" ColumnName="item" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
@@ -841,7 +971,7 @@
           <EntitySetMapping Name="UserSkills">
             <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.UserSkills">
               <MappingFragment StoreEntitySet="UserSkills">
-                <ScalarProperty Name="event" ColumnName="event" />
+                <ScalarProperty Name="eventId" ColumnName="eventId" />
                 <ScalarProperty Name="SkillsId" ColumnName="SkillsId" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="id" ColumnName="id" />
@@ -851,6 +981,7 @@
           <EntitySetMapping Name="Volunteers">
             <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Volunteers">
               <MappingFragment StoreEntitySet="Volunteers">
+                <ScalarProperty Name="age" ColumnName="age" />
                 <ScalarProperty Name="skillsId" ColumnName="skillsId" />
                 <ScalarProperty Name="cityId" ColumnName="cityId" />
                 <ScalarProperty Name="manageCityId" ColumnName="manageCityId" />

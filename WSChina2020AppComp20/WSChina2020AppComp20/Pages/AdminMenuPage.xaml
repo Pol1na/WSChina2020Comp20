@@ -12,8 +12,8 @@
         <TextBlock Style="{StaticResource MainTB}">Administrator Menu</TextBlock>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">
             <TextBlock Name="HelloTB" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="40"></TextBlock>
-            <Button Style="{StaticResource MainButton}" Margin="5">Event Managment</Button>
-            <Button Style="{StaticResource MainButton}" Margin="5">Competitor Managment</Button>
+            <Button Name="EventBtn" Style="{StaticResource MainButton}" Margin="5" Click="EventBtn_Click">Event Managment</Button>
+            <Button Name="CompetitorMngBtn" Style="{StaticResource MainButton}" Margin="5" Click="CompetitorMngBtn_Click">Competitor Managment</Button>
         </StackPanel>
 
     </Grid>

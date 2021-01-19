@@ -108,3 +108,7 @@ C:\Users\Lenovo\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020A
 C:\Users\Lenovo\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\Pages\ImportPage.g.cs
 C:\Users\Lenovo\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\Pages\AdjustVolunteers.baml
 C:\Users\Lenovo\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\Pages\ImportPage.baml
+C:\Users\Lenovo\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\Pages\SponsorShipMngPage.g.cs
+C:\Users\Lenovo\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\Pages\SponsorshipStatPage.g.cs
+C:\Users\Lenovo\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\Pages\SponsorShipMngPage.baml
+C:\Users\Lenovo\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\Pages\SponsorshipStatPage.baml

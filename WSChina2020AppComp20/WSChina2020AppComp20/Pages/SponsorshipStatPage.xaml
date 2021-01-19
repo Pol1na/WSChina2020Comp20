@@ -1,0 +1,36 @@
+﻿<Page x:Class="WSChina2020AppComp20.Pages.SponsorshipStatPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WSChina2020AppComp20.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SponsorshipStatPage">
+
+    <Grid>
+        <StackPanel Style="{StaticResource MSP}">
+            <TextBlock Style="{StaticResource MainTB}">Sponsorship Statistics</TextBlock>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                <TextBlock Style="{StaticResource SecondaryTB}">Event: </TextBlock>
+                <ComboBox Name="EventCBox" Width="220" Height="25"></ComboBox>
+                <TextBlock Style="{StaticResource SecondaryTB}">Class by:</TextBlock>
+                <ComboBox Name="ClassByCBox" Width="150" Height="25">
+                    <ComboBoxItem Content="Sponsor's name"></ComboBoxItem>
+                    <ComboBoxItem Content="Items"></ComboBoxItem>
+                    <ComboBoxItem Content="Amount"></ComboBoxItem>
+                </ComboBox>
+                <Button Name="FindBtn" Style="{StaticResource BackButton}" Click="FindBtn_Click">Sort</Button>
+            </StackPanel>
+            <TextBlock Style="{StaticResource MainTB}" FontSize="12">Total Amount: XXX</TextBlock>
+            <DataGrid Name="StatDataGrid" Margin="5" AutoGenerateColumns="False" IsReadOnly="True" ScrollViewer.CanContentScroll="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="*" Header="Photo" Binding="{Binding photo}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="Items" Binding="{Binding item}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="Sponsor's name" Binding="{Binding name}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="Amount" Binding="{Binding amount}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Page>

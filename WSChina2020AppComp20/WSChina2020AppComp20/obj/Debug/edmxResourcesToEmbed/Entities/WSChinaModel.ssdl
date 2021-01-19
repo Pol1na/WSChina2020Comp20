@@ -37,6 +37,13 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="name" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="Events">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
   <EntityType Name="Genders">
     <Key>
       <PropertyRef Name="id" />
@@ -71,6 +78,17 @@
     <Property Name="DateStart" Type="date" />
     <Property Name="DateEnd" Type="date" />
     <Property Name="name" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sponsorship">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="item" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="photo" Type="image" />
+    <Property Name="amount" Type="int" Nullable="false" />
+    <Property Name="eventId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -107,7 +125,7 @@
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="UserId" Type="int" />
     <Property Name="SkillsId" Type="int" />
-    <Property Name="event" Type="nvarchar" MaxLength="50" />
+    <Property Name="eventId" Type="int" />
   </EntityType>
   <EntityType Name="Volunteers">
     <Key>
@@ -119,6 +137,7 @@
     <Property Name="manageCityId" Type="int" Nullable="false" />
     <Property Name="cityId" Type="int" Nullable="false" />
     <Property Name="skillsId" Type="int" Nullable="false" />
+    <Property Name="age" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="FK_Blocks_All Fields">
     <End Role="All Fields" Type="Self.All Fields" Multiplicity="1" />
@@ -180,6 +199,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Sponsorship_Events">
+    <End Role="Events" Type="Self.Events" Multiplicity="1" />
+    <End Role="Sponsorship" Type="Self.Sponsorship" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Events">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Sponsorship">
+        <PropertyRef Name="eventId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Users_Coutry">
     <End Role="Coutry" Type="Self.Coutry" Multiplicity="1" />
     <End Role="Users" Type="Self.Users" Multiplicity="*" />
@@ -225,6 +256,18 @@
       </Principal>
       <Dependent Role="UserSkills">
         <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserSkills_Events">
+    <End Role="Events" Type="Self.Events" Multiplicity="0..1" />
+    <End Role="UserSkills" Type="Self.UserSkills" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Events">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="UserSkills">
+        <PropertyRef Name="eventId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -282,10 +325,12 @@
     <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Competitions" EntityType="Self.Competitions" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Coutry" EntityType="Self.Coutry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Events" EntityType="Self.Events" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Genders" EntityType="Self.Genders" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Organizations" EntityType="Self.Organizations" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Skills" EntityType="Self.Skills" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SkillsShedule" EntityType="Self.SkillsShedule" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sponsorship" EntityType="Self.Sponsorship" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserSkills" EntityType="Self.UserSkills" Schema="dbo" store:Type="Tables" />
@@ -310,6 +355,10 @@
       <End Role="Skills" EntitySet="Skills" />
       <End Role="SkillsShedule" EntitySet="SkillsShedule" />
     </AssociationSet>
+    <AssociationSet Name="FK_Sponsorship_Events" Association="Self.FK_Sponsorship_Events">
+      <End Role="Events" EntitySet="Events" />
+      <End Role="Sponsorship" EntitySet="Sponsorship" />
+    </AssociationSet>
     <AssociationSet Name="FK_Users_Coutry" Association="Self.FK_Users_Coutry">
       <End Role="Coutry" EntitySet="Coutry" />
       <End Role="Users" EntitySet="Users" />
@@ -324,6 +373,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_Users_UsersSkills" Association="Self.FK_Users_UsersSkills">
       <End Role="Users" EntitySet="Users" />
+      <End Role="UserSkills" EntitySet="UserSkills" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserSkills_Events" Association="Self.FK_UserSkills_Events">
+      <End Role="Events" EntitySet="Events" />
       <End Role="UserSkills" EntitySet="UserSkills" />
     </AssociationSet>
     <AssociationSet Name="FK_UserSkills_Skills" Association="Self.FK_UserSkills_Skills">

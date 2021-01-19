@@ -79,7 +79,6 @@ namespace WSChina2020AppComp20.Pages
         }
         private void Binding(int number, int currentPage)
         {
-            int i = 0;
             int count = VolunteersDGrid.Items.Count;
             int pageSize = 0;
             if (count % number == 0)
@@ -117,16 +116,38 @@ namespace WSChina2020AppComp20.Pages
 
         private void GoBtn_Click(object sender, RoutedEventArgs e)
         {
-            int pageGoNum;
-            if (PageNumTB.Text != null && int.TryParse(PageNumTB.Text, out pageGoNum))
+            if (PaginationTB.Text != null)
             {
-                int pageNum = int.Parse(PageNumTB.Text);
+                int pageNum = int.Parse(PaginationTB.Text);
                 int total = int.Parse(TotalTB.Text);
                 if (pageNum >= 1 && pageNum <= total)
                 {
                     Binding(10, pageNum);
                 }
             }
+        }
+
+        private void PreviousBtn_Click(object sender, RoutedEventArgs e)
+        {
+            int total = Convert.ToInt32(TotalTB.Text);
+            int currentPage = Convert.ToInt32(CurrentTB.Text);
+            if (currentPage < total)
+            {
+                Binding(10, currentPage - 1);
+            }
+        }
+
+        private void FirstBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Binding(10, 1);
+        
+        }
+
+        private void LastBtn_Click(object sender, RoutedEventArgs e)
+        {
+            int total = Convert.ToInt32(TotalTB.Text);
+            Binding(10, total);
+
         }
     }
 }

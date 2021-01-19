@@ -23,6 +23,26 @@ namespace WSChina2020AppComp20.Pages
         public AdjustVolunteers()
         {
             InitializeComponent();
+            SkillsNoLess.ItemsSource = AppData.Context.Skills.ToList();
+            SkillsNoLess.DisplayMemberPath = "Name";
+            SkillsLess.ItemsSource = AppData.Context.Skills.ToList();
+            SkillsLess.DisplayMemberPath = "Name";
+        }
+
+        private void ShowBtn_Click(object sender, RoutedEventArgs e)
+        {
+            LeftDGrid.ItemsSource = AppData.Context.Volunteers.ToList().Where(i => i.Skills.Name == SkillsNoLess.Text);
+        }
+
+        private void ShowRightBtn_Click(object sender, RoutedEventArgs e)
+        {
+            RightDGrid.ItemsSource = AppData.Context.Volunteers.ToList().Where(i => i.Skills.Name == SkillsLess.Text);
+
+        }
+
+        private void MoveToRightBtn_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

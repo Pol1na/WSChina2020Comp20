@@ -17,28 +17,49 @@
         <TextBlock Style="{StaticResource MainTB}" Grid.ColumnSpan="3">Adjust volunteers between skills</TextBlock>
         <StackPanel Style="{StaticResource MSP}" Margin="20">
             <TextBlock Style="{StaticResource SecondaryTB}" FontSize="12">No less than average volunteers number</TextBlock>
-            <DataGrid AutoGenerateColumns="False" IsReadOnly="True" Name="LeftDGrid">
+            <StackPanel Orientation="Horizontal">
+                <ComboBox Name="SkillsNoLess"></ComboBox>
+                <Button Width="50" Name="ShowBtn" Style="{StaticResource BackButton}" Click="ShowBtn_Click">Show</Button>
+            </StackPanel> 
+            <DataGrid AutoGenerateColumns="False" ScrollViewer.CanContentScroll="True" Height="150" IsReadOnly="True" Name="LeftDGrid">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Width="*" Header="Check"></DataGridTextColumn>
-                    <DataGridTextColumn Width="*" Header="Name"></DataGridTextColumn>
-                    <DataGridTextColumn Width="*" Header="Age"></DataGridTextColumn>
-                    <DataGridTextColumn Width="*" Header="Occupation"></DataGridTextColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox Name="LeftCheckBox"></CheckBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Width="*" Header="Name" Binding="{Binding fullname}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="Age" Binding="{Binding age}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="Occupation" Binding="{Binding City.name}"></DataGridTextColumn>
                 </DataGrid.Columns>
             </DataGrid>
             <TextBlock Name="TotalLeftTB" Style="{StaticResource SecondaryTB}" FontSize="12">Total volunteers: </TextBlock>
         </StackPanel>
         <StackPanel Grid.Column="1" Style="{StaticResource MSP}">
-            <Button Name="MoveToRightBtn" Style="{StaticResource BackButton}" Width="90">></Button>
+            <Button Name="MoveToRightBtn" Style="{StaticResource BackButton}" Width="90" Click="MoveToRightBtn_Click">></Button>
             <Button Name="MoveToLeftBtn" Style="{StaticResource BackButton}" Width="90" Content="&lt;"></Button>
         </StackPanel>
         <StackPanel Style="{StaticResource MSP}" Grid.Column="2" Margin="20">
             <TextBlock Style="{StaticResource SecondaryTB}" FontSize="12">Less than the average volunteers number</TextBlock>
-            <DataGrid AutoGenerateColumns="False" IsReadOnly="True" Name="RightDGrid">
+            <StackPanel Orientation="Horizontal">
+                <ComboBox Name="SkillsLess"></ComboBox>
+                <Button Width="50" Name="ShowRightBtn" Style="{StaticResource BackButton}" Click="ShowRightBtn_Click">Show</Button>
+
+            </StackPanel>
+            <DataGrid AutoGenerateColumns="False" ScrollViewer.CanContentScroll="True" Height="150" IsReadOnly="True" Name="RightDGrid">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Width="*" Header="Check"></DataGridTextColumn>
-                    <DataGridTextColumn Width="*" Header="Name"></DataGridTextColumn>
-                    <DataGridTextColumn Width="*" Header="Age"></DataGridTextColumn>
-                    <DataGridTextColumn Width="*" Header="Occupation"></DataGridTextColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox Name="LeftCheckBox"></CheckBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Width="*" Header="Name" Binding="{Binding fullname}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="Age" Binding="{Binding age}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="Occupation" Binding="{Binding City.name}"></DataGridTextColumn>
                 </DataGrid.Columns>
             </DataGrid>
             <TextBlock Name="TotalRightTB" Style="{StaticResource SecondaryTB}" FontSize="12">Total volunteers:</TextBlock>

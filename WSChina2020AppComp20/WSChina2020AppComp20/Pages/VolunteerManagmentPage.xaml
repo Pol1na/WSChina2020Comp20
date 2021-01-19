@@ -49,14 +49,13 @@
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock Name="TotalTB" Style="{StaticResource SecondaryTB}" FontSize="12" VerticalAlignment="Center"></TextBlock>
                 <TextBlock Name="CurrentTB" Style="{StaticResource SecondaryTB}" FontSize="12" VerticalAlignment="Center"></TextBlock>
-                <Button Style="{StaticResource BackButton}">First</Button>
-                <Button Style="{StaticResource BackButton}">Previous</Button>
+                <Button Name="FirstBtn" Style="{StaticResource BackButton}" Click="FirstBtn_Click">First</Button>
+                <Button Name="PreviousBtn" Style="{StaticResource BackButton}" Click="PreviousBtn_Click">Previous</Button>
                 <Button Name="NextBtn" Style="{StaticResource BackButton}" Click="NextBtn_Click">Next</Button>
-                <Button Style="{StaticResource BackButton}">Last</Button>
+                <Button Name="LastBtn" Style="{StaticResource BackButton}" Click="LastBtn_Click">Last</Button>
                 <TextBlock Style="{StaticResource SecondaryTB}" FontSize="12" VerticalAlignment="Center">Go to page</TextBlock>
                 <TextBox Name="PaginationTB" Width="30"></TextBox>
                 <Button Name="GoBtn" Style="{StaticResource BackButton}" Width="50" Click="GoBtn_Click">Go</Button>
-                <TextBlock Name="PageNumTB" Style="{StaticResource SecondaryTB}"></TextBlock>
             </StackPanel>
         </StackPanel>
 

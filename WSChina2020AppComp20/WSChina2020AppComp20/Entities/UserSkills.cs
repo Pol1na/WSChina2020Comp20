@@ -17,8 +17,9 @@ namespace WSChina2020AppComp20.Entities
         public int id { get; set; }
         public Nullable<int> UserId { get; set; }
         public Nullable<int> SkillsId { get; set; }
-        public string @event { get; set; }
+        public Nullable<int> eventId { get; set; }
     
+        public virtual Events Events { get; set; }
         public virtual Skills Skills { get; set; }
         public virtual Users Users { get; set; }
     }
