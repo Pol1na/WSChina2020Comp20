@@ -141,6 +141,9 @@
     <Compile Include="Pages\CoordinatorMenuPage.xaml.cs">
       <DependentUpon>CoordinatorMenuPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ExportPage.xaml.cs">
+      <DependentUpon>ExportPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ImportPage.xaml.cs">
       <DependentUpon>ImportPage.xaml</DependentUpon>
     </Compile>
@@ -161,6 +164,9 @@
     </Compile>
     <Compile Include="Pages\SponsorshipStatPage.xaml.cs">
       <DependentUpon>SponsorshipStatPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SponsorShipViewPage.xaml.cs">
+      <DependentUpon>SponsorShipViewPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\VolunteerManagmentPage.xaml.cs">
       <DependentUpon>VolunteerManagmentPage.xaml</DependentUpon>
@@ -216,6 +222,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ExportPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\HistoryOfWSPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -253,6 +263,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\SponsorshipStatPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SponsorShipViewPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

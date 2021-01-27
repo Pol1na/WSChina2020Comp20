@@ -1,0 +1,33 @@
+﻿<Page x:Class="WSChina2020AppComp20.Pages.ExportPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WSChina2020AppComp20.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ExportPage">
+
+    <Grid>
+        <StackPanel Style="{StaticResource MSP}">
+            <TextBlock Style="{StaticResource MainTB}">Export Sponsorship Detail</TextBlock>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource SecondaryTB}">File type:</TextBlock>
+                <CheckBox Name="XMLCheckBox" VerticalAlignment="Center" Margin="5"></CheckBox>
+                <TextBlock Style="{StaticResource SecondaryTB}" Margin="0 0 150 0">XML</TextBlock>
+                <CheckBox Name="XLSCheckBox" VerticalAlignment="Center" Margin="5"></CheckBox>
+                <TextBlock Style="{StaticResource SecondaryTB}">XLS/XLSX</TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Style="{StaticResource SecondaryTB}">File location</TextBlock>
+                <TextBox Name="LocationTB" Width="210"></TextBox>
+                <Button Name="BrowseBtn" Style="{StaticResource BackButton}" Click="BrowseBtn_Click">Browse..</Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Name="ExportBtn" Style="{StaticResource BackButton}" Click="ExportBtn_Click" >Export</Button>
+                <Button Name="CancelBtn" Style="{StaticResource BackButton}" Click="CancelBtn_Click">Cancel</Button>
+            </StackPanel>
+        </StackPanel>
+        
+    </Grid>
+</Page>

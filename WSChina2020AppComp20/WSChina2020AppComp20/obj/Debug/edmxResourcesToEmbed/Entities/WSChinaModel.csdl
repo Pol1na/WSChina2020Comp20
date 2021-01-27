@@ -64,6 +64,10 @@
       <End Role="Skills" EntitySet="Skills" />
       <End Role="SkillsShedule" EntitySet="SkillsShedule" />
     </AssociationSet>
+    <AssociationSet Name="FK_Sponsorship_Skills" Association="WSChina2020BaseComp20Model.FK_Sponsorship_Skills">
+      <End Role="Skills" EntitySet="Skills" />
+      <End Role="Sponsorship" EntitySet="Sponsorship" />
+    </AssociationSet>
     <AssociationSet Name="FK_UserSkills_Skills" Association="WSChina2020BaseComp20Model.FK_UserSkills_Skills">
       <End Role="Skills" EntitySet="Skills" />
       <End Role="UserSkills" EntitySet="UserSkills" />
@@ -161,6 +165,7 @@
     <Property Name="Infrastructure" Type="Binary" MaxLength="Max" FixedLength="false" />
     <NavigationProperty Name="Blocks" Relationship="WSChina2020BaseComp20Model.FK_Skills_Blocks" FromRole="Skills" ToRole="Blocks" />
     <NavigationProperty Name="SkillsShedule" Relationship="WSChina2020BaseComp20Model.FK_SkillsShedule_Skills" FromRole="Skills" ToRole="SkillsShedule" />
+    <NavigationProperty Name="Sponsorship" Relationship="WSChina2020BaseComp20Model.FK_Sponsorship_Skills" FromRole="Skills" ToRole="Sponsorship" />
     <NavigationProperty Name="UserSkills" Relationship="WSChina2020BaseComp20Model.FK_UserSkills_Skills" FromRole="Skills" ToRole="UserSkills" />
     <NavigationProperty Name="Volunteers" Relationship="WSChina2020BaseComp20Model.FK_Volunteers_Skills" FromRole="Skills" ToRole="Volunteers" />
   </EntityType>
@@ -185,7 +190,9 @@
     <Property Name="photo" Type="Binary" MaxLength="Max" FixedLength="false" />
     <Property Name="amount" Type="Int32" Nullable="false" />
     <Property Name="eventId" Type="Int32" Nullable="false" />
+    <Property Name="skillId" Type="Int32" />
     <NavigationProperty Name="Events" Relationship="WSChina2020BaseComp20Model.FK_Sponsorship_Events" FromRole="Sponsorship" ToRole="Events" />
+    <NavigationProperty Name="Skills" Relationship="WSChina2020BaseComp20Model.FK_Sponsorship_Skills" FromRole="Sponsorship" ToRole="Skills" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -387,6 +394,18 @@
       </Principal>
       <Dependent Role="SkillsShedule">
         <PropertyRef Name="SkillsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sponsorship_Skills">
+    <End Type="WSChina2020BaseComp20Model.Skills" Role="Skills" Multiplicity="0..1" />
+    <End Type="WSChina2020BaseComp20Model.Sponsorship" Role="Sponsorship" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skills">
+        <PropertyRef Name="SkillID" />
+      </Principal>
+      <Dependent Role="Sponsorship">
+        <PropertyRef Name="skillId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

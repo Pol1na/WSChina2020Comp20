@@ -93,6 +93,7 @@
     <EntitySetMapping Name="Sponsorship">
       <EntityTypeMapping TypeName="WSChina2020BaseComp20Model.Sponsorship">
         <MappingFragment StoreEntitySet="Sponsorship">
+          <ScalarProperty Name="skillId" ColumnName="skillId" />
           <ScalarProperty Name="eventId" ColumnName="eventId" />
           <ScalarProperty Name="amount" ColumnName="amount" />
           <ScalarProperty Name="photo" ColumnName="photo" />

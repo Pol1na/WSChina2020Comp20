@@ -18,6 +18,7 @@ namespace WSChina2020AppComp20.Entities
         public Skills()
         {
             this.SkillsShedule = new HashSet<SkillsShedule>();
+            this.Sponsorship = new HashSet<Sponsorship>();
             this.UserSkills = new HashSet<UserSkills>();
             this.Volunteers = new HashSet<Volunteers>();
         }
@@ -32,6 +33,8 @@ namespace WSChina2020AppComp20.Entities
         public virtual Blocks Blocks { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SkillsShedule> SkillsShedule { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Sponsorship> Sponsorship { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserSkills> UserSkills { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

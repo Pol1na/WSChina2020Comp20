@@ -89,6 +89,7 @@
     <Property Name="photo" Type="image" />
     <Property Name="amount" Type="int" Nullable="false" />
     <Property Name="eventId" Type="int" Nullable="false" />
+    <Property Name="skillId" Type="int" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -208,6 +209,18 @@
       </Principal>
       <Dependent Role="Sponsorship">
         <PropertyRef Name="eventId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sponsorship_Skills">
+    <End Role="Skills" Type="Self.Skills" Multiplicity="0..1" />
+    <End Role="Sponsorship" Type="Self.Sponsorship" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Skills">
+        <PropertyRef Name="SkillID" />
+      </Principal>
+      <Dependent Role="Sponsorship">
+        <PropertyRef Name="skillId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -357,6 +370,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_Sponsorship_Events" Association="Self.FK_Sponsorship_Events">
       <End Role="Events" EntitySet="Events" />
+      <End Role="Sponsorship" EntitySet="Sponsorship" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sponsorship_Skills" Association="Self.FK_Sponsorship_Skills">
+      <End Role="Skills" EntitySet="Skills" />
       <End Role="Sponsorship" EntitySet="Sponsorship" />
     </AssociationSet>
     <AssociationSet Name="FK_Users_Coutry" Association="Self.FK_Users_Coutry">

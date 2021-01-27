@@ -32,7 +32,7 @@ namespace WSChina2020AppComp20.Pages
 
         private void ViewBtn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("брат скажи честно только честно брат ты дебил?", "в 2.5 такого не было", MessageBoxButton.OK, MessageBoxImage.Error);
+            NavigationService.Navigate(new SponsorShipViewPage());
         }
 
         private void ChartBtn_Click(object sender, RoutedEventArgs e)

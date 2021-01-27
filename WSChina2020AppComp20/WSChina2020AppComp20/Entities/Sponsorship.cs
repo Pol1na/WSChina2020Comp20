@@ -20,7 +20,9 @@ namespace WSChina2020AppComp20.Entities
         public byte[] photo { get; set; }
         public int amount { get; set; }
         public int eventId { get; set; }
+        public Nullable<int> skillId { get; set; }
     
         public virtual Events Events { get; set; }
+        public virtual Skills Skills { get; set; }
     }
 }

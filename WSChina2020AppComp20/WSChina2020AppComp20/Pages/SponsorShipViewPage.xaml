@@ -1,0 +1,38 @@
+﻿<Page x:Class="WSChina2020AppComp20.Pages.SponsorShipViewPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WSChina2020AppComp20.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SponsorShipViewPage">
+
+    <Grid>
+        <TextBlock Style="{StaticResource MainTB}">Sponsorship View</TextBlock>
+        <StackPanel Style="{StaticResource MSP}">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Style="{StaticResource SecondaryTB}">Event:</TextBlock>
+                <ComboBox Name="ChooseEventCB"></ComboBox>
+                <TextBlock Style="{StaticResource SecondaryTB}">Skills:</TextBlock>
+                <ComboBox Name="ChooseSkillsCB"></ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Style="{StaticResource SecondaryTB}">Sponsor:</TextBlock>
+                <ComboBox Name="SponsorNameCB"></ComboBox>
+                <Button Name="SearchBtn" Style="{StaticResource BackButton}" Click="SearchBtn_Click">Search</Button>
+                <Button Name="ExportBtn" Style="{StaticResource BackButton}" Click="ExportBtn_Click" >Export</Button>
+            </StackPanel>
+            <TextBlock Style="{StaticResource MainTB}" FontSize="12" Name="TotalTB"></TextBlock>
+            <DataGrid Name="SponsorDG" Margin="10" AutoGenerateColumns="False" IsReadOnly="True" ScrollViewer.CanContentScroll="True" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="*" Header="Event" Binding="{Binding Events.name}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="Skills" Binding="{Binding Skills.Name}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="Sponsor" Binding="{Binding name}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="SponsorItem" Binding="{Binding item}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="Amount" Binding="{Binding amount}"></DataGridTextColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Page>
