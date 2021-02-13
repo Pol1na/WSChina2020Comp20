@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "C:\Users\Lenovo\source\repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\Entities\WSChinaModel.edmx" включено. 
+﻿// Создание кода T4 для модели "C:\Users\Lenovo\Source\Repos\Pol1na\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\Entities\WSChinaModel.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

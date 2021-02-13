@@ -54,5 +54,10 @@ namespace WSChina2020AppComp20.Pages
         {
             NavigationService.Navigate(new SponsorShipMngPage());
         }
+
+        private void CompServiceBtn_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new CompetitionServicePage());
+        }
     }
 }

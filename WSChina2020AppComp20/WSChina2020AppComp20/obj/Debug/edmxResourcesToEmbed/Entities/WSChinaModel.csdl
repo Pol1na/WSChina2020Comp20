@@ -12,7 +12,6 @@
     <EntitySet Name="Skills" EntityType="WSChina2020BaseComp20Model.Skills" />
     <EntitySet Name="SkillsShedule" EntityType="WSChina2020BaseComp20Model.SkillsShedule" />
     <EntitySet Name="Sponsorship" EntityType="WSChina2020BaseComp20Model.Sponsorship" />
-    <EntitySet Name="sysdiagrams" EntityType="WSChina2020BaseComp20Model.sysdiagrams" />
     <EntitySet Name="Users" EntityType="WSChina2020BaseComp20Model.Users" />
     <EntitySet Name="UserSkills" EntityType="WSChina2020BaseComp20Model.UserSkills" />
     <EntitySet Name="Volunteers" EntityType="WSChina2020BaseComp20Model.Volunteers" />
@@ -133,6 +132,7 @@
     </Key>
     <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="year" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Sponsorship" Relationship="WSChina2020BaseComp20Model.FK_Sponsorship_Events" FromRole="Events" ToRole="Sponsorship" />
     <NavigationProperty Name="UserSkills" Relationship="WSChina2020BaseComp20Model.FK_UserSkills_Events" FromRole="Events" ToRole="UserSkills" />
   </EntityType>
@@ -193,16 +193,6 @@
     <Property Name="skillId" Type="Int32" />
     <NavigationProperty Name="Events" Relationship="WSChina2020BaseComp20Model.FK_Sponsorship_Events" FromRole="Sponsorship" ToRole="Events" />
     <NavigationProperty Name="Skills" Relationship="WSChina2020BaseComp20Model.FK_Sponsorship_Skills" FromRole="Sponsorship" ToRole="Skills" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="Users">
     <Key>

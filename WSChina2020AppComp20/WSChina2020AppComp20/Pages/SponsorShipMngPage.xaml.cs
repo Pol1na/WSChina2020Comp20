@@ -37,7 +37,7 @@ namespace WSChina2020AppComp20.Pages
 
         private void ChartBtn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("да кто такие ваши эксепшены блин", "в 2.5 такого не было", MessageBoxButton.OK, MessageBoxImage.Error);
+            NavigationService.Navigate(new SponsorshipChartPage());
         }
     }
 }

@@ -23,6 +23,7 @@ namespace WSChina2020AppComp20.Entities
     
         public int id { get; set; }
         public string name { get; set; }
+        public string year { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sponsorship> Sponsorship { get; set; }

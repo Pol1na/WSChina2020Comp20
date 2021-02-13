@@ -36,7 +36,6 @@ namespace WSChina2020AppComp20.Entities
         public virtual DbSet<Skills> Skills { get; set; }
         public virtual DbSet<SkillsShedule> SkillsShedule { get; set; }
         public virtual DbSet<Sponsorship> Sponsorship { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<UserSkills> UserSkills { get; set; }
         public virtual DbSet<Volunteers> Volunteers { get; set; }

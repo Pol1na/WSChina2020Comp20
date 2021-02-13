@@ -47,6 +47,8 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -56,9 +58,11 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -99,9 +103,6 @@
     <Compile Include="Entities\Sponsorship.cs">
       <DependentUpon>WSChinaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\sysdiagrams.cs">
-      <DependentUpon>WSChinaModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Entities\Users.cs">
       <DependentUpon>WSChinaModel.tt</DependentUpon>
     </Compile>
@@ -135,6 +136,9 @@
     <Compile Include="Pages\AuthPage.xaml.cs">
       <DependentUpon>AuthPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CompetitionServicePage.xaml.cs">
+      <DependentUpon>CompetitionServicePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\CompetitorMenuPage.xaml.cs">
       <DependentUpon>CompetitorMenuPage.xaml</DependentUpon>
     </Compile>
@@ -158,6 +162,9 @@
     </Compile>
     <Compile Include="Pages\MySkillsPage.xaml.cs">
       <DependentUpon>MySkillsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SponsorshipChartPage.xaml.cs">
+      <DependentUpon>SponsorshipChartPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SponsorShipMngPage.xaml.cs">
       <DependentUpon>SponsorShipMngPage.xaml</DependentUpon>
@@ -210,6 +217,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\CompetitionServicePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\CompetitionSkillsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -255,6 +266,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PreviousCompPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SponsorshipChartPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -373,6 +388,11 @@
       <DependentUpon>WSChinaModel.edmx</DependentUpon>
       <LastGenOutput>WSChinaModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Images\CompetitionService\drink.ico" />
+    <Resource Include="Images\CompetitionService\fire.ico" />
+    <Resource Include="Images\CompetitionService\medical.ico" />
+    <Resource Include="Images\CompetitionService\support.ico" />
+    <Resource Include="Images\CompetitionService\toilet.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
