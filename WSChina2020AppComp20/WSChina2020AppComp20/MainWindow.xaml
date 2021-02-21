@@ -16,8 +16,8 @@
         <Frame x:Name="MainFrame" Grid.Row="1"
                NavigationUIVisibility="Hidden"
                ContentRendered="MainFrame_ContentRendered"></Frame>
-        <Grid Background="Gray"></Grid>
-        <Grid Grid.Row="2" Background="Gray"></Grid>
+        <Grid Background="DarkRed"></Grid>
+        <Grid Grid.Row="2" Background="DarkRed"></Grid>
         <!--<Image Source="Images/logo.png" Width="120" VerticalAlignment="Center" HorizontalAlignment="Left"></Image>-->
         <TextBlock HorizontalAlignment="Center" FontSize="20" VerticalAlignment="Center" FontWeight="Bold" Foreground="White">Worldskills China Competiton 2016</TextBlock>
         <Button Name="BackBtn" Style="{StaticResource BackButton}" VerticalAlignment="Top" Margin="150 10" Click="BackBtn_Click"></Button>

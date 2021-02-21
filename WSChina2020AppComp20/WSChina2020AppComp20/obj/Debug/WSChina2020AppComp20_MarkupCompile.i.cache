@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Lenovo\Source\Repos\Pol1na\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\
+C:\Users\Lenovo\source\repos\Pol1na\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\
 WSChina2020AppComp20
 none
 false
 DEBUG;TRACE
-C:\Users\Lenovo\Source\Repos\Pol1na\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\App.xaml
+C:\Users\Lenovo\source\repos\Pol1na\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\App.xaml
 26-1771717575
 228363142
 49648474907
-23247217637
+231565506015
 MainWindow.xaml;Pages\AboutSHPage.xaml;Pages\AboutWSCN.xaml;Pages\AboutWSPage.xaml;Pages\AdjustVolunteers.xaml;Pages\AdminMenuPage.xaml;Pages\AuthPage.xaml;Pages\CompetitionServicePage.xaml;Pages\CompetitionSkillsPage.xaml;Pages\CompetitorMenuPage.xaml;Pages\CoordinatorMenuPage.xaml;Pages\ExportPage.xaml;Pages\HistoryOfWSPage.xaml;Pages\ImportPage.xaml;Pages\JudgerMenuPage.xaml;Pages\MenuPage.xaml;Pages\MyProfilePage.xaml;Pages\MyResultsPage.xaml;Pages\MySkillsPage.xaml;Pages\PreviousCompPage.xaml;Pages\SponsorshipChartPage.xaml;Pages\SponsorShipMngPage.xaml;Pages\SponsorshipStatPage.xaml;Pages\SponsorShipViewPage.xaml;Pages\VolunteerManagmentPage.xaml;UserControl\ShpUC.xaml;
 
-False
+True
 

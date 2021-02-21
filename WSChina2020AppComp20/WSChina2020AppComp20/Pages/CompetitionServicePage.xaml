@@ -22,7 +22,7 @@
             </ListView.ItemTemplate>
         </ListView>
         <Canvas x:Name="DropCanvas" Grid.Column="1" Drop="DropCanvas_Drop" AllowDrop="True">
-            
+            <Rectangle Width="400" Height="300" Margin="100" Fill="White" Opacity="1" Stroke="DarkRed"></Rectangle>
         </Canvas>
     </Grid>
 </Page>

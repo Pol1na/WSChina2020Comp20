@@ -26,24 +26,20 @@ namespace WSChina2020AppComp20.Pages
         }
         private void ToDragImage_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            DragDrop.DoDragDrop(sender as Image, (sender as Image).DataContext, DragDropEffects.Copy);
-            var img = (sender as Image).Source;
+            DragDrop.DoDragDrop(sender as Image, (sender as Image), DragDropEffects.Copy);
         }
 
         private void DropCanvas_Drop(object sender, DragEventArgs e)
         {
             var MouseLocation = e.GetPosition(DropCanvas);
             var point = new Point(MouseLocation.X, MouseLocation.Y);
-            DropCanvas.Children.Add(*source картинки*, point);
+            var dropped = (e.Data.GetData(e.Data.GetFormats()[0]) as Image).Source;
+            Image image = new Image();
+            image.Source = dropped;
+            image.Margin = new Thickness(point.X, point.Y, 0, 0);
+            image.Width = 100;
+            image.Height = 100;
+            DropCanvas.Children.Add(image);
         }
-
-        //private void DropLV_Drop(object sender, DragEventArgs e)
-        //{
-        //    var currentImage = e.Data.GetData(e.Data.GetFormats()[0]) as byte[];
-        //    droppedImages.Add(currentImage);
-        //    DropLV.ItemsSource = droppedImages;
-        //    DropLV.Items.Refresh();
-
-        //}
     }
 }
