@@ -71,61 +71,64 @@
     </ApplicationDefinition>
     <Compile Include="AppData.cs" />
     <Compile Include="Entities\All_Fields.cs">
-      <DependentUpon>WSChinaModel.tt</DependentUpon>
+      <DependentUpon>WSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Blocks.cs">
-      <DependentUpon>WSChinaModel.tt</DependentUpon>
+      <DependentUpon>WSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\City.cs">
-      <DependentUpon>WSChinaModel.tt</DependentUpon>
+      <DependentUpon>WSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Competitions.cs">
-      <DependentUpon>WSChinaModel.tt</DependentUpon>
+      <DependentUpon>WSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Coutry.cs">
-      <DependentUpon>WSChinaModel.tt</DependentUpon>
+      <DependentUpon>WSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Events.cs">
-      <DependentUpon>WSChinaModel.tt</DependentUpon>
+      <DependentUpon>WSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Genders.cs">
-      <DependentUpon>WSChinaModel.tt</DependentUpon>
+      <DependentUpon>WSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Organizations.cs">
-      <DependentUpon>WSChinaModel.tt</DependentUpon>
+      <DependentUpon>WSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Skills.cs">
-      <DependentUpon>WSChinaModel.tt</DependentUpon>
+      <DependentUpon>WSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\SkillsShedule.cs">
-      <DependentUpon>WSChinaModel.tt</DependentUpon>
+      <DependentUpon>WSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Sponsorship.cs">
-      <DependentUpon>WSChinaModel.tt</DependentUpon>
+      <DependentUpon>WSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\sysdiagrams.cs">
+      <DependentUpon>WSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Users.cs">
-      <DependentUpon>WSChinaModel.tt</DependentUpon>
+      <DependentUpon>WSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\UserSkills.cs">
-      <DependentUpon>WSChinaModel.tt</DependentUpon>
+      <DependentUpon>WSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Entities\Volunteers.cs">
-      <DependentUpon>WSChinaModel.tt</DependentUpon>
+      <DependentUpon>WSModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\WSChinaModel.Context.cs">
+    <Compile Include="Entities\WSModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>WSChinaModel.Context.tt</DependentUpon>
+      <DependentUpon>WSModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\WSChinaModel.cs">
+    <Compile Include="Entities\WSModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>WSChinaModel.tt</DependentUpon>
+      <DependentUpon>WSModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entities\WSChinaModel.Designer.cs">
+    <Compile Include="Entities\WSModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>WSChinaModel.edmx</DependentUpon>
+      <DependentUpon>WSModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Pages\AdjustVolunteers.xaml.cs">
       <DependentUpon>AdjustVolunteers.xaml</DependentUpon>
@@ -136,6 +139,9 @@
     <Compile Include="Pages\AuthPage.xaml.cs">
       <DependentUpon>AuthPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CompetitionEventPage.xaml.cs">
+      <DependentUpon>CompetitionEventPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\CompetitionServicePage.xaml.cs">
       <DependentUpon>CompetitionServicePage.xaml</DependentUpon>
     </Compile>
@@ -144,6 +150,9 @@
     </Compile>
     <Compile Include="Pages\CoordinatorMenuPage.xaml.cs">
       <DependentUpon>CoordinatorMenuPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EventManagmentPage.xaml.cs">
+      <DependentUpon>EventManagmentPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ExportPage.xaml.cs">
       <DependentUpon>ExportPage.xaml</DependentUpon>
@@ -174,6 +183,9 @@
     </Compile>
     <Compile Include="Pages\SponsorShipViewPage.xaml.cs">
       <DependentUpon>SponsorShipViewPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ViewRegistrationPage.xaml.cs">
+      <DependentUpon>ViewRegistrationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\VolunteerManagmentPage.xaml.cs">
       <DependentUpon>VolunteerManagmentPage.xaml</DependentUpon>
@@ -217,6 +229,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\CompetitionEventPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\CompetitionServicePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -230,6 +246,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\CoordinatorMenuPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\EventManagmentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -285,6 +305,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ViewRegistrationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\VolunteerManagmentPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -333,12 +357,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Entities\WSChinaModel.edmx">
+    <EntityDeploy Include="Entities\WSModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>WSChinaModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>WSModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Entities\WSChinaModel.edmx.diagram">
-      <DependentUpon>WSChinaModel.edmx</DependentUpon>
+    <None Include="Entities\WSModel.edmx.diagram">
+      <DependentUpon>WSModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -361,7 +385,6 @@
   <ItemGroup>
     <Resource Include="Images\no-image.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\China in the WorldSkills.txt" />
     <Resource Include="Images\food_sh_3.jpg" />
@@ -378,21 +401,23 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Entities\WSChinaModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>WSChinaModel.edmx</DependentUpon>
-      <LastGenOutput>WSChinaModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Entities\WSChinaModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>WSChinaModel.edmx</DependentUpon>
-      <LastGenOutput>WSChinaModel.cs</LastGenOutput>
-    </Content>
     <Resource Include="Images\CompetitionService\drink.ico" />
     <Resource Include="Images\CompetitionService\fire.ico" />
     <Resource Include="Images\CompetitionService\medical.ico" />
     <Resource Include="Images\CompetitionService\support.ico" />
     <Resource Include="Images\CompetitionService\toilet.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entities\WSModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WSModel.edmx</DependentUpon>
+      <LastGenOutput>WSModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entities\WSModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WSModel.edmx</DependentUpon>
+      <LastGenOutput>WSModel.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

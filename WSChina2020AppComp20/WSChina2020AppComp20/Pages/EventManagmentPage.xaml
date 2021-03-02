@@ -1,0 +1,18 @@
+﻿<Page x:Class="WSChina2020AppComp20.Pages.EventManagmentPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WSChina2020AppComp20.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EventManagmentPage">
+
+    <Grid>
+        <StackPanel Style="{StaticResource MSP}">
+            <TextBlock Style="{StaticResource MainTB}" Margin="0 0 0 40">Event Managment</TextBlock>
+            <Button Name="EventBtn" Style="{StaticResource MainButton}" Click="EventBtn_Click">Competition Event</Button>
+            <Button Name="SkillsBtn" Style="{StaticResource MainButton}" Click="SkillsBtn_Click">Competition Skills</Button>
+        </StackPanel>
+    </Grid>
+</Page>

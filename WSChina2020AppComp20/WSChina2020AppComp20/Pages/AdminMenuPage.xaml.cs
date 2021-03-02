@@ -48,7 +48,7 @@ namespace WSChina2020AppComp20.Pages
 
         private void EventBtn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("да ну вас с такими запросами, пойду на пит0нчике писать", "в 2.1 такого не было", MessageBoxButton.OK, MessageBoxImage.Error);
+            NavigationService.Navigate(new EventManagmentPage());
         }
 
         private void CompetitorMngBtn_Click(object sender, RoutedEventArgs e)

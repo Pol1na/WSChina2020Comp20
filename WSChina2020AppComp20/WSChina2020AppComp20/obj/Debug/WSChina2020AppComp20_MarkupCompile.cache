@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Lenovo\source\repos\Pol1na\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\
+C:\Users\student20\Source\Repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\
 WSChina2020AppComp20
 none
 false
 DEBUG;TRACE
-C:\Users\Lenovo\source\repos\Pol1na\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\App.xaml
-26-1771717575
-228363142
-481490834274
-231565506015
-MainWindow.xaml;Pages\AboutSHPage.xaml;Pages\AboutWSCN.xaml;Pages\AboutWSPage.xaml;Pages\AdjustVolunteers.xaml;Pages\AdminMenuPage.xaml;Pages\AuthPage.xaml;Pages\CompetitionServicePage.xaml;Pages\CompetitionSkillsPage.xaml;Pages\CompetitorMenuPage.xaml;Pages\CoordinatorMenuPage.xaml;Pages\ExportPage.xaml;Pages\HistoryOfWSPage.xaml;Pages\ImportPage.xaml;Pages\JudgerMenuPage.xaml;Pages\MenuPage.xaml;Pages\MyProfilePage.xaml;Pages\MyResultsPage.xaml;Pages\MySkillsPage.xaml;Pages\PreviousCompPage.xaml;Pages\SponsorshipChartPage.xaml;Pages\SponsorShipMngPage.xaml;Pages\SponsorshipStatPage.xaml;Pages\SponsorShipViewPage.xaml;Pages\VolunteerManagmentPage.xaml;UserControl\ShpUC.xaml;
+C:\Users\student20\Source\Repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\App.xaml
+29-1260642687
+21979793663
+522045334541
+231403795460
+MainWindow.xaml;Pages\AboutSHPage.xaml;Pages\AboutWSCN.xaml;Pages\AboutWSPage.xaml;Pages\AdjustVolunteers.xaml;Pages\AdminMenuPage.xaml;Pages\AuthPage.xaml;Pages\CompetitionEventPage.xaml;Pages\CompetitionServicePage.xaml;Pages\CompetitionSkillsPage.xaml;Pages\CompetitorMenuPage.xaml;Pages\CoordinatorMenuPage.xaml;Pages\EventManagmentPage.xaml;Pages\ExportPage.xaml;Pages\HistoryOfWSPage.xaml;Pages\ImportPage.xaml;Pages\JudgerMenuPage.xaml;Pages\MenuPage.xaml;Pages\MyProfilePage.xaml;Pages\MyResultsPage.xaml;Pages\MySkillsPage.xaml;Pages\PreviousCompPage.xaml;Pages\SponsorshipChartPage.xaml;Pages\SponsorShipMngPage.xaml;Pages\SponsorshipStatPage.xaml;Pages\SponsorShipViewPage.xaml;Pages\ViewRegistrationPage.xaml;Pages\VolunteerManagmentPage.xaml;UserControl\ShpUC.xaml;
 
 False
 
