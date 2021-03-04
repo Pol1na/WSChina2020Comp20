@@ -16,9 +16,9 @@
                     <TabItem.Content>
                         <DataGrid Name="ViewSkillsDataGrid" IsReadOnly="True" AutoGenerateColumns="False" ScrollViewer.CanContentScroll="True">
                             <DataGrid.Columns>
-                                <DataGridTextColumn Width="*" Binding="{Binding }" Header="Skills"></DataGridTextColumn>
-                                <DataGridTextColumn Width="*" Binding="{Binding }" Header="Competitors Provinces"></DataGridTextColumn>
-                                <DataGridTextColumn Width="*" Binding="{Binding }" Header="Number of Competitors"></DataGridTextColumn>
+                                <DataGridTextColumn Width="*" Binding="{Binding Skills.Name}" Header="Skills"></DataGridTextColumn>
+                                <DataGridTextColumn Width="*" Binding="{Binding competitorsProvinces}" Header="Competitors Provinces"></DataGridTextColumn>
+                                <DataGridTextColumn Width="*" Binding="{Binding countCompetitors}" Header="Number of Competitors"></DataGridTextColumn>
                                 <DataGridTextColumn Width="*" Binding="{Binding }" Header="Judgers Provinces"></DataGridTextColumn>
                                 <DataGridTextColumn Width="*" Binding="{Binding }" Header="Number of Judgers"></DataGridTextColumn>
                             </DataGrid.Columns>

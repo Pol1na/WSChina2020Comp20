@@ -23,6 +23,9 @@ namespace WSChina2020AppComp20.Pages
         public ViewRegistrationPage()
         {
             InitializeComponent();
+            ViewSkillsDataGrid.ItemsSource = AppData.Context.UserSkills.ToList();
+            var competitorsProvinces = AppData.Context.UserSkills.ToList().Where(i => i.Users.role == "Competitor").Select(p => p.Users.Coutry).ToList();
+            var countCompetitors = AppData.Context.UserSkills.ToList().Select(i => i.Users.role == "Competitor").Count();
         }
     }
 }

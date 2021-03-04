@@ -19,7 +19,8 @@
             <DataGrid Name="CompetitionDataGrid" Margin="10"  AutoGenerateColumns="False" IsReadOnly="True" ScrollViewer.CanContentScroll="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn Width="*" Header="Event" Binding="{Binding name}"></DataGridTextColumn>
-                    <DataGridTextColumn Width="*" Header="Duration" Binding="{Binding }"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="Start Event" Binding="{Binding start_event}"></DataGridTextColumn>
+                    <DataGridTextColumn Width="*" Header="End Event" Binding="{Binding end_event}"></DataGridTextColumn>
                     <DataGridTextColumn Width="*" Header="Province" Binding="{Binding province}"></DataGridTextColumn>
                 </DataGrid.Columns>
             </DataGrid>

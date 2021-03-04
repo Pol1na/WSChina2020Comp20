@@ -24,21 +24,18 @@ namespace WSChina2020AppComp20.Pages
         {
             InitializeComponent();
             CompetitionDataGrid.ItemsSource = AppData.Context.Events.ToList();
-            //if (DateTime.Now.DayOfYear == )
-            //{
-
-            //}
         }
 
         private void SearchBtn_Click(object sender, RoutedEventArgs e)
         {
             if(SearchTB.Text != "")
             {
-                CompetitionDataGrid.ItemsSource = AppData.Context.Events.ToList().Where(i => i.province == SearchTB.Text || i.name == SearchTB.Text);
+                CompetitionDataGrid.ItemsSource = AppData.Context.Events.ToList().Where(i => i.province.Contains(SearchTB.Text) || i.name.Contains(SearchTB.Text));
             }
             else
             {
-                MessageBox.Show("нет ну ты издеваешься надо мной?", "бесполезное расходование ресурсов компьютера", MessageBoxButton.OK, MessageBoxImage.Error);
+                CompetitionDataGrid.ItemsSource = AppData.Context.Events.ToList();
+                MessageBox.Show("Значение не было задано. Выдан список всех соревнований", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
 
@@ -54,7 +51,7 @@ namespace WSChina2020AppComp20.Pages
 
         private void RegistrationBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            NavigationService.Navigate(new ViewRegistrationPage());
         }
     }
 }
