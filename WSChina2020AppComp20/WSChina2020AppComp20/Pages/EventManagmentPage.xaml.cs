@@ -32,7 +32,7 @@ namespace WSChina2020AppComp20.Pages
 
         private void SkillsBtn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("я и так нифига не делаю, а этой страницы ваще в тз не было", "в 3.1 такого не было", MessageBoxButton.OK, MessageBoxImage.Error);
+            NavigationService.Navigate(new CompetitionSkillsAdminPage());
         }
     }
 }

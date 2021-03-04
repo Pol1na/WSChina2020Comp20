@@ -268,3 +268,7 @@ C:\Users\student20\Source\Repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina20
 C:\Users\student20\Source\Repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\WSChina2020AppComp20.csproj.CopyComplete
 C:\Users\student20\Source\Repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\Pages\ViewRegistrationPage.g.cs
 C:\Users\student20\Source\Repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\Pages\ViewRegistrationPage.baml
+C:\Users\student20\Source\Repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\Pages\CompetitionSkillsAdminPage.g.cs
+C:\Users\student20\Source\Repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\Pages\AddSkillsPage.g.cs
+C:\Users\student20\Source\Repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\Pages\AddSkillsPage.baml
+C:\Users\student20\Source\Repos\WSChina2020Comp20\WSChina2020AppComp20\WSChina2020AppComp20\obj\Debug\Pages\CompetitionSkillsAdminPage.baml
